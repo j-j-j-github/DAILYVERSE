@@ -10,24 +10,43 @@ class VerseRepository(private val context: Context) {
 
     private val prefs = context.getSharedPreferences("DailyVersePrefs", Context.MODE_PRIVATE)
 
-    // --- GENRE PREFERENCE ---
+    // --- DARK MODE LOGIC (Required to fix build errors) ---
+    fun saveDarkMode(enabled: Boolean) {
+        prefs.edit().putBoolean("pref_dark_mode", enabled).apply()
+    }
+
+    fun isDarkMode(): Boolean {
+        return prefs.getBoolean("pref_dark_mode", false)
+    }
+
+    // --- GENRE LOGIC ---
     fun saveGenrePreference(genre: String) {
         prefs.edit().putString("pref_genre", genre).apply()
-        forceNewVerse() // Refresh immediately when changed
+        forceNewVerse()
     }
 
     fun getGenrePreference(): String {
         return prefs.getString("pref_genre", "All") ?: "All"
     }
 
-    // --- DAILY LOGIC ---
+    // --- DAILY VERSE LOGIC ---
+    private fun forceNewVerse() {
+        val todayDate = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(Date())
+        val newVerse = pickRandomVerse(getGenrePreference())
+        if (newVerse != null) {
+            saveVerse(newVerse, todayDate)
+        }
+    }
+
     fun getDailyVerse(): Verse? {
         val todayDate = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(Date())
         val lastSavedDate = prefs.getString("saved_date", "")
 
         if (todayDate != lastSavedDate) {
             val newVerse = pickRandomVerse(getGenrePreference())
-            if (newVerse != null) saveVerse(newVerse, todayDate)
+            if (newVerse != null) {
+                saveVerse(newVerse, todayDate)
+            }
             return newVerse
         } else {
             val id = prefs.getInt("saved_id", -1)
@@ -43,12 +62,6 @@ class VerseRepository(private val context: Context) {
         }
     }
 
-    private fun forceNewVerse() {
-        val todayDate = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(Date())
-        val newVerse = pickRandomVerse(getGenrePreference())
-        if (newVerse != null) saveVerse(newVerse, todayDate)
-    }
-
     private fun pickRandomVerse(genreFilter: String): Verse? {
         val jsonString = loadJSONFromAsset() ?: return null
         val candidates = ArrayList<Verse>()
@@ -58,15 +71,7 @@ class VerseRepository(private val context: Context) {
                 val obj = jsonArray.getJSONObject(i)
                 val vGenre = obj.getString("genre")
                 if (genreFilter == "All" || vGenre.equals(genreFilter, ignoreCase = true)) {
-                    candidates.add(
-                        Verse(
-                            id = obj.getInt("id"),
-                            text = obj.getString("text"),
-                            reference = obj.getString("reference"),
-                            genre = vGenre,
-                            explanation = obj.getString("explanation")
-                        )
-                    )
+                    candidates.add(Verse(obj.getInt("id"), obj.getString("text"), obj.getString("reference"), vGenre, obj.getString("explanation")))
                 }
             }
         } catch (e: Exception) { e.printStackTrace() }
