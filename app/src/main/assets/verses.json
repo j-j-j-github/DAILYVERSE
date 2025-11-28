@@ -1,16 +1,4402 @@
 [
   {
     "id": 1,
-    "text": "For I know the plans I have for you...",
+    "text": "For I know the plans I have for you,” declares the Lord, “plans to prosper you and not to harm you, plans to give you hope and a future.",
     "reference": "Jeremiah 29:11",
     "genre": "Encouragement & Hope",
-    "explanation": "This verse reminds us that God is in control..."
+    "explanation": "God has a blueprint for your life designed for your success, not your failure. He promises you a future filled with hope.",
+    "version": "NIV"
   },
   {
     "id": 2,
-    "text": "Love is patient, love is kind...",
+    "text": "But those who hope in the Lord will renew their strength. They will soar on wings like eagles; they will run and not grow weary, they will walk and not be faint.",
+    "reference": "Isaiah 40:31",
+    "genre": "Encouragement & Hope",
+    "explanation": "When you trust in God, He exchanges your tiredness for His power. You will find the energy to keep going without giving up.",
+    "version": "NIV"
+  },
+  {
+    "id": 3,
+    "text": "Be strong and courageous. Do not be afraid; do not be discouraged, for the Lord your God will be with you wherever you go.",
+    "reference": "Joshua 1:9",
+    "genre": "Encouragement & Hope",
+    "explanation": "You don't have to be brave on your own. You can have courage because God is right there beside you in every situation.",
+    "version": "NIV"
+  },
+  {
+    "id": 4,
+    "text": "Come to me, all you who are weary and burdened, and I will give you rest.",
+    "reference": "Matthew 11:28",
+    "genre": "Encouragement & Hope",
+    "explanation": "If you are exhausted from trying to handle everything yourself, come to God. He offers deep rest for your soul.",
+    "version": "NIV"
+  },
+  {
+    "id": 5,
+    "text": "The Lord is my shepherd, I lack nothing.",
+    "reference": "Psalm 23:1",
+    "genre": "Encouragement & Hope",
+    "explanation": "God looks after you like a shepherd looks after sheep. With Him guiding you, you will have everything you truly need.",
+    "version": "NIV"
+  },
+  {
+    "id": 6,
+    "text": "And we know that in all things God works for the good of those who love him, who have been called according to his purpose.",
+    "reference": "Romans 8:28",
+    "genre": "Encouragement & Hope",
+    "explanation": "Even in bad situations, God is at work. He is weaving every detail of your life together to create a good outcome.",
+    "version": "NIV"
+  },
+  {
+    "id": 7,
+    "text": "Cast all your anxiety on him because he cares for you.",
+    "reference": "1 Peter 5:7",
+    "genre": "Encouragement & Hope",
+    "explanation": "You don't have to carry your worries alone. Throw them onto God, because He genuinely cares about what you are going through.",
+    "version": "NIV"
+  },
+  {
+    "id": 8,
+    "text": "I can do all this through him who gives me strength.",
+    "reference": "Philippians 4:13",
+    "genre": "Encouragement & Hope",
+    "explanation": "No challenge is too great because Christ empowers you. You have divine strength to face any circumstance.",
+    "version": "NIV"
+  },
+  {
+    "id": 9,
+    "text": "The Lord himself goes before you and will be with you; he will not leave you nor forsake you. Do not be afraid; do not be discouraged.",
+    "reference": "Deuteronomy 31:8",
+    "genre": "Encouragement & Hope",
+    "explanation": "God is already in your future preparing the way. He will never abandon you, so you don't need to fear the unknown.",
+    "version": "NIV"
+  },
+  {
+    "id": 10,
+    "text": "Peace I leave with you; my peace I give you. I do not give to you as the world gives. Do not let your hearts be troubled and do not be afraid.",
+    "reference": "John 14:27",
+    "genre": "Encouragement & Hope",
+    "explanation": "God gives a special kind of peace that doesn't depend on your circumstances. Relax your heart and let go of fear.",
+    "version": "NIV"
+  },
+  {
+    "id": 11,
+    "text": "Therefore we do not lose heart. Though outwardly we are wasting away, yet inwardly we are being renewed day by day.",
+    "reference": "2 Corinthians 4:16",
+    "genre": "Encouragement & Hope",
+    "explanation": "Even if your body feels tired or life feels hard, your spirit is getting fresh strength and new life from God every single morning.",
+    "version": "NIV"
+  },
+  {
+    "id": 12,
+    "text": "The Lord is my light and my salvation—whom shall I fear? The Lord is the stronghold of my life—of whom shall I be afraid?",
+    "reference": "Psalm 27:1",
+    "genre": "Encouragement & Hope",
+    "explanation": "With God lighting your path and protecting you like a fortress, there is no person or problem big enough to make you afraid.",
+    "version": "NIV"
+  },
+  {
+    "id": 13,
+    "text": "He heals the brokenhearted and binds up their wounds.",
+    "reference": "Psalm 147:3",
+    "genre": "Encouragement & Hope",
+    "explanation": "God specializes in emotional healing. He cares for your broken heart and gently tends to your painful emotional wounds.",
+    "version": "NIV"
+  },
+  {
+    "id": 14,
+    "text": "Let us hold unswervingly to the hope we profess, for he who promised is faithful.",
+    "reference": "Hebrews 10:23",
+    "genre": "Encouragement & Hope",
+    "explanation": "Hold tight to your hope. You can trust God completely because He always keeps the promises He makes to you.",
+    "version": "NIV"
+  },
+  {
+    "id": 15,
+    "text": "When you pass through the waters, I will be with you; and when you pass through the rivers, they will not sweep over you.",
+    "reference": "Isaiah 43:2",
+    "genre": "Encouragement & Hope",
+    "explanation": "Difficult times will come, but they won't destroy you. God will keep your head above water and walk with you through the trouble.",
+    "version": "NIV"
+  },
+  {
+    "id": 16,
+    "text": "Surely your goodness and love will follow me all the days of my life, and I will dwell in the house of the Lord forever.",
+    "reference": "Psalm 23:6",
+    "genre": "Encouragement & Hope",
+    "explanation": "God's blessings are chasing after you. You have a permanent home with Him and His love surrounds you every day.",
+    "version": "NIV"
+  },
+  {
+    "id": 17,
+    "text": "The Lord is close to the brokenhearted and saves those who are crushed in spirit.",
+    "reference": "Psalm 34:18",
+    "genre": "Encouragement & Hope",
+    "explanation": "When you feel crushed and alone, God is actually closer to you than ever. He is there to rescue your spirit.",
+    "version": "NIV"
+  },
+  {
+    "id": 18,
+    "text": "May the God of hope fill you with all joy and peace as you trust in him, so that you may overflow with hope by the power of the Holy Spirit.",
+    "reference": "Romans 15:13",
+    "genre": "Encouragement & Hope",
+    "explanation": "Trusting God unlocks joy and peace. He wants you to have so much hope that it spills over into the lives of people around you.",
+    "version": "NIV"
+  },
+  {
+    "id": 19,
+    "text": "Be strong and take heart, all you who hope in the Lord.",
+    "reference": "Psalm 31:24",
+    "genre": "Encouragement & Hope",
+    "explanation": "Cheer up and stand firm. If you are waiting on God to act, you can be confident that He is working on your behalf.",
+    "version": "NIV"
+  },
+  {
+    "id": 20,
+    "text": "We have this hope as an anchor for the soul, firm and secure.",
+    "reference": "Hebrews 6:19",
+    "genre": "Encouragement & Hope",
+    "explanation": "Hope in God stabilizes you like an anchor stabilizes a ship. No matter how much the storm rages, your soul is safe.",
+    "version": "NIV"
+  },
+  {
+    "id": 21,
+    "text": "Because of the Lord’s great love we are not consumed, for his compassions never fail. They are new every morning; great is your faithfulness.",
+    "reference": "Lamentations 3:22-23",
+    "genre": "Encouragement & Hope",
+    "explanation": "You get a fresh start every single day. God's mercy doesn't run out; He has a new supply of compassion for you every morning.",
+    "version": "NIV"
+  },
+  {
+    "id": 22,
+    "text": "Fear not, for I am with you; be not dismayed, for I am your God; I will strengthen you, I will help you, I will uphold you with my righteous right hand.",
+    "reference": "Isaiah 41:10",
+    "genre": "Encouragement & Hope",
+    "explanation": "God is holding you up. You don't need to worry because He promises to give you strength and personal help.",
+    "version": "ESV"
+  },
+  {
+    "id": 23,
+    "text": "But thanks be to God! He gives us the victory through our Lord Jesus Christ.",
+    "reference": "1 Corinthians 15:57",
+    "genre": "Encouragement & Hope",
+    "explanation": "You are on the winning side. Through Jesus, victory over sin, death, and struggle is already yours.",
+    "version": "NIV"
+  },
+  {
+    "id": 24,
+    "text": "What, then, shall we say in response to these things? If God is for us, who can be against us?",
+    "reference": "Romans 8:31",
+    "genre": "Encouragement & Hope",
+    "explanation": "With the Creator of the universe on your team, opposition doesn't matter. No enemy is stronger than God.",
+    "version": "NIV"
+  },
+  {
+    "id": 25,
+    "text": "Wait for the Lord; be strong and take heart and wait for the Lord.",
+    "reference": "Psalm 27:14",
+    "genre": "Encouragement & Hope",
+    "explanation": "Patience requires strength. Don't give up while you wait for God's timing; He is worth the wait.",
+    "version": "NIV"
+  },
+  {
+    "id": 26,
+    "text": "In this world you will have trouble. But take heart! I have overcome the world.",
+    "reference": "John 16:33",
+    "genre": "Encouragement & Hope",
+    "explanation": "Problems are guaranteed, but so is victory. Jesus has already beaten the struggles of this world, so you can have courage.",
+    "version": "NIV"
+  },
+  {
+    "id": 27,
+    "text": "The Lord will fight for you; you need only to be still.",
+    "reference": "Exodus 14:14",
+    "genre": "Encouragement & Hope",
+    "explanation": "Stop striving and stressing. Stay calm and watch God handle the battle for you.",
+    "version": "NIV"
+  },
+  {
+    "id": 28,
+    "text": "Consider it pure joy, my brothers and sisters, whenever you face trials of many kinds, because you know that the testing of your faith produces perseverance.",
+    "reference": "James 1:2-3",
+    "genre": "Encouragement & Hope",
+    "explanation": "Hard times are actually training grounds. They are building your spiritual muscles and teaching you how to endure.",
+    "version": "NIV"
+  },
+  {
+    "id": 29,
+    "text": "The name of the Lord is a fortified tower; the righteous run to it and are safe.",
+    "reference": "Proverbs 18:10",
+    "genre": "Encouragement & Hope",
+    "explanation": "God is your safe house. When life gets dangerous or scary, run to Him for protection.",
+    "version": "NIV"
+  },
+  {
+    "id": 30,
+    "text": "Even youths grow tired and weary, and young men stumble and fall; but those who hope in the Lord will renew their strength.",
+    "reference": "Isaiah 40:30-31",
+    "genre": "Encouragement & Hope",
+    "explanation": "Natural human energy runs out, but God's strength is unlimited. Hope connects you to His endless power source.",
+    "version": "NIV"
+  },
+  {
+    "id": 31,
+    "text": "For I am convinced that neither death nor life, neither angels nor demons, neither the present nor the future, nor any powers... will be able to separate us from the love of God.",
+    "reference": "Romans 8:38-39",
+    "genre": "Encouragement & Hope",
+    "explanation": "Nothing in the universe can stop God from loving you. You are permanently connected to His love.",
+    "version": "NIV"
+  },
+  {
+    "id": 32,
+    "text": "You are my hiding place; you will protect me from trouble and surround me with songs of deliverance.",
+    "reference": "Psalm 32:7",
+    "genre": "Encouragement & Hope",
+    "explanation": "When you feel overwhelmed, hide in God. He surrounds you with joy and keeps you safe from the trouble.",
+    "version": "NIV"
+  },
+  {
+    "id": 33,
+    "text": "He who began a good work in you will carry it on to completion until the day of Christ Jesus.",
+    "reference": "Philippians 1:6",
+    "genre": "Encouragement & Hope",
+    "explanation": "God finishes what He starts. He is not done with you yet and will continue to help you grow.",
+    "version": "NIV"
+  },
+  {
+    "id": 34,
+    "text": "My flesh and my heart may fail, but God is the strength of my heart and my portion forever.",
+    "reference": "Psalm 73:26",
+    "genre": "Encouragement & Hope",
+    "explanation": "Even when you feel physically or emotionally weak, God is your rock. He is all you need, forever.",
+    "version": "NIV"
+  },
+  {
+    "id": 35,
+    "text": "The eternal God is your refuge, and underneath are the everlasting arms.",
+    "reference": "Deuteronomy 33:27",
+    "genre": "Encouragement & Hope",
+    "explanation": "You can never fall too far because God's arms are underneath you, catching you and holding you safe.",
+    "version": "NIV"
+  },
+  {
+    "id": 36,
+    "text": "Let us not become weary in doing good, for at the proper time we will reap a harvest if we do not give up.",
+    "reference": "Galatians 6:9",
+    "genre": "Encouragement & Hope",
+    "explanation": "Keep doing good things, even when it's hard. Your reward is coming at just the right time.",
+    "version": "NIV"
+  },
+  {
+    "id": 37,
+    "text": "God is our refuge and strength, an ever-present help in trouble.",
+    "reference": "Psalm 46:1",
+    "genre": "Encouragement & Hope",
+    "explanation": "God isn't hard to find when things go wrong. He is right there, ready to help you instantly.",
+    "version": "NIV"
+  },
+  {
+    "id": 38,
+    "text": "Blessed is the one who trusts in the Lord, whose confidence is in him.",
+    "reference": "Jeremiah 17:7",
+    "genre": "Encouragement & Hope",
+    "explanation": "You are blessed when you put your confidence in God rather than yourself. It leads to a stable and happy life.",
+    "version": "NIV"
+  },
+  {
+    "id": 39,
+    "text": "Look at the birds of the air; they do not sow or reap or store away in barns, and yet your heavenly Father feeds them. Are you not much more valuable than they?",
+    "reference": "Matthew 6:26",
+    "genre": "Encouragement & Hope",
+    "explanation": "You matter to God. If He takes care of tiny birds, He will definitely take care of you.",
+    "version": "NIV"
+  },
+  {
+    "id": 40,
+    "text": "I sought the Lord, and he answered me; he delivered me from all my fears.",
+    "reference": "Psalm 34:4",
+    "genre": "Encouragement & Hope",
+    "explanation": "When you look for God, He answers. He frees you from the cage of your fears.",
+    "version": "NIV"
+  },
+  {
+    "id": 41,
+    "text": "If any of you lacks wisdom, you should ask God, who gives generously to all without finding fault, and it will be given to you.",
+    "reference": "James 1:5",
+    "genre": "Wisdom & Guidance",
+    "explanation": "You don't have to figure it all out alone. Just ask God for wisdom; He loves to give it to you and won't judge you for asking.",
+    "version": "NIV"
+  },
+  {
+    "id": 42,
+    "text": "Trust in the Lord with all your heart and lean not on your own understanding; in all your ways submit to him, and he will make your paths straight.",
+    "reference": "Proverbs 3:5-6",
+    "genre": "Wisdom & Guidance",
+    "explanation": "Human logic has limits. If you stop relying solely on what you think you know and trust God instead, He will clear the path ahead of you.",
+    "version": "NIV"
+  },
+  {
+    "id": 43,
+    "text": "Your word is a lamp for my feet, a light on my path.",
+    "reference": "Psalm 119:105",
+    "genre": "Wisdom & Guidance",
+    "explanation": "The Bible isn't just a history book; it's a flashlight. It shows you where to step next so you don't stumble in the dark.",
+    "version": "NIV"
+  },
+  {
+    "id": 44,
+    "text": "In their hearts humans plan their course, but the Lord establishes their steps.",
+    "reference": "Proverbs 16:9",
+    "genre": "Wisdom & Guidance",
+    "explanation": "It's okay to make plans, but remember that God has the final say. Be flexible and let Him guide your actual steps.",
+    "version": "NIV"
+  },
+  {
+    "id": 45,
+    "text": "Whether you turn to the right or to the left, your ears will hear a voice behind you, saying, 'This is the way; walk in it.'",
+    "reference": "Isaiah 30:21",
+    "genre": "Wisdom & Guidance",
+    "explanation": "God is committed to guiding you. Listen closely, and you will sense His direction nudging you back to the right path when you stray.",
+    "version": "NIV"
+  },
+  {
+    "id": 46,
+    "text": "Many are the plans in a person’s heart, but it is the Lord’s purpose that prevails.",
+    "reference": "Proverbs 19:21",
+    "genre": "Wisdom & Guidance",
+    "explanation": "You might have a hundred different ideas for your life, but God's purpose is the one that will actually last and succeed.",
+    "version": "NIV"
+  },
+  {
+    "id": 47,
+    "text": "Let the message of Christ dwell among you richly as you teach and admonish one another with all wisdom.",
+    "reference": "Colossians 3:16",
+    "genre": "Wisdom & Guidance",
+    "explanation": "Don't just visit Jesus on Sundays; let His words live in your mind every day. That connection will make you wise and helpful to others.",
+    "version": "NIV"
+  },
+  {
+    "id": 48,
+    "text": "Do not forsake wisdom, and she will protect you; love her, and she will watch over you. The beginning of wisdom is this: Get wisdom.",
+    "reference": "Proverbs 4:6-7",
+    "genre": "Wisdom & Guidance",
+    "explanation": "Wisdom is your bodyguard. If you chase after wisdom and value it, it will keep you safe from making life-ruining mistakes.",
+    "version": "NIV"
+  },
+  {
+    "id": 49,
+    "text": "But the wisdom that comes from heaven is first of all pure; then peace-loving, considerate, submissive, full of mercy and good fruit, impartial and sincere.",
+    "reference": "James 3:17",
+    "genre": "Wisdom & Guidance",
+    "explanation": "Real divine wisdom isn't arrogant. It shows itself by being calm, fair, and kind to people.",
+    "version": "NIV"
+  },
+  {
+    "id": 50,
+    "text": "The fear of the Lord is the beginning of knowledge, but fools despise wisdom and instruction.",
+    "reference": "Proverbs 1:7",
+    "genre": "Wisdom & Guidance",
+    "explanation": "Being smart starts with respecting God. Only a fool thinks they already know everything and refuses to learn.",
+    "version": "NIV"
+  },
+  {
+    "id": 51,
+    "text": "Be very careful, then, how you live—not as unwise but as wise, making the most of every opportunity, because the days are evil.",
+    "reference": "Ephesians 5:15-16",
+    "genre": "Wisdom & Guidance",
+    "explanation": "Time is limited and distractions are everywhere. Use your time smartly and don't waste the opportunities you have today.",
+    "version": "NIV"
+  },
+  {
+    "id": 52,
+    "text": "The way of fools seems right to them, but the wise listen to advice.",
+    "reference": "Proverbs 12:15",
+    "genre": "Wisdom & Guidance",
+    "explanation": "Don't be stubborn. Assuming you are always right is a trap; listening to good advice is a sign of true intelligence.",
+    "version": "NIV"
+  },
+  {
+    "id": 53,
+    "text": "Teach us to number our days, that we may gain a heart of wisdom.",
+    "reference": "Psalm 90:12",
+    "genre": "Wisdom & Guidance",
+    "explanation": "Life is short. Realizing that your time on earth is limited helps you focus on what actually matters.",
+    "version": "NIV"
+  },
+  {
+    "id": 54,
+    "text": "Walk with the wise and become wise, for a companion of fools suffers harm.",
+    "reference": "Proverbs 13:20",
+    "genre": "Wisdom & Guidance",
+    "explanation": "You become like the people you hang out with. Choose friends who make you better, not ones who drag you into trouble.",
+    "version": "NIV"
+  },
+  {
+    "id": 55,
+    "text": "Therefore everyone who hears these words of mine and puts them into practice is like a wise man who built his house on the rock.",
+    "reference": "Matthew 7:24",
+    "genre": "Wisdom & Guidance",
+    "explanation": "Hearing good advice isn't enough; you have to do it. Acting on God's word gives your life a foundation that storms can't break.",
+    "version": "NIV"
+  },
+  {
+    "id": 56,
+    "text": "As iron sharpens iron, so one person sharpens another.",
+    "reference": "Proverbs 27:17",
+    "genre": "Wisdom & Guidance",
+    "explanation": "You need other people to grow. Just like tools need friction to stay sharp, honest friends challenge you to be your best self.",
+    "version": "NIV"
+  },
+  {
+    "id": 57,
+    "text": "I will instruct you and teach you in the way you should go; I will counsel you with my loving eye on you.",
+    "reference": "Psalm 32:8",
+    "genre": "Wisdom & Guidance",
+    "explanation": "God wants to be your personal mentor. He promises to watch over you and give you specific advice for your life.",
+    "version": "NIV"
+  },
+  {
+    "id": 58,
+    "text": "Commit to the Lord whatever you do, and he will establish your plans.",
+    "reference": "Proverbs 16:3",
+    "genre": "Wisdom & Guidance",
+    "explanation": "Before you start a project, invite God into it. When you align your work with Him, He helps you succeed.",
+    "version": "NIV"
+  },
+  {
+    "id": 59,
+    "text": "Do not conform to the pattern of this world, but be transformed by the renewing of your mind.",
+    "reference": "Romans 12:2",
+    "genre": "Wisdom & Guidance",
+    "explanation": "Don't just copy what everyone else is doing. Let God upgrade how you think, so you can see life from a better perspective.",
+    "version": "NIV"
+  },
+  {
+    "id": 60,
+    "text": "Plans fail for lack of counsel, but with many advisers they succeed.",
+    "reference": "Proverbs 15:22",
+    "genre": "Wisdom & Guidance",
+    "explanation": "Trying to do everything alone leads to failure. Success comes when you are humble enough to ask others for input.",
+    "version": "NIV"
+  },
+  {
+    "id": 61,
+    "text": "Do not be wise in your own eyes; fear the Lord and shun evil.",
+    "reference": "Proverbs 3:7",
+    "genre": "Wisdom & Guidance",
+    "explanation": "Don't be impressed by your own intelligence. True wisdom is knowing your limits and respecting God's boundaries.",
+    "version": "NIV"
+  },
+  {
+    "id": 62,
+    "text": "There is a way that appears to be right, but in the end it leads to death.",
+    "reference": "Proverbs 14:12",
+    "genre": "Wisdom & Guidance",
+    "explanation": "Your gut feeling isn't always right. Some choices look good initially but have terrible consequences later. Verify your path with God.",
+    "version": "NIV"
+  },
+  {
+    "id": 63,
+    "text": "For the Lord gives wisdom; from his mouth come knowledge and understanding.",
+    "reference": "Proverbs 2:6",
+    "genre": "Wisdom & Guidance",
+    "explanation": "You can't manufacture wisdom; it's a gift. Go to the source—God's words—to find the understanding you lack.",
+    "version": "NIV"
+  },
+  {
+    "id": 64,
+    "text": "How much better to get wisdom than gold, to get insight rather than silver!",
+    "reference": "Proverbs 16:16",
+    "genre": "Wisdom & Guidance",
+    "explanation": "Money can be lost, but wisdom is yours forever. Making good decisions is far more valuable than a full bank account.",
+    "version": "NIV"
+  },
+  {
+    "id": 65,
+    "text": "The fear of the Lord is the beginning of wisdom, and knowledge of the Holy One is understanding.",
+    "reference": "Proverbs 9:10",
+    "genre": "Wisdom & Guidance",
+    "explanation": "You can't really understand life until you know the One who created it. Knowing God is the foundation of all smart living.",
+    "version": "NIV"
+  },
+  {
+    "id": 66,
+    "text": "Do not be quickly provoked in your spirit, for anger resides in the lap of fools.",
+    "reference": "Ecclesiastes 7:9",
+    "genre": "Wisdom & Guidance",
+    "explanation": "It's foolish to lose your temper instantly. Wisdom means controlling your emotions instead of letting them control you.",
+    "version": "NIV"
+  },
+  {
+    "id": 67,
+    "text": "The heart of the discerning acquires knowledge, for the ears of the wise seek it out.",
+    "reference": "Proverbs 18:15",
+    "genre": "Wisdom & Guidance",
+    "explanation": "Smart people are curious. They are always listening and looking for new things to learn rather than assuming they know enough.",
+    "version": "NIV"
+  },
+  {
+    "id": 68,
+    "text": "By wisdom a house is built, and through understanding it is established.",
+    "reference": "Proverbs 24:3",
+    "genre": "Wisdom & Guidance",
+    "explanation": "Whether it's a family, a business, or a life, you can't build it on luck. You need wisdom and understanding to make it last.",
+    "version": "NIV"
+  },
+  {
+    "id": 69,
+    "text": "The one who has knowledge uses words with restraint, and whoever has understanding is even-tempered.",
+    "reference": "Proverbs 17:27",
+    "genre": "Wisdom & Guidance",
+    "explanation": "Smart people don't talk just to hear their own voice. Wisdom is knowing when to stay calm and keep your mouth shut.",
+    "version": "NIV"
+  },
+  {
+    "id": 70,
+    "text": "The prudent see danger and take refuge, but the simple keep going and pay the penalty.",
+    "reference": "Proverbs 22:3",
+    "genre": "Wisdom & Guidance",
+    "explanation": "Don't ignore red flags. A wise person changes course when they see trouble ahead, while a fool blindly walks into it.",
+    "version": "NIV"
+  },
+  {
+    "id": 71,
+    "text": "Fools give full vent to their rage, but the wise bring calm in the end.",
+    "reference": "Proverbs 29:11",
+    "genre": "Wisdom & Guidance",
+    "explanation": "Venting all your anger might feel good, but it's destructive. Wisdom is the strength to hold back and bring peace to a situation.",
+    "version": "NIV"
+  },
+  {
+    "id": 72,
+    "text": "For lack of guidance a nation falls, but victory is won through many advisers.",
+    "reference": "Proverbs 11:14",
+    "genre": "Wisdom & Guidance",
+    "explanation": "Isolation leads to failure. If you want to win in life, surround yourself with people who can give you good guidance.",
+    "version": "NIV"
+  },
+  {
+    "id": 73,
+    "text": "The purposes of a person’s heart are deep waters, but one who has insight draws them out.",
+    "reference": "Proverbs 20:5",
+    "genre": "Wisdom & Guidance",
+    "explanation": "People are complex. A wise person takes the time to listen and ask questions to understand what is really going on inside someone.",
+    "version": "NIV"
+  },
+  {
+    "id": 74,
+    "text": "Is not wisdom found among the aged? Does not long life bring understanding?",
+    "reference": "Job 12:12",
+    "genre": "Wisdom & Guidance",
+    "explanation": "Respect those who have lived longer than you. Their experience has taught them lessons that you haven't learned yet.",
+    "version": "NIV"
+  },
+  {
+    "id": 75,
+    "text": "Do not deceive yourselves. If any of you think you are wise by the standards of this age, you should become 'fools' so that you may become wise.",
+    "reference": "1 Corinthians 3:18",
+    "genre": "Wisdom & Guidance",
+    "explanation": "Worldly smarts aren't God's wisdom. Be willing to look foolish to the world if it means following God's truth.",
+    "version": "NIV"
+  },
+  {
+    "id": 76,
+    "text": "Sin is not ended by multiplying words, but the prudent hold their tongues.",
+    "reference": "Proverbs 10:19",
+    "genre": "Wisdom & Guidance",
+    "explanation": "Talking too much usually leads to trouble. It is often smarter to say less and listen more.",
+    "version": "NIV"
+  },
+  {
+    "id": 77,
+    "text": "The plans of the diligent lead to profit as surely as haste leads to poverty.",
+    "reference": "Proverbs 21:5",
+    "genre": "Wisdom & Guidance",
+    "explanation": "Get rich quick schemes usually fail. Success comes from careful planning and steady, hard work.",
+    "version": "NIV"
+  },
+  {
+    "id": 78,
+    "text": "Those who trust in themselves are fools, but those who walk in wisdom are kept safe.",
+    "reference": "Proverbs 28:26",
+    "genre": "Wisdom & Guidance",
+    "explanation": "Don't be arrogant enough to think you don't need help. Trusting God's wisdom protects you better than trusting your own ego.",
+    "version": "NIV"
+  },
+  {
+    "id": 79,
+    "text": "Who is like the wise? Who knows the explanation of things? A person’s wisdom brightens their face and changes its hard appearance.",
+    "reference": "Ecclesiastes 8:1",
+    "genre": "Wisdom & Guidance",
+    "explanation": "Wisdom changes how you look. It softens your hardness and gives you a brightness that comes from understanding life.",
+    "version": "NIV"
+  },
+  {
+    "id": 80,
+    "text": "Above all else, guard your heart, for everything you do flows from it.",
+    "reference": "Proverbs 4:23",
+    "genre": "Wisdom & Guidance",
+    "explanation": "Your inner life determines your outer life. Protect your thoughts and feelings, because they shape everything else you do.",
+    "version": "NIV"
+  },
+  {
+    "id": 81,
+    "text": "Love is patient, love is kind. It does not envy, it does not boast, it is not proud.",
     "reference": "1 Corinthians 13:4",
     "genre": "Love & Relationships",
-    "explanation": "This defines true love not as a feeling, but as an action."
+    "explanation": "True love isn't just a feeling; it's a choice to be patient and kind to others, even when they are difficult.",
+    "version": "NIV"
+  },
+  {
+    "id": 82,
+    "text": "We love because he first loved us.",
+    "reference": "1 John 4:19",
+    "genre": "Love & Relationships",
+    "explanation": "You are able to love others not because you are perfect, but because God poured His love into you first.",
+    "version": "NIV"
+  },
+  {
+    "id": 83,
+    "text": "Greater love has no one than this: to lay down one’s life for one’s friends.",
+    "reference": "John 15:13",
+    "genre": "Love & Relationships",
+    "explanation": "The ultimate proof of love is sacrifice. It means putting the needs of your friends and family above your own.",
+    "version": "NIV"
+  },
+  {
+    "id": 84,
+    "text": "Above all, love each other deeply, because love covers over a multitude of sins.",
+    "reference": "1 Peter 4:8",
+    "genre": "Love & Relationships",
+    "explanation": "When you love deeply, you become willing to forgive. Love helps you look past mistakes and flaws in others.",
+    "version": "NIV"
+  },
+  {
+    "id": 85,
+    "text": "Do to others as you would have them do to you.",
+    "reference": "Luke 6:31",
+    "genre": "Love & Relationships",
+    "explanation": "Treat people exactly how you want to be treated. It is the simplest and most powerful rule for healthy relationships.",
+    "version": "NIV"
+  },
+  {
+    "id": 86,
+    "text": "Be completely humble and gentle; be patient, bearing with one another in love.",
+    "reference": "Ephesians 4:2",
+    "genre": "Love & Relationships",
+    "explanation": "Relationships work best when you drop the ego. Be gentle and put up with each other's quirks gracefully.",
+    "version": "NIV"
+  },
+  {
+    "id": 87,
+    "text": "A friend loves at all times, and a brother is born for a time of adversity.",
+    "reference": "Proverbs 17:17",
+    "genre": "Love & Relationships",
+    "explanation": "Real friendship isn't fair-weather. A true friend sticks by your side when things get tough, just like family.",
+    "version": "NIV"
+  },
+  {
+    "id": 88,
+    "text": "Let love and faithfulness never leave you; bind them around your neck, write them on the tablet of your heart.",
+    "reference": "Proverbs 3:3",
+    "genre": "Love & Relationships",
+    "explanation": "Make loyalty and love your signature traits. Keep them so close to you that they become part of who you are.",
+    "version": "NIV"
+  },
+  {
+    "id": 89,
+    "text": "Two are better than one, because they have a good return for their labor: If either of them falls down, one can help the other up.",
+    "reference": "Ecclesiastes 4:9-10",
+    "genre": "Love & Relationships",
+    "explanation": "Life is harder alone. Having a partner or friend means you always have someone to pick you up when you stumble.",
+    "version": "NIV"
+  },
+  {
+    "id": 90,
+    "text": "And over all these virtues put on love, which binds them all together in perfect unity.",
+    "reference": "Colossians 3:14",
+    "genre": "Love & Relationships",
+    "explanation": "Love is the glue that holds everything else together. Without it, even your best qualities can feel disconnected.",
+    "version": "NIV"
+  },
+  {
+    "id": 91,
+    "text": "Beloved, let us love one another, for love is from God, and whoever loves has been born of God and knows God.",
+    "reference": "1 John 4:7",
+    "genre": "Love & Relationships",
+    "explanation": "When you show love to others, you are proving that you know God, because He is the source of all true love.",
+    "version": "ESV"
+  },
+  {
+    "id": 92,
+    "text": "Let no debt remain outstanding, except the continuing debt to love one another.",
+    "reference": "Romans 13:8",
+    "genre": "Love & Relationships",
+    "explanation": "Pay your bills, but realize you will never finish 'paying' love to others. Love is an ongoing obligation we owe to everyone.",
+    "version": "NIV"
+  },
+  {
+    "id": 93,
+    "text": "Iron sharpens iron, and one man sharpens another.",
+    "reference": "Proverbs 27:17",
+    "genre": "Love & Relationships",
+    "explanation": "Good relationships challenge you. Surround yourself with people who make you better, sharper, and stronger.",
+    "version": "ESV"
+  },
+  {
+    "id": 94,
+    "text": "Whoever does not love does not know God, because God is love.",
+    "reference": "1 John 4:8",
+    "genre": "Love & Relationships",
+    "explanation": "You can't claim to know God while hating people. God's very nature is love, so knowing Him naturally leads to loving others.",
+    "version": "NIV"
+  },
+  {
+    "id": 95,
+    "text": "Be kind to one another, tenderhearted, forgiving one another, as God in Christ forgave you.",
+    "reference": "Ephesians 4:32",
+    "genre": "Love & Relationships",
+    "explanation": "Forgive others freely. Since God forgave your biggest mistakes, you can find the strength to forgive the smaller mistakes of others.",
+    "version": "ESV"
+  },
+  {
+    "id": 96,
+    "text": "For God so loved the world that he gave his one and only Son, that whoever believes in him shall not perish but have eternal life.",
+    "reference": "John 3:16",
+    "genre": "Love & Relationships",
+    "explanation": "This is the ultimate standard of love: giving up what is most precious to save someone else. You are loved that much.",
+    "version": "NIV"
+  },
+  {
+    "id": 97,
+    "text": "Therefore encourage one another and build each other up, just as in fact you are doing.",
+    "reference": "1 Thessalonians 5:11",
+    "genre": "Love & Relationships",
+    "explanation": "Use your words to construct, not destruct. Make it your daily mission to leave people feeling stronger than you found them.",
+    "version": "NIV"
+  },
+  {
+    "id": 98,
+    "text": "Hatred stirs up conflict, but love covers over all wrongs.",
+    "reference": "Proverbs 10:12",
+    "genre": "Love & Relationships",
+    "explanation": "Hate looks for fights; love looks for solutions. Love chooses to move past offenses rather than turning them into arguments.",
+    "version": "NIV"
+  },
+  {
+    "id": 99,
+    "text": "Let us not love with words or speech but with actions and in truth.",
+    "reference": "1 John 3:18",
+    "genre": "Love & Relationships",
+    "explanation": "Don't just say 'I love you'—prove it. Real love is shown through what you do, not just what you say.",
+    "version": "NIV"
+  },
+  {
+    "id": 100,
+    "text": "Love does no harm to a neighbor. Therefore love is the fulfillment of the law.",
+    "reference": "Romans 13:10",
+    "genre": "Love & Relationships",
+    "explanation": "If you truly act in love, you won't hurt people. Love naturally stops you from lying, stealing, or mistreating others.",
+    "version": "NIV"
+  },
+  {
+    "id": 101,
+    "text": "A soft answer turns away wrath, but a harsh word stirs up anger.",
+    "reference": "Proverbs 15:1",
+    "genre": "Love & Relationships",
+    "explanation": "You can stop a fight before it explodes simply by lowering your voice and speaking gently.",
+    "version": "ESV"
+  },
+  {
+    "id": 102,
+    "text": "There is no fear in love. But perfect love drives out fear.",
+    "reference": "1 John 4:18",
+    "genre": "Love & Relationships",
+    "explanation": "When you are secure in being loved, you don't need to be afraid of rejection or punishment. Love creates a safe zone.",
+    "version": "NIV"
+  },
+  {
+    "id": 103,
+    "text": "Whatever you do, do it all for the glory of God.",
+    "reference": "1 Corinthians 10:31",
+    "genre": "Love & Relationships",
+    "explanation": "Even your relationships are a way to honor God. Treat people in a way that makes God look good.",
+    "version": "NIV"
+  },
+  {
+    "id": 104,
+    "text": "The greatest of these is love.",
+    "reference": "1 Corinthians 13:13",
+    "genre": "Love & Relationships",
+    "explanation": "Faith and hope are vital, but love is the champion. It is the most enduring and important quality you can possess.",
+    "version": "NIV"
+  },
+  {
+    "id": 105,
+    "text": "Honor one another above yourselves.",
+    "reference": "Romans 12:10",
+    "genre": "Love & Relationships",
+    "explanation": "Make it a competition to see who can be more respectful. Treat others as if they are more important than you.",
+    "version": "NIV"
+  },
+  {
+    "id": 106,
+    "text": "Wounds from a friend can be trusted, but an enemy multiplies kisses.",
+    "reference": "Proverbs 27:6",
+    "genre": "Love & Relationships",
+    "explanation": "A true friend will tell you the ugly truth even if it hurts, while a fake friend will just flatter you to your face.",
+    "version": "NIV"
+  },
+  {
+    "id": 107,
+    "text": "Finally, all of you, be like-minded, be sympathetic, love one another, be compassionate and humble.",
+    "reference": "1 Peter 3:8",
+    "genre": "Love & Relationships",
+    "explanation": "Harmony happens when you stop competing. Stay humble, care about how others feel, and treat them like family.",
+    "version": "NIV"
+  },
+  {
+    "id": 108,
+    "text": "Though one may be overpowered, two can defend themselves. A cord of three strands is not quickly broken.",
+    "reference": "Ecclesiastes 4:12",
+    "genre": "Love & Relationships",
+    "explanation": "There is safety in numbers. When you invite God into your relationship between you and a friend or partner, it becomes unbreakable.",
+    "version": "NIV"
+  },
+  {
+    "id": 109,
+    "text": "If it is possible, as far as it depends on you, live at peace with everyone.",
+    "reference": "Romans 12:18",
+    "genre": "Love & Relationships",
+    "explanation": "You can't control how others act, but you can control your reaction. Do your absolute best to keep the peace on your end.",
+    "version": "NIV"
+  },
+  {
+    "id": 110,
+    "text": "Whoever would foster love covers over an offense, but whoever repeats the matter separates close friends.",
+    "reference": "Proverbs 17:9",
+    "genre": "Love & Relationships",
+    "explanation": "Bringing up old arguments destroys friendships. If you want love to grow, learn to forgive and let things go permanently.",
+    "version": "NIV"
+  },
+  {
+    "id": 111,
+    "text": "Do everything in love.",
+    "reference": "1 Corinthians 16:14",
+    "genre": "Love & Relationships",
+    "explanation": "Let love be the motivation for every single action you take, big or small. It changes the outcome of everything.",
+    "version": "NIV"
+  },
+  {
+    "id": 112,
+    "text": "Husbands, love your wives and do not be harsh with them.",
+    "reference": "Colossians 3:19",
+    "genre": "Love & Relationships",
+    "explanation": "Gentleness is strength. Treat your partner with softness and care rather than sharpness and anger.",
+    "version": "NIV"
+  },
+  {
+    "id": 113,
+    "text": "Submit to one another out of reverence for Christ.",
+    "reference": "Ephesians 5:21",
+    "genre": "Love & Relationships",
+    "explanation": "Relationships aren't about power struggles. Respect Jesus by serving and listening to each other willingly.",
+    "version": "NIV"
+  },
+  {
+    "id": 114,
+    "text": "However, each one of you also must love his wife as he loves himself, and the wife must respect her husband.",
+    "reference": "Ephesians 5:33",
+    "genre": "Love & Relationships",
+    "explanation": "The cycle of a healthy marriage is simple: deep love and genuine respect. Give what the other person needs most.",
+    "version": "NIV"
+  },
+  {
+    "id": 115,
+    "text": "May the Lord make your love increase and overflow for each other and for everyone else, just as ours does for you.",
+    "reference": "1 Thessalonians 3:12",
+    "genre": "Love & Relationships",
+    "explanation": "Love shouldn't be stagnant. Ask God to help your capacity for love grow until it's spilling over onto everyone you meet.",
+    "version": "NIV"
+  },
+  {
+    "id": 116,
+    "text": "Strive for full restoration, encourage one another, be of one mind, live in peace. And the God of love and peace will be with you.",
+    "reference": "2 Corinthians 13:11",
+    "genre": "Love & Relationships",
+    "explanation": "Fix what is broken in your relationships. When you aim for peace and unity, God shows up.",
+    "version": "NIV"
+  },
+  {
+    "id": 117,
+    "text": "How good and pleasant it is when God’s people live together in unity!",
+    "reference": "Psalm 133:1",
+    "genre": "Love & Relationships",
+    "explanation": "Drama is exhausting, but unity is beautiful. Life is simply better when you get along with your people.",
+    "version": "NIV"
+  },
+  {
+    "id": 118,
+    "text": "Many waters cannot quench love; rivers cannot sweep it away.",
+    "reference": "Song of Solomon 8:7",
+    "genre": "Love & Relationships",
+    "explanation": "Real love is resilient. No crisis or flood of trouble is strong enough to extinguish a love that is true.",
+    "version": "NIV"
+  },
+  {
+    "id": 119,
+    "text": "Do not make friends with a hot-tempered person, do not associate with one easily angered.",
+    "reference": "Proverbs 22:24",
+    "genre": "Love & Relationships",
+    "explanation": "Protect your own peace by choosing friends carefully. Constant anger is contagious; stay away from it.",
+    "version": "NIV"
+  },
+  {
+    "id": 120,
+    "text": "Keep on loving one another as brothers and sisters.",
+    "reference": "Hebrews 13:1",
+    "genre": "Love & Relationships",
+    "explanation": "Consistency matters. Treat the people in your life with the loyalty and care of family, every single day.",
+    "version": "NIV"
+  },
+  {
+    "id": 121,
+    "text": "Now faith is confidence in what we hope for and assurance about what we do not see.",
+    "reference": "Hebrews 11:1",
+    "genre": "Faith & Trust",
+    "explanation": "Faith isn't wishful thinking. It is having total confidence in a reality that your eyes can't see yet.",
+    "version": "NIV"
+  },
+  {
+    "id": 122,
+    "text": "When I am afraid, I put my trust in you.",
+    "reference": "Psalm 56:3",
+    "genre": "Faith & Trust",
+    "explanation": "Fear is normal, but faith is a choice. When you get scared, actively decide to place your safety in God's hands.",
+    "version": "NIV"
+  },
+  {
+    "id": 123,
+    "text": "For we live by faith, not by sight.",
+    "reference": "2 Corinthians 5:7",
+    "genre": "Faith & Trust",
+    "explanation": "Don't let your eyes fool you. Base your life decisions on God's promises, not just on what things look like right now.",
+    "version": "NIV"
+  },
+  {
+    "id": 124,
+    "text": "Have faith in God.",
+    "reference": "Mark 11:22",
+    "genre": "Faith & Trust",
+    "explanation": "It really is that simple. Keep your belief centered on God's ability, not your own.",
+    "version": "NIV"
+  },
+  {
+    "id": 125,
+    "text": "Consequently, faith comes from hearing the message, and the message is heard through the word about Christ.",
+    "reference": "Romans 10:17",
+    "genre": "Faith & Trust",
+    "explanation": "If your faith feels weak, feed it. Listening to God's words is the fuel that builds up your belief.",
+    "version": "NIV"
+  },
+  {
+    "id": 126,
+    "text": "And without faith it is impossible to please God, because anyone who comes to him must believe that he exists and that he rewards those who earnestly seek him.",
+    "reference": "Hebrews 11:6",
+    "genre": "Faith & Trust",
+    "explanation": "God loves it when you trust Him. Believing that He is there and that He is good is the key to a relationship with Him.",
+    "version": "NIV"
+  },
+  {
+    "id": 127,
+    "text": "Commit your way to the Lord; trust in him and he will do this.",
+    "reference": "Psalm 37:5",
+    "genre": "Faith & Trust",
+    "explanation": "Give your plans entirely to God. If you hand over the controls, He will make things happen.",
+    "version": "NIV"
+  },
+  {
+    "id": 128,
+    "text": "Be still, and know that I am God.",
+    "reference": "Psalm 46:10",
+    "genre": "Faith & Trust",
+    "explanation": "Stop frantic activity. Sometimes the greatest act of faith is to sit quietly and remember who is really in charge.",
+    "version": "NIV"
+  },
+  {
+    "id": 129,
+    "text": "If you believe, you will receive whatever you ask for in prayer.",
+    "reference": "Matthew 21:22",
+    "genre": "Faith & Trust",
+    "explanation": "Prayer isn't just talking; it's believing. When you pray with confidence, you unlock heaven's answers.",
+    "version": "NIV"
+  },
+  {
+    "id": 130,
+    "text": "For no word from God will ever fail.",
+    "reference": "Luke 1:37",
+    "genre": "Faith & Trust",
+    "explanation": "God has a 100% success rate. If He said it, it will happen. Nothing is impossible for Him.",
+    "version": "NIV"
+  },
+  {
+    "id": 131,
+    "text": "Those who know your name trust in you, for you, Lord, have never forsaken those who seek you.",
+    "reference": "Psalm 9:10",
+    "genre": "Faith & Trust",
+    "explanation": "The more you get to know God's character, the easier it is to trust Him. He has a perfect track record of never quitting on His people.",
+    "version": "NIV"
+  },
+  {
+    "id": 132,
+    "text": "You will keep in perfect peace those whose minds are steadfast, because they trust in you.",
+    "reference": "Isaiah 26:3",
+    "genre": "Faith & Trust",
+    "explanation": "A focused mind leads to a peaceful heart. Keep your thoughts locked on God, and He will stabilize your emotions.",
+    "version": "NIV"
+  },
+  {
+    "id": 133,
+    "text": "The Lord is my strength and my shield; my heart trusts in him, and he helps me.",
+    "reference": "Psalm 28:7",
+    "genre": "Faith & Trust",
+    "explanation": "Trust acts like a shield. When you rely on God internally, you get tangible help externally.",
+    "version": "NIV"
+  },
+  {
+    "id": 134,
+    "text": "They will have no fear of bad news; their hearts are steadfast, trusting in the Lord.",
+    "reference": "Psalm 112:7",
+    "genre": "Faith & Trust",
+    "explanation": "You don't need to dread the future. Even if bad news comes, your heart can stay calm because you know who holds your future.",
+    "version": "NIV"
+  },
+  {
+    "id": 135,
+    "text": "Do not let your hearts be troubled. You believe in God; believe also in me.",
+    "reference": "John 14:1",
+    "genre": "Faith & Trust",
+    "explanation": "Worry and faith can't live in the same house. Jesus asks you to replace your trouble with trust.",
+    "version": "NIV"
+  },
+  {
+    "id": 136,
+    "text": "Trust in him at all times, you people; pour out your hearts to him, for God is our refuge.",
+    "reference": "Psalm 62:8",
+    "genre": "Faith & Trust",
+    "explanation": "Trust isn't just for the good days. Be honest with God and tell Him everything; He is a safe place for your secrets.",
+    "version": "NIV"
+  },
+  {
+    "id": 137,
+    "text": "But I trust in your unfailing love; my heart rejoices in your salvation.",
+    "reference": "Psalm 13:5",
+    "genre": "Faith & Trust",
+    "explanation": "People might let you down, but God's love never fails. That reliability is a reason to celebrate.",
+    "version": "NIV"
+  },
+  {
+    "id": 138,
+    "text": "Fight the good fight of the faith. Take hold of the eternal life to which you were called.",
+    "reference": "1 Timothy 6:12",
+    "genre": "Faith & Trust",
+    "explanation": "Faith is a battle worth fighting. Don't be passive; actively grab hold of the life God has called you to live.",
+    "version": "NIV"
+  },
+  {
+    "id": 139,
+    "text": "This is the victory that has overcome the world, even our faith.",
+    "reference": "1 John 5:4",
+    "genre": "Faith & Trust",
+    "explanation": "You are already a winner. Your faith in Jesus is the weapon that beats every challenge the world throws at you.",
+    "version": "NIV"
+  },
+  {
+    "id": 140,
+    "text": "I live by faith in the Son of God, who loved me and gave himself for me.",
+    "reference": "Galatians 2:20",
+    "genre": "Faith & Trust",
+    "explanation": "Your daily life is powered by trusting Jesus. Remember that He proved his love by giving everything for you.",
+    "version": "NIV"
+  },
+  {
+    "id": 141,
+    "text": "For it is by grace you have been saved, through faith—and this is not from yourselves, it is the gift of God.",
+    "reference": "Ephesians 2:8",
+    "genre": "Faith & Trust",
+    "explanation": "You can't earn God's love, you just have to trust it. Salvation is a free gift, not a paycheck.",
+    "version": "NIV"
+  },
+  {
+    "id": 142,
+    "text": "Some trust in chariots and some in horses, but we trust in the name of the Lord our God.",
+    "reference": "Psalm 20:7",
+    "genre": "Faith & Trust",
+    "explanation": "Some rely on money or power (chariots), but those things can break. Trusting in God's name is the only failsafe plan.",
+    "version": "NIV"
+  },
+  {
+    "id": 143,
+    "text": "It is better to take refuge in the Lord than to trust in humans.",
+    "reference": "Psalm 118:8",
+    "genre": "Faith & Trust",
+    "explanation": "People are imperfect. God is the only one who can offer you perfect protection and reliability.",
+    "version": "NIV"
+  },
+  {
+    "id": 144,
+    "text": "Fear of man will prove to be a snare, but whoever trusts in the Lord is kept safe.",
+    "reference": "Proverbs 29:25",
+    "genre": "Faith & Trust",
+    "explanation": "Worrying about what people think is a trap. Focusing on what God thinks keeps you safe and free.",
+    "version": "NIV"
+  },
+  {
+    "id": 145,
+    "text": "Surely God is my salvation; I will trust and not be afraid.",
+    "reference": "Isaiah 12:2",
+    "genre": "Faith & Trust",
+    "explanation": "When you realize God is the one saving you, fear evaporates. You can relax knowing He is handling it.",
+    "version": "NIV"
+  },
+  {
+    "id": 146,
+    "text": "Everything is possible for one who believes.",
+    "reference": "Mark 9:23",
+    "genre": "Faith & Trust",
+    "explanation": "Belief removes limits. When you align with God's power through faith, the word 'impossible' loses its meaning.",
+    "version": "NIV"
+  },
+  {
+    "id": 147,
+    "text": "Don’t be afraid; just believe.",
+    "reference": "Mark 5:36",
+    "genre": "Faith & Trust",
+    "explanation": "Fear and belief are opposites. When you feel scared, simplify your job: just keep believing.",
+    "version": "NIV"
+  },
+  {
+    "id": 148,
+    "text": "I am the bread of life. Whoever comes to me will never go hungry, and whoever believes in me will never be thirsty.",
+    "reference": "John 6:35",
+    "genre": "Faith & Trust",
+    "explanation": "Jesus satisfies your deepest cravings. Trusting Him fills the emptiness inside you that nothing else can fill.",
+    "version": "NIV"
+  },
+  {
+    "id": 149,
+    "text": "I am the resurrection and the life. The one who believes in me will live, even though they die.",
+    "reference": "John 11:25",
+    "genre": "Faith & Trust",
+    "explanation": "Faith conquers even death. Trusting in Jesus secures a life that lasts forever, no matter what happens to your body.",
+    "version": "NIV"
+  },
+  {
+    "id": 150,
+    "text": "Blessed are those who have not seen and yet have believed.",
+    "reference": "John 20:29",
+    "genre": "Faith & Trust",
+    "explanation": "It takes special courage to believe without seeing proof first. God blesses you when you trust Him in the dark.",
+    "version": "NIV"
+  },
+  {
+    "id": 151,
+    "text": "The righteous will live by faith.",
+    "reference": "Romans 1:17",
+    "genre": "Faith & Trust",
+    "explanation": "Faith isn't a one-time event; it's a lifestyle. It is the daily oxygen for a person who is right with God.",
+    "version": "NIV"
+  },
+  {
+    "id": 152,
+    "text": "Your faith might not rest on human wisdom, but on God’s power.",
+    "reference": "1 Corinthians 2:5",
+    "genre": "Faith & Trust",
+    "explanation": "Clever arguments don't change lives; God's power does. Build your life on His power, not just smart ideas.",
+    "version": "NIV"
+  },
+  {
+    "id": 153,
+    "text": "Be on your guard; stand firm in the faith; be courageous; be strong.",
+    "reference": "1 Corinthians 16:13",
+    "genre": "Faith & Trust",
+    "explanation": "Don't drift. Stay alert and keep your feet planted firmly in what you believe. That is where courage comes from.",
+    "version": "NIV"
+  },
+  {
+    "id": 154,
+    "text": "So we fix our eyes not on what is seen, but on what is unseen, since what is seen is temporary, but what is unseen is eternal.",
+    "reference": "2 Corinthians 4:18",
+    "genre": "Faith & Trust",
+    "explanation": "Your problems are temporary; God is eternal. Focus on the forever reality, not the temporary mess.",
+    "version": "NIV"
+  },
+  {
+    "id": 155,
+    "text": "So that Christ may dwell in your hearts through faith.",
+    "reference": "Ephesians 3:17",
+    "genre": "Faith & Trust",
+    "explanation": "Faith opens the door of your heart. It invites Christ to move in and make His home inside you.",
+    "version": "NIV"
+  },
+  {
+    "id": 156,
+    "text": "Take up the shield of faith, with which you can extinguish all the flaming arrows of the evil one.",
+    "reference": "Ephesians 6:16",
+    "genre": "Faith & Trust",
+    "explanation": "Faith is your defense weapon. When lies and attacks come your way, trusting God blocks them from hurting you.",
+    "version": "NIV"
+  },
+  {
+    "id": 157,
+    "text": "Not having a righteousness of my own... but that which is through faith in Christ.",
+    "reference": "Philippians 3:9",
+    "genre": "Faith & Trust",
+    "explanation": "You don't have to be perfect on your own. Faith gives you Jesus's perfection, which is all you need.",
+    "version": "NIV"
+  },
+  {
+    "id": 158,
+    "text": "Rooted and built up in him, strengthened in the faith as you were taught.",
+    "reference": "Colossians 2:7",
+    "genre": "Faith & Trust",
+    "explanation": "Be like a tree with deep roots. Let your faith grow downwards into God so you can stand strong when winds blow.",
+    "version": "NIV"
+  },
+  {
+    "id": 159,
+    "text": "Putting on faith and love as a breastplate, and the hope of salvation as a helmet.",
+    "reference": "1 Thessalonians 5:8",
+    "genre": "Faith & Trust",
+    "explanation": "Faith protects your vital organs. Wear it like armor to keep your heart safe from the negativity of the world.",
+    "version": "NIV"
+  },
+  {
+    "id": 160,
+    "text": "Holding on to faith and a good conscience.",
+    "reference": "1 Timothy 1:19",
+    "genre": "Faith & Trust",
+    "explanation": "Don't let go. Keep a tight grip on your belief and keep your conscience clean to navigate life successfully.",
+    "version": "NIV"
+  },
+  {
+    "id": 161,
+    "text": "Be strong in the Lord and in his mighty power.",
+    "reference": "Ephesians 6:10",
+    "genre": "Strength & Courage",
+    "explanation": "You don't have to rely on your own weak muscles. Plug into God's mighty power to find the strength you need.",
+    "version": "NIV"
+  },
+  {
+    "id": 162,
+    "text": "For the Spirit God gave us does not make us timid, but gives us power, love and self-discipline.",
+    "reference": "2 Timothy 1:7",
+    "genre": "Strength & Courage",
+    "explanation": "Fear isn't from God. He has equipped you with a spirit that is powerful, loving, and in control.",
+    "version": "NIV"
+  },
+  {
+    "id": 163,
+    "text": "The Lord is my rock, my fortress and my deliverer.",
+    "reference": "Psalm 18:2",
+    "genre": "Strength & Courage",
+    "explanation": "God is solid ground. When everything else is shaking, He is a fortress where you can be totally safe.",
+    "version": "NIV"
+  },
+  {
+    "id": 164,
+    "text": "I will sing of your strength, in the morning I will sing of your love.",
+    "reference": "Psalm 59:16",
+    "genre": "Strength & Courage",
+    "explanation": "Start your day with a song. Celebrating God's power in the morning sets the tone for a strong day.",
+    "version": "NIV"
+  },
+  {
+    "id": 165,
+    "text": "The Sovereign Lord is my strength; he makes my feet like the feet of a deer, he enables me to tread on the heights.",
+    "reference": "Habakkuk 3:19",
+    "genre": "Strength & Courage",
+    "explanation": "God gives you sure-footed confidence. He enables you to navigate the high and scary places of life with ease.",
+    "version": "NIV"
+  },
+  {
+    "id": 166,
+    "text": "He gives strength to the weary and increases the power of the weak.",
+    "reference": "Isaiah 40:29",
+    "genre": "Strength & Courage",
+    "explanation": "It's okay to be weak because that is when God steps in. He specializes in recharging people who have run out of battery.",
+    "version": "NIV"
+  },
+  {
+    "id": 167,
+    "text": "Not by might nor by power, but by my Spirit,' says the Lord Almighty.",
+    "reference": "Zechariah 4:6",
+    "genre": "Strength & Courage",
+    "explanation": "Brute force isn't the answer. Real victory comes from God's Spirit working through you, not your own muscle.",
+    "version": "NIV"
+  },
+  {
+    "id": 168,
+    "text": "My grace is sufficient for you, for my power is made perfect in weakness.",
+    "reference": "2 Corinthians 12:9",
+    "genre": "Strength & Courage",
+    "explanation": "Your weakness is actually a setup for God's power to show off. His grace fills the gaps where you fall short.",
+    "version": "NIV"
+  },
+  {
+    "id": 169,
+    "text": "That is why, for Christ’s sake, I delight in weaknesses, in insults, in hardships... For when I am weak, then I am strong.",
+    "reference": "2 Corinthians 12:10",
+    "genre": "Strength & Courage",
+    "explanation": "You can face hardships with a smile. When you are at the end of your rope, you are in the perfect position for God to hold you up.",
+    "version": "NIV"
+  },
+  {
+    "id": 170,
+    "text": "It is God who arms me with strength and keeps my way secure.",
+    "reference": "Psalm 18:32",
+    "genre": "Strength & Courage",
+    "explanation": "God outfits you for battle. He straps strength onto you like armor and makes sure your path is safe.",
+    "version": "NIV"
+  },
+  {
+    "id": 171,
+    "text": "When I called, you answered me; you greatly emboldened me.",
+    "reference": "Psalm 138:3",
+    "genre": "Strength & Courage",
+    "explanation": "One prayer can change your attitude. God answers by putting courage directly into your soul.",
+    "version": "NIV"
+  },
+  {
+    "id": 172,
+    "text": "Praise be to the Lord my Rock, who trains my hands for war, my fingers for battle.",
+    "reference": "Psalm 144:1",
+    "genre": "Strength & Courage",
+    "explanation": "God is your trainer. He prepares you to handle the conflicts of life with skill and strength.",
+    "version": "NIV"
+  },
+  {
+    "id": 173,
+    "text": "Do not grieve, for the joy of the Lord is your strength.",
+    "reference": "Nehemiah 8:10",
+    "genre": "Strength & Courage",
+    "explanation": "Sadness drains you, but joy refuels you. Focusing on God's joy gives you the physical and emotional energy to keep going.",
+    "version": "NIV"
+  },
+  {
+    "id": 174,
+    "text": "The Lord gives strength to his people; the Lord blesses his people with peace.",
+    "reference": "Psalm 29:11",
+    "genre": "Strength & Courage",
+    "explanation": "God doesn't leave you defenseless. He gifts you with strength to endure and peace to stay calm.",
+    "version": "NIV"
+  },
+  {
+    "id": 175,
+    "text": "You are awesome, O God... the God of Israel gives power and strength to his people.",
+    "reference": "Psalm 68:35",
+    "genre": "Strength & Courage",
+    "explanation": "God is generous with His power. He willingly hands it over to His people so they can succeed.",
+    "version": "NIV"
+  },
+  {
+    "id": 176,
+    "text": "The Lord is my strength and my defense; he has become my salvation.",
+    "reference": "Psalm 118:14",
+    "genre": "Strength & Courage",
+    "explanation": "You don't have to defend yourself. God acts as your personal bodyguard and rescuer.",
+    "version": "NIV"
+  },
+  {
+    "id": 177,
+    "text": "In repentance and rest is your salvation, in quietness and trust is your strength.",
+    "reference": "Isaiah 30:15",
+    "genre": "Strength & Courage",
+    "explanation": "Strength doesn't always roar. Sometimes the strongest thing you can do is stay quiet and trust God calmly.",
+    "version": "NIV"
+  },
+  {
+    "id": 178,
+    "text": "Ah, Sovereign Lord, you have made the heavens and the earth by your great power and outstretched arm. Nothing is too hard for you.",
+    "reference": "Jeremiah 32:17",
+    "genre": "Strength & Courage",
+    "explanation": "If God can make the universe, He can handle your problem. Absolutely nothing is difficult for Him.",
+    "version": "NIV"
+  },
+  {
+    "id": 179,
+    "text": "Jesus looked at them and said, 'With man this is impossible, but with God all things are possible.'",
+    "reference": "Matthew 19:26",
+    "genre": "Strength & Courage",
+    "explanation": "Don't look at the odds; look at God. He operates outside of human limitations.",
+    "version": "NIV"
+  },
+  {
+    "id": 180,
+    "text": "But you will receive power when the Holy Spirit comes on you.",
+    "reference": "Acts 1:8",
+    "genre": "Strength & Courage",
+    "explanation": "You have a divine power source living inside you. The Holy Spirit gives you ability beyond your natural talent.",
+    "version": "NIV"
+  },
+  {
+    "id": 181,
+    "text": "For the foolishness of God is wiser than human wisdom, and the weakness of God is stronger than human strength.",
+    "reference": "1 Corinthians 1:25",
+    "genre": "Strength & Courage",
+    "explanation": "God on His worst day is stronger than you on your best day. You are in good hands.",
+    "version": "NIV"
+  },
+  {
+    "id": 182,
+    "text": "I pray that out of his glorious riches he may strengthen you with power through his Spirit in your inner being.",
+    "reference": "Ephesians 3:16",
+    "genre": "Strength & Courage",
+    "explanation": "God has unlimited resources. Ask Him to download power directly into your inner spirit.",
+    "version": "NIV"
+  },
+  {
+    "id": 183,
+    "text": "Being strengthened with all power according to his glorious might so that you may have great endurance and patience.",
+    "reference": "Colossians 1:11",
+    "genre": "Strength & Courage",
+    "explanation": "God's power isn't just for miracles; it's for endurance. He gives you the strength to simply not give up.",
+    "version": "NIV"
+  },
+  {
+    "id": 184,
+    "text": "But the Lord is faithful, and he will strengthen you and protect you from the evil one.",
+    "reference": "2 Thessalonians 3:3",
+    "genre": "Strength & Courage",
+    "explanation": "God is your faithful protector. He strengthens your defenses against anything evil.",
+    "version": "NIV"
+  },
+  {
+    "id": 185,
+    "text": "Let us then approach God’s throne of grace with confidence, so that we may receive mercy and find grace to help us in our time of need.",
+    "reference": "Hebrews 4:16",
+    "genre": "Strength & Courage",
+    "explanation": "Don't be shy with God. Walk boldly to Him when you need help; He is waiting to give it to you.",
+    "version": "NIV"
+  },
+  {
+    "id": 186,
+    "text": "And the God of all grace... will himself restore you and make you strong, firm and steadfast.",
+    "reference": "1 Peter 5:10",
+    "genre": "Strength & Courage",
+    "explanation": "Suffering doesn't last forever. God promises to repair you and make you stronger and steadier than before.",
+    "version": "NIV"
+  },
+  {
+    "id": 187,
+    "text": "You, dear children, are from God and have overcome them, because the one who is in you is greater than the one who is in the world.",
+    "reference": "1 John 4:4",
+    "genre": "Strength & Courage",
+    "explanation": "You are outnumbered but not outmatched. The God inside you is bigger than any enemy outside you.",
+    "version": "NIV"
+  },
+  {
+    "id": 188,
+    "text": "You armed me with strength for battle; you humbled my adversaries before me.",
+    "reference": "Psalm 18:39",
+    "genre": "Strength & Courage",
+    "explanation": "Life is a battle, but you are well-equipped. God gives you the strength to win and defeat your opposition.",
+    "version": "NIV"
+  },
+  {
+    "id": 189,
+    "text": "For you have been my refuge, a strong tower against the foe.",
+    "reference": "Psalm 61:3",
+    "genre": "Strength & Courage",
+    "explanation": "When the enemy attacks, run to God. He is a high tower where you are out of reach of danger.",
+    "version": "NIV"
+  },
+  {
+    "id": 190,
+    "text": "Since you are my rock and my fortress, for the sake of your name lead and guide me.",
+    "reference": "Psalm 31:3",
+    "genre": "Strength & Courage",
+    "explanation": "God is immovable. Let Him be your solid foundation and your guide through unstable times.",
+    "version": "NIV"
+  },
+  {
+    "id": 191,
+    "text": "I will go in the strength of the Lord God.",
+    "reference": "Psalm 71:16",
+    "genre": "Strength & Courage",
+    "explanation": "Don't rely on your own energy. Move forward relying entirely on God's strength.",
+    "version": "NKJV"
+  },
+  {
+    "id": 192,
+    "text": "Blessed are those whose strength is in you, whose hearts are set on pilgrimage.",
+    "reference": "Psalm 84:5",
+    "genre": "Strength & Courage",
+    "explanation": "Happiness comes from sourcing your strength in God. Keep your heart moving toward Him.",
+    "version": "NIV"
+  },
+  {
+    "id": 193,
+    "text": "Lord, be gracious to us; we long for you. Be our strength every morning, our salvation in time of distress.",
+    "reference": "Isaiah 33:2",
+    "genre": "Strength & Courage",
+    "explanation": "Make this your daily prayer: ask God for fresh strength before you even start your day.",
+    "version": "NIV"
+  },
+  {
+    "id": 194,
+    "text": "The people who know their God shall be strong, and carry out great exploits.",
+    "reference": "Daniel 11:32",
+    "genre": "Strength & Courage",
+    "explanation": "Knowing God leads to doing big things. Relationship with Him produces strength and action.",
+    "version": "NKJV"
+  },
+  {
+    "id": 195,
+    "text": "Let the weak say, 'I am strong.'",
+    "reference": "Joel 3:10",
+    "genre": "Strength & Courage",
+    "explanation": "Change your confession. Even when you feel weak, declare the truth that you are strong in God.",
+    "version": "NKJV"
+  },
+  {
+    "id": 196,
+    "text": "We who are strong ought to bear with the failings of the weak and not to please ourselves.",
+    "reference": "Romans 15:1",
+    "genre": "Strength & Courage",
+    "explanation": "True strength isn't selfish. Use your power to help carry the burden of those who are struggling.",
+    "version": "NIV"
+  },
+  {
+    "id": 197,
+    "text": "No temptation has overtaken you except what is common to mankind. And God is faithful; he will not let you be tempted beyond what you can bear.",
+    "reference": "1 Corinthians 10:13",
+    "genre": "Strength & Courage",
+    "explanation": "You can handle this. God knows your limits and promises to provide an escape route for every pressure you face.",
+    "version": "NIV"
+  },
+  {
+    "id": 198,
+    "text": "For we are glad when we are weak and you are strong.",
+    "reference": "2 Corinthians 13:9",
+    "genre": "Strength & Courage",
+    "explanation": "Real leaders celebrate when others are strong. Use your strength to empower people, not control them.",
+    "version": "NIV"
+  },
+  {
+    "id": 199,
+    "text": "That power is the same as the mighty strength he exerted when he raised Christ from the dead.",
+    "reference": "Ephesians 1:19-20",
+    "genre": "Strength & Courage",
+    "explanation": "The same massive power that brought Jesus back to life is available to you today. That's how strong you can be.",
+    "version": "NIV"
+  },
+  {
+    "id": 200,
+    "text": "Without being frightened in any way by those who oppose you.",
+    "reference": "Philippians 1:28",
+    "genre": "Strength & Courage",
+    "explanation": "Don't let bullies or enemies scare you. Your lack of fear is a sign that God is saving you.",
+    "version": "NIV"
+  },
+  {
+    "id": 201,
+    "text": "I lift up my eyes to the mountains—where does my help come from? My help comes from the Lord, the Maker of heaven and earth.",
+    "reference": "Psalm 121:1-2",
+    "genre": "Encouragement & Hope",
+    "explanation": "Don't look at the size of your problem; look at your Creator. The One who built the mountains is the One helping you climb them.",
+    "version": "NIV"
+  },
+  {
+    "id": 202,
+    "text": "The Lord will vindicate me; your love, Lord, endures forever.",
+    "reference": "Psalm 138:8",
+    "genre": "Encouragement & Hope",
+    "explanation": "God isn't finished with you yet. He will complete the plans He has for your life because His love doesn't have an expiration date.",
+    "version": "NIV"
+  },
+  {
+    "id": 203,
+    "text": "He will cover you with his feathers, and under his wings you will find refuge.",
+    "reference": "Psalm 91:4",
+    "genre": "Encouragement & Hope",
+    "explanation": "God protects you like a mother bird protects her young. You are safe and shielded right under His wing.",
+    "version": "NIV"
+  },
+  {
+    "id": 204,
+    "text": "May our Lord Jesus Christ... who loved us and by his grace gave us eternal encouragement and good hope, encourage your hearts.",
+    "reference": "2 Thessalonians 2:16-17",
+    "genre": "Encouragement & Hope",
+    "explanation": "God's encouragement isn't temporary; it's eternal. He wants to strengthen you deep inside your heart today.",
+    "version": "NIV"
+  },
+  {
+    "id": 205,
+    "text": "I keep my eyes always on the Lord. With him at my right hand, I will not be shaken.",
+    "reference": "Psalm 16:8",
+    "genre": "Encouragement & Hope",
+    "explanation": "Stability comes from focus. If you keep God in your line of sight, life's earthquakes won't knock you over.",
+    "version": "NIV"
+  },
+  {
+    "id": 206,
+    "text": "Those who sow with tears will reap with songs of joy.",
+    "reference": "Psalm 126:5",
+    "genre": "Encouragement & Hope",
+    "explanation": "Your sadness isn't wasted; it's planting a seed. The tears you cry today will eventually grow into a harvest of joy.",
+    "version": "NIV"
+  },
+  {
+    "id": 207,
+    "text": "For I am the Lord your God who takes hold of your right hand and says to you, Do not fear; I will help you.",
+    "reference": "Isaiah 41:13",
+    "genre": "Encouragement & Hope",
+    "explanation": "Imagine God physically holding your hand right now. He is personally guiding you and whispering, 'I've got this.'",
+    "version": "NIV"
+  },
+  {
+    "id": 208,
+    "text": "The Lord is good, a refuge in times of trouble. He cares for those who trust in him.",
+    "reference": "Nahum 1:7",
+    "genre": "Encouragement & Hope",
+    "explanation": "When life gets dangerous, God is your bunker. He knows exactly who is trusting Him, and He takes care of them.",
+    "version": "NIV"
+  },
+  {
+    "id": 209,
+    "text": "For everything that was written in the past was written to teach us, so that through the endurance taught in the Scriptures... we might have hope.",
+    "reference": "Romans 15:4",
+    "genre": "Encouragement & Hope",
+    "explanation": "The Bible isn't just history; it's a tool for hope. Reading about God's past faithfulness gives you fuel to keep going today.",
+    "version": "NIV"
+  },
+  {
+    "id": 210,
+    "text": "The Lord is a refuge for the oppressed, a stronghold in times of trouble.",
+    "reference": "Psalm 9:9",
+    "genre": "Encouragement & Hope",
+    "explanation": "If you feel crushed by life, run to God. He is a safe fortress specifically designed for people who are hurting.",
+    "version": "NIV"
+  },
+  {
+    "id": 211,
+    "text": "Though the mountains be shaken... yet my unfailing love for you will not be shaken nor my covenant of peace be removed.",
+    "reference": "Isaiah 54:10",
+    "genre": "Encouragement & Hope",
+    "explanation": "The whole world could fall apart, but God's love for you wouldn't move an inch. His promise of peace is permanent.",
+    "version": "NIV"
+  },
+  {
+    "id": 212,
+    "text": "Cast your cares on the Lord and he will sustain you; he will never let the righteous be shaken.",
+    "reference": "Psalm 55:22",
+    "genre": "Encouragement & Hope",
+    "explanation": "Don't carry the heavy weight alone. Hand it over to God; He will hold you up so you don't collapse under the pressure.",
+    "version": "NIV"
+  },
+  {
+    "id": 213,
+    "text": "Do not let your hearts be troubled. You believe in God; believe also in me.",
+    "reference": "John 14:1",
+    "genre": "Encouragement & Hope",
+    "explanation": "Anxiety and trust can't live in the same heart. Jesus is inviting you to trade your trouble for belief.",
+    "version": "NIV"
+  },
+  {
+    "id": 214,
+    "text": "As for me, I will always have hope; I will praise you more and more.",
+    "reference": "Psalm 71:14",
+    "genre": "Encouragement & Hope",
+    "explanation": "Make hope a stubborn habit. Decide that no matter what happens, you are going to keep hoping and keep praising.",
+    "version": "NIV"
+  },
+  {
+    "id": 215,
+    "text": "There is surely a future hope for you, and your hope will not be cut off.",
+    "reference": "Proverbs 23:18",
+    "genre": "Encouragement & Hope",
+    "explanation": "Your story isn't over yet. God has a future waiting for you, and your expectation of good things won't be disappointed.",
+    "version": "NIV"
+  },
+  {
+    "id": 216,
+    "text": "Yes, my soul, find rest in God; my hope comes from him.",
+    "reference": "Psalm 62:5",
+    "genre": "Encouragement & Hope",
+    "explanation": "Tell your soul to calm down. You don't need to stress because God is the source of the outcome you are hoping for.",
+    "version": "NIV"
+  },
+  {
+    "id": 217,
+    "text": "In his great mercy he has given us new birth into a living hope through the resurrection of Jesus Christ from the dead.",
+    "reference": "1 Peter 1:3",
+    "genre": "Encouragement & Hope",
+    "explanation": "Your hope is alive because Jesus is alive. It's not a 'fingers crossed' wish; it's a living reality.",
+    "version": "NIV"
+  },
+  {
+    "id": 218,
+    "text": "You are my hiding place and my shield; I hope in your word.",
+    "reference": "Psalm 119:114",
+    "genre": "Encouragement & Hope",
+    "explanation": "When life attacks, hide in God. Use His promises as a shield to deflect the negativity.",
+    "version": "NIV"
+  },
+  {
+    "id": 219,
+    "text": "You will keep in perfect peace those whose minds are steadfast, because they trust in you.",
+    "reference": "Isaiah 26:3",
+    "genre": "Encouragement & Hope",
+    "explanation": "Peace is a byproduct of focus. If you keep your mind locked onto God, He keeps your heart in perfect peace.",
+    "version": "NIV"
+  },
+  {
+    "id": 220,
+    "text": "I wait for the Lord, my whole being waits, and in his word I put my hope.",
+    "reference": "Psalm 130:5",
+    "genre": "Encouragement & Hope",
+    "explanation": "Waiting on God involves your whole self. While you wait, rest your weight on what He has promised in the Bible.",
+    "version": "NIV"
+  },
+  {
+    "id": 221,
+    "text": "The Lord lives! Praise be to my Rock! Exalted be God my Savior!",
+    "reference": "Psalm 18:46",
+    "genre": "Gratitude & Praise",
+    "explanation": "God isn't a statue; He is alive and active. Celebrate the fact that your Protector is living and working for you.",
+    "version": "NIV"
+  },
+  {
+    "id": 222,
+    "text": "Great is the Lord and most worthy of praise; his greatness no one can fathom.",
+    "reference": "Psalm 145:3",
+    "genre": "Gratitude & Praise",
+    "explanation": "God is bigger than your brain can comprehend. His greatness is limitless, so our praise should be endless.",
+    "version": "NIV"
+  },
+  {
+    "id": 223,
+    "text": "Let the peace of Christ rule in your hearts... And be thankful.",
+    "reference": "Colossians 3:15",
+    "genre": "Gratitude & Praise",
+    "explanation": "A thankful heart is a peaceful heart. If you want anxiety to leave, invite gratitude to come in.",
+    "version": "NIV"
+  },
+  {
+    "id": 224,
+    "text": "I will exalt you, my God the King; I will praise your name for ever and ever.",
+    "reference": "Psalm 145:1",
+    "genre": "Gratitude & Praise",
+    "explanation": "Make God the King of your life. Deciding to honor Him is a forever commitment, not just a one-time thing.",
+    "version": "NIV"
+  },
+  {
+    "id": 225,
+    "text": "But thanks be to God! He gives us the victory through our Lord Jesus Christ.",
+    "reference": "1 Corinthians 15:57",
+    "genre": "Gratitude & Praise",
+    "explanation": "You don't have to fight for victory; you fight FROM victory. Thank God that Jesus already won the war for you.",
+    "version": "NIV"
+  },
+  {
+    "id": 226,
+    "text": "Praise the Lord. How good it is to sing praises to our God, how pleasant and fitting to praise him!",
+    "reference": "Psalm 147:1",
+    "genre": "Gratitude & Praise",
+    "explanation": "Praising God actually feels good. It fits your soul like a glove because you were designed to do it.",
+    "version": "NIV"
+  },
+  {
+    "id": 227,
+    "text": "I thank my God every time I remember you.",
+    "reference": "Philippians 1:3",
+    "genre": "Gratitude & Praise",
+    "explanation": "Be thankful for the people in your life. Telling God 'thank you' for your friends is a great way to love them.",
+    "version": "NIV"
+  },
+  {
+    "id": 228,
+    "text": "Open for me the gates of the righteous; I will enter and give thanks to the Lord.",
+    "reference": "Psalm 118:19",
+    "genre": "Gratitude & Praise",
+    "explanation": "Don't stay on the outside looking in. Walk boldly into God's presence with a thank-you on your lips.",
+    "version": "NIV"
+  },
+  {
+    "id": 229,
+    "text": "From the rising of the sun to the place where it sets, the name of the Lord is to be praised.",
+    "reference": "Psalm 113:3",
+    "genre": "Gratitude & Praise",
+    "explanation": "From your first cup of coffee to the moment you fall asleep, let your entire day be sandwiched in praise.",
+    "version": "NIV"
+  },
+  {
+    "id": 230,
+    "text": "The heavens declare the glory of God; the skies proclaim the work of his hands.",
+    "reference": "Psalm 19:1",
+    "genre": "Gratitude & Praise",
+    "explanation": "Just look up. The sky and stars are constantly showing off how amazing God is. Join them in that song.",
+    "version": "NIV"
+  },
+  {
+    "id": 231,
+    "text": "Devote yourselves to prayer, being watchful and thankful.",
+    "reference": "Colossians 4:2",
+    "genre": "Gratitude & Praise",
+    "explanation": "Stay alert. If you pay attention to your life, you will find a thousand small reasons to pray and say thank you.",
+    "version": "NIV"
+  },
+  {
+    "id": 232,
+    "text": "We give thanks to you, Lord God Almighty, the One who is and who was, because you have taken your great power and have begun to reign.",
+    "reference": "Revelation 11:17",
+    "genre": "Gratitude & Praise",
+    "explanation": "Thank God for being timeless. He was there in your past, He is here now, and He is already in your future.",
+    "version": "NIV"
+  },
+  {
+    "id": 233,
+    "text": "Therefore, let us offer through Jesus a continual sacrifice of praise to God.",
+    "reference": "Hebrews 13:15",
+    "genre": "Gratitude & Praise",
+    "explanation": "Keep the praise flowing. Like a stream that never dries up, let gratitude be a constant part of your day.",
+    "version": "NIV"
+  },
+  {
+    "id": 234,
+    "text": "Many, Lord my God, are the wonders you have done, the things you planned for us.",
+    "reference": "Psalm 40:5",
+    "genre": "Gratitude & Praise",
+    "explanation": "God has done too much math to count. His plans for you are more numerous and wonderful than you can list.",
+    "version": "NIV"
+  },
+  {
+    "id": 235,
+    "text": "In God we make our boast all day long, and we will praise your name forever.",
+    "reference": "Psalm 44:8",
+    "genre": "Gratitude & Praise",
+    "explanation": "Brag on God. Be proud of who He is and what He does, and don't be afraid to talk about it.",
+    "version": "NIV"
+  },
+  {
+    "id": 236,
+    "text": "Praise the Lord, for the Lord is good; sing praise to his name, for that is pleasant.",
+    "reference": "Psalm 135:3",
+    "genre": "Gratitude & Praise",
+    "explanation": "Praising God isn't a chore; it's a pleasure. It is a good activity that brings good feelings to your soul.",
+    "version": "NIV"
+  },
+  {
+    "id": 237,
+    "text": "But I, with shouts of grateful praise, will sacrifice to you. What I have vowed I will make good.",
+    "reference": "Jonah 2:9",
+    "genre": "Gratitude & Praise",
+    "explanation": "Even in the belly of a whale, Jonah praised God. You can shout your gratitude even when you are in a dark place.",
+    "version": "NIV"
+  },
+  {
+    "id": 238,
+    "text": "Do not get drunk on wine... Instead, be filled with the Spirit, speaking to one another with psalms, hymns, and songs from the Spirit.",
+    "reference": "Ephesians 5:18-19",
+    "genre": "Gratitude & Praise",
+    "explanation": "Don't numb yourself with substances; fill yourself with God. Singing and gratitude give you a better high than anything else.",
+    "version": "NIV"
+  },
+  {
+    "id": 239,
+    "text": "I will praise you seven times a day for your righteous laws.",
+    "reference": "Psalm 119:164",
+    "genre": "Gratitude & Praise",
+    "explanation": "Make gratitude a habit. Stop throughout your day just to appreciate God's rules and His right way of doing things.",
+    "version": "NIV"
+  },
+  {
+    "id": 240,
+    "text": "Thanks be to God, who always leads us as captives in Christ’s triumphal procession.",
+    "reference": "2 Corinthians 2:14",
+    "genre": "Gratitude & Praise",
+    "explanation": "God leads a victory parade, and you are in it. Be thankful that He is leading you toward triumph, not defeat.",
+    "version": "NIV"
+  },
+  {
+    "id": 241,
+    "text": "The Lord your God is with you, the Mighty Warrior who saves. He will take great delight in you.",
+    "reference": "Zephaniah 3:17",
+    "genre": "Encouragement & Hope",
+    "explanation": "God isn't just tolerating you; He genuinely likes you. He fights for you like a warrior and smiles when He thinks about you.",
+    "version": "NIV"
+  },
+  {
+    "id": 242,
+    "text": "And the peace of God, which transcends all understanding, will guard your hearts and your minds in Christ Jesus.",
+    "reference": "Philippians 4:7",
+    "genre": "Encouragement & Hope",
+    "explanation": "God offers a peace that makes no logical sense. It acts like a security guard, protecting your mind from panic.",
+    "version": "NIV"
+  },
+  {
+    "id": 243,
+    "text": "If God is for us, who can be against us?",
+    "reference": "Romans 8:31",
+    "genre": "Encouragement & Hope",
+    "explanation": "Do the math: You + God > Everyone else. If the Creator is backing you, opposition is irrelevant.",
+    "version": "NIV"
+  },
+  {
+    "id": 244,
+    "text": "The Lord is faithful, and he will strengthen you and protect you from the evil one.",
+    "reference": "2 Thessalonians 3:3",
+    "genre": "Encouragement & Hope",
+    "explanation": "You are not unguarded. God is faithful to build up your defenses and keep evil from taking you out.",
+    "version": "NIV"
+  },
+  {
+    "id": 245,
+    "text": "Cast your cares on the Lord and he will sustain you; he will never let the righteous be shaken.",
+    "reference": "Psalm 55:22",
+    "genre": "Encouragement & Hope",
+    "explanation": "Throw your heavy backpack of worries onto God. He will carry the weight so you don't collapse under it.",
+    "version": "NIV"
+  },
+  {
+    "id": 246,
+    "text": "He gives power to the weak and strength to the powerless.",
+    "reference": "Isaiah 40:29",
+    "genre": "Encouragement & Hope",
+    "explanation": "Running on empty? Perfect. That is exactly when God steps in to refill your tank with His power.",
+    "version": "NLT"
+  },
+  {
+    "id": 247,
+    "text": "Be strong and courageous. Do not be afraid or terrified because of them, for the Lord your God goes with you.",
+    "reference": "Deuteronomy 31:6",
+    "genre": "Encouragement & Hope",
+    "explanation": "You never walk into a room alone. God walks in with you, so you can face anyone or anything with confidence.",
+    "version": "NIV"
+  },
+  {
+    "id": 248,
+    "text": "Therefore, if anyone is in Christ, the new creation has come: The old has gone, the new is here!",
+    "reference": "2 Corinthians 5:17",
+    "genre": "Encouragement & Hope",
+    "explanation": "Your past doesn't define you. With Jesus, you get a total reboot. You are a brand new version of yourself.",
+    "version": "NIV"
+  },
+  {
+    "id": 249,
+    "text": "The Lord is my light and my salvation—whom shall I fear?",
+    "reference": "Psalm 27:1",
+    "genre": "Encouragement & Hope",
+    "explanation": "Darkness and danger can't scare you when you have the ultimate Light and Savior by your side.",
+    "version": "NIV"
+  },
+  {
+    "id": 250,
+    "text": "God is our refuge and strength, an ever-present help in trouble.",
+    "reference": "Psalm 46:1",
+    "genre": "Encouragement & Hope",
+    "explanation": "God isn't distant when things go wrong. He is right there in the mess with you, ready to help immediately.",
+    "version": "NIV"
+  },
+  {
+    "id": 251,
+    "text": "Blessed is the one who trusts in the Lord, whose confidence is in him.",
+    "reference": "Jeremiah 17:7",
+    "genre": "Encouragement & Hope",
+    "explanation": "The happiest people are the ones who rely on God. Placing your confidence in Him is the secret to a blessed life.",
+    "version": "NIV"
+  },
+  {
+    "id": 252,
+    "text": "Let us hold unswervingly to the hope we profess, for he who promised is faithful.",
+    "reference": "Hebrews 10:23",
+    "genre": "Encouragement & Hope",
+    "explanation": "Don't wobble in your hope. You can stand firm because the One who made the promise never breaks His word.",
+    "version": "NIV"
+  },
+  {
+    "id": 253,
+    "text": "I sought the Lord, and he answered me; he delivered me from all my fears.",
+    "reference": "Psalm 34:4",
+    "genre": "Encouragement & Hope",
+    "explanation": "When you call out to God, He doesn't ignore you. He listens and actively frees you from the things that scare you.",
+    "version": "NIV"
+  },
+  {
+    "id": 254,
+    "text": "For I am the Lord your God who takes hold of your right hand and says to you, Do not fear; I will help you.",
+    "reference": "Isaiah 41:13",
+    "genre": "Encouragement & Hope",
+    "explanation": "Imagine God physically holding your hand. He is guiding you personally and whispering, 'I've got this.'",
+    "version": "NIV"
+  },
+  {
+    "id": 255,
+    "text": "The Lord is good, a refuge in times of trouble. He cares for those who trust in him.",
+    "reference": "Nahum 1:7",
+    "genre": "Encouragement & Hope",
+    "explanation": "When the storm hits, God is your shelter. He knows you personally and keeps you safe when you trust Him.",
+    "version": "NIV"
+  },
+  {
+    "id": 256,
+    "text": "You are my hiding place; you will protect me from trouble and surround me with songs of deliverance.",
+    "reference": "Psalm 32:7",
+    "genre": "Encouragement & Hope",
+    "explanation": "When life gets too loud, hide in God. He wraps you in music of victory and keeps the trouble away.",
+    "version": "NIV"
+  },
+  {
+    "id": 257,
+    "text": "Being confident of this, that he who began a good work in you will carry it on to completion.",
+    "reference": "Philippians 1:6",
+    "genre": "Encouragement & Hope",
+    "explanation": "God doesn't leave projects half-finished. He started a good work in you, and He guarantees He will finish it.",
+    "version": "NIV"
+  },
+  {
+    "id": 258,
+    "text": "My comfort in my suffering is this: Your promise preserves my life.",
+    "reference": "Psalm 119:50",
+    "genre": "Encouragement & Hope",
+    "explanation": "God's promises are life-savers. When you are hurting, holding onto what God said keeps you from drowning.",
+    "version": "NIV"
+  },
+  {
+    "id": 259,
+    "text": "The Lord sustains them on their sickbed and restores them from their bed of illness.",
+    "reference": "Psalm 41:3",
+    "genre": "Encouragement & Hope",
+    "explanation": "God is a healer. Even when you are physically down, He is sustaining you and working towards your restoration.",
+    "version": "NIV"
+  },
+  {
+    "id": 260,
+    "text": "Even though I walk through the darkest valley, I will fear no evil, for you are with me.",
+    "reference": "Psalm 23:4",
+    "genre": "Encouragement & Hope",
+    "explanation": "You might be in a dark place, but you aren't alone. God is walking right next to you, so evil can't touch you.",
+    "version": "NIV"
+  },
+  {
+    "id": 261,
+    "text": "Peace I leave with you; my peace I give you... Do not let your hearts be troubled.",
+    "reference": "John 14:27",
+    "genre": "Encouragement & Hope",
+    "explanation": "Jesus left you a gift in His will: Peace. Claim that inheritance and refuse to let your heart stay troubled.",
+    "version": "NIV"
+  },
+  {
+    "id": 262,
+    "text": "I have told you these things, so that in me you may have peace. In this world you will have trouble. But take heart! I have overcome the world.",
+    "reference": "John 16:33",
+    "genre": "Encouragement & Hope",
+    "explanation": "Trouble is guaranteed, but so is the win. Jesus has already beaten the world, so you can relax in His victory.",
+    "version": "NIV"
+  },
+  {
+    "id": 263,
+    "text": "He will wipe every tear from their eyes. There will be no more death or mourning or crying or pain.",
+    "reference": "Revelation 21:4",
+    "genre": "Encouragement & Hope",
+    "explanation": "The ultimate happy ending is coming. One day, God will personally remove all your pain and sadness forever.",
+    "version": "NIV"
+  },
+  {
+    "id": 264,
+    "text": "For the Spirit God gave us does not make us timid, but gives us power, love and self-discipline.",
+    "reference": "2 Timothy 1:7",
+    "genre": "Encouragement & Hope",
+    "explanation": "Timidity isn't your nature. God built you with a spirit that is powerful, loving, and fully in control.",
+    "version": "NIV"
+  },
+  {
+    "id": 265,
+    "text": "The Lord makes firm the steps of the one who delights in him.",
+    "reference": "Psalm 37:23",
+    "genre": "Encouragement & Hope",
+    "explanation": "When you enjoy God, He secures your future. He makes sure your footing is solid so you don't slip.",
+    "version": "NIV"
+  },
+  {
+    "id": 266,
+    "text": "Wait for the Lord; be strong and take heart and wait for the Lord.",
+    "reference": "Psalm 27:14",
+    "genre": "Encouragement & Hope",
+    "explanation": "Waiting is an active sport. Stay strong and keep your courage up while you wait for God to move.",
+    "version": "NIV"
+  },
+  {
+    "id": 267,
+    "text": "But you, Lord, are a shield around me, my glory, the One who lifts my head high.",
+    "reference": "Psalm 3:3",
+    "genre": "Encouragement & Hope",
+    "explanation": "When you are feeling down and defeated, God gently lifts your chin up. He restores your dignity and protects you.",
+    "version": "NIV"
+  },
+  {
+    "id": 268,
+    "text": "Taste and see that the Lord is good; blessed is the one who takes refuge in him.",
+    "reference": "Psalm 34:8",
+    "genre": "Encouragement & Hope",
+    "explanation": "Don't just take someone's word for it—experience God yourself. Once you try trusting Him, you'll see how good He is.",
+    "version": "NIV"
+  },
+  {
+    "id": 269,
+    "text": "Surely your goodness and love will follow me all the days of my life.",
+    "reference": "Psalm 23:6",
+    "genre": "Encouragement & Hope",
+    "explanation": "You have a stalker, but a good one. God's kindness and love are chasing you down every single day.",
+    "version": "NIV"
+  },
+  {
+    "id": 270,
+    "text": "The Lord is near to all who call on him, to all who call on him in truth.",
+    "reference": "Psalm 145:18",
+    "genre": "Encouragement & Hope",
+    "explanation": "God isn't playing hard to get. The moment you call out to Him honestly, He is right there beside you.",
+    "version": "NIV"
+  },
+  {
+    "id": 271,
+    "text": "Whatever you ask for in prayer, believe that you have received it, and it will be yours.",
+    "reference": "Mark 11:24",
+    "genre": "Encouragement & Hope",
+    "explanation": "Pray with bold confidence. Believe the answer is already on its way, and you will see it happen.",
+    "version": "NIV"
+  },
+  {
+    "id": 272,
+    "text": "We rejoice in our sufferings, knowing that suffering produces endurance.",
+    "reference": "Romans 5:3",
+    "genre": "Encouragement & Hope",
+    "explanation": "Pain has a purpose. Hard times are actually building you into a stronger, more enduring person.",
+    "version": "ESV"
+  },
+  {
+    "id": 273,
+    "text": "And my God will meet all your needs according to the riches of his glory in Christ Jesus.",
+    "reference": "Philippians 4:19",
+    "genre": "Encouragement & Hope",
+    "explanation": "God's bank account is unlimited. He will supply everything you need, customized perfectly for you.",
+    "version": "NIV"
+  },
+  {
+    "id": 274,
+    "text": "The light shines in the darkness, and the darkness has not overcome it.",
+    "reference": "John 1:5",
+    "genre": "Encouragement & Hope",
+    "explanation": "Light always wins. No matter how dark your situation feels, God's light is stronger and cannot be put out.",
+    "version": "NIV"
+  },
+  {
+    "id": 275,
+    "text": "Be strong and courageous. Do not be afraid; do not be discouraged.",
+    "reference": "Joshua 1:9",
+    "genre": "Encouragement & Hope",
+    "explanation": "Discouragement is a choice you can reject. God commands you to be brave because He is backing you up.",
+    "version": "NIV"
+  },
+  {
+    "id": 276,
+    "text": "Let us not become weary in doing good, for at the proper time we will reap a harvest if we do not give up.",
+    "reference": "Galatians 6:9",
+    "genre": "Encouragement & Hope",
+    "explanation": "Don't quit right before the miracle. Keep doing the right thing, and your payday is guaranteed to come.",
+    "version": "NIV"
+  },
+  {
+    "id": 277,
+    "text": "I can do all this through him who gives me strength.",
+    "reference": "Philippians 4:13",
+    "genre": "Encouragement & Hope",
+    "explanation": "There is no 'I can't' when you are with Him. Jesus provides the strength for absolutely everything you face.",
+    "version": "NIV"
+  },
+  {
+    "id": 278,
+    "text": "But those who hope in the Lord will renew their strength. They will soar on wings like eagles.",
+    "reference": "Isaiah 40:31",
+    "genre": "Encouragement & Hope",
+    "explanation": "Waiting on God recharges your battery. Instead of struggling, you will find yourself flying above the problems.",
+    "version": "NIV"
+  },
+  {
+    "id": 279,
+    "text": "The Lord is faithful to all his promises and loving toward all he has made.",
+    "reference": "Psalm 145:13",
+    "genre": "Encouragement & Hope",
+    "explanation": "You can bet your life on God. He is completely faithful to keep every promise, and He loves everything He created—including you.",
+    "version": "NIV"
+  },
+  {
+    "id": 280,
+    "text": "For I know the plans I have for you... plans to give you hope and a future.",
+    "reference": "Jeremiah 29:11",
+    "genre": "Encouragement & Hope",
+    "explanation": "Your future is bright because God planned it. He isn't plotting your harm; He is plotting your hope.",
+    "version": "NIV"
+  },
+  {
+    "id": 281,
+    "text": "Fools find no pleasure in understanding but delight in airing their own opinions.",
+    "reference": "Proverbs 18:2",
+    "genre": "Wisdom & Guidance",
+    "explanation": "Don't just talk to hear your own voice. Real intelligence is listening to understand, not just waiting for your turn to speak.",
+    "version": "NIV"
+  },
+  {
+    "id": 282,
+    "text": "A gentle answer turns away wrath, but a harsh word stirs up anger.",
+    "reference": "Proverbs 15:1",
+    "genre": "Wisdom & Guidance",
+    "explanation": "You have the power to stop a fight before it blows up. Lowering your voice is often stronger than shouting back.",
+    "version": "NIV"
+  },
+  {
+    "id": 283,
+    "text": "Walk with the wise and become wise, for a companion of fools suffers harm.",
+    "reference": "Proverbs 13:20",
+    "genre": "Wisdom & Guidance",
+    "explanation": "You become like the people you hang out with. If you want to be smart, surround yourself with people who make good choices.",
+    "version": "NIV"
+  },
+  {
+    "id": 284,
+    "text": "Teach us to number our days, that we may gain a heart of wisdom.",
+    "reference": "Psalm 90:12",
+    "genre": "Wisdom & Guidance",
+    "explanation": "Life is shorter than you think. Realizing that your time is limited helps you stop wasting it on things that don't matter.",
+    "version": "NIV"
+  },
+  {
+    "id": 285,
+    "text": "Trust in the Lord with all your heart and lean not on your own understanding.",
+    "reference": "Proverbs 3:5",
+    "genre": "Wisdom & Guidance",
+    "explanation": "Your logic has blind spots. Trusting God's perspective is safer than relying solely on your own limited point of view.",
+    "version": "NIV"
+  },
+  {
+    "id": 286,
+    "text": "Whatever you do, work at it with all your heart, as working for the Lord, not for human masters.",
+    "reference": "Colossians 3:23",
+    "genre": "Wisdom & Guidance",
+    "explanation": "Don't just work for a paycheck or a boss. Do your absolute best in everything because you are ultimately serving God.",
+    "version": "NIV"
+  },
+  {
+    "id": 287,
+    "text": "Everyone should be quick to listen, slow to speak and slow to become angry.",
+    "reference": "James 1:19",
+    "genre": "Wisdom & Guidance",
+    "explanation": "Control your reactions. Listening more and reacting less is the secret to avoiding regrets and damaged relationships.",
+    "version": "NIV"
+  },
+  {
+    "id": 288,
+    "text": "Pride goes before destruction, a haughty spirit before a fall.",
+    "reference": "Proverbs 16:18",
+    "genre": "Wisdom & Guidance",
+    "explanation": "Arrogance is a warning sign that you are about to crash. Stay humble to stay safe.",
+    "version": "NIV"
+  },
+  {
+    "id": 289,
+    "text": "As iron sharpens iron, so one person sharpens another.",
+    "reference": "Proverbs 27:17",
+    "genre": "Wisdom & Guidance",
+    "explanation": "You need people who challenge you. Honest friends make you sharper and better, even if the friction feels uncomfortable sometimes.",
+    "version": "NIV"
+  },
+  {
+    "id": 290,
+    "text": "The simple believe anything, but the prudent give thought to their steps.",
+    "reference": "Proverbs 14:15",
+    "genre": "Wisdom & Guidance",
+    "explanation": "Don't be gullible. A wise person asks questions and looks at the evidence before jumping into a decision.",
+    "version": "NIV"
+  },
+  {
+    "id": 291,
+    "text": "Even a fool who keeps silent is considered wise; when he closes his lips, he is deemed intelligent.",
+    "reference": "Proverbs 17:28",
+    "genre": "Wisdom & Guidance",
+    "explanation": "If you don't know what to say, say nothing. Silence can make you look smarter than rambling.",
+    "version": "ESV"
+  },
+  {
+    "id": 292,
+    "text": "Where there is no guidance, a people falls, but in an abundance of counselors there is safety.",
+    "reference": "Proverbs 11:14",
+    "genre": "Wisdom & Guidance",
+    "explanation": "Trying to do it all alone is risky. You are much safer when you get advice from multiple smart people.",
+    "version": "ESV"
+  },
+  {
+    "id": 293,
+    "text": "Do not boast about tomorrow, for you do not know what a day may bring.",
+    "reference": "Proverbs 27:1",
+    "genre": "Wisdom & Guidance",
+    "explanation": "Don't be arrogant about your future plans. Live responsibly today because you can't control what happens tomorrow.",
+    "version": "NIV"
+  },
+  {
+    "id": 294,
+    "text": "A cheerful heart is good medicine, but a crushed spirit dries up the bones.",
+    "reference": "Proverbs 17:22",
+    "genre": "Wisdom & Guidance",
+    "explanation": "Your attitude affects your physical health. Choosing joy and laughter actually helps your body heal and stay strong.",
+    "version": "NIV"
+  },
+  {
+    "id": 295,
+    "text": "Suppose one of you wants to build a tower. Won’t you first sit down and estimate the cost to see if you have enough money to complete it?",
+    "reference": "Luke 14:28",
+    "genre": "Wisdom & Guidance",
+    "explanation": "Don't start things you can't finish. Wise people count the cost and plan ahead before making a commitment.",
+    "version": "NIV"
+  },
+  {
+    "id": 296,
+    "text": "Whoever is patient has great understanding, but one who is quick-tempered displays folly.",
+    "reference": "Proverbs 14:29",
+    "genre": "Wisdom & Guidance",
+    "explanation": "Patience is a sign of intelligence. Losing your temper quickly just puts your immaturity on display.",
+    "version": "NIV"
+  },
+  {
+    "id": 297,
+    "text": "Commit to the Lord whatever you do, and he will establish your plans.",
+    "reference": "Proverbs 16:3",
+    "genre": "Wisdom & Guidance",
+    "explanation": "Invite God into your work early. When you dedicate your efforts to Him, He helps you succeed.",
+    "version": "NIV"
+  },
+  {
+    "id": 298,
+    "text": "Listen to advice and accept discipline, and at the end you will be counted among the wise.",
+    "reference": "Proverbs 19:20",
+    "genre": "Wisdom & Guidance",
+    "explanation": "Nobody likes being corrected, but it's the only way to grow. Accept feedback now so you can be wise later.",
+    "version": "NIV"
+  },
+  {
+    "id": 299,
+    "text": "Whatever is true, whatever is noble, whatever is right, whatever is pure... think about such things.",
+    "reference": "Philippians 4:8",
+    "genre": "Wisdom & Guidance",
+    "explanation": "You are what you think about.Protect your mental health by focusing on good, true, and positive things.",
+    "version": "NIV"
+  },
+  {
+    "id": 300,
+    "text": "If God is for us, who can be against us?",
+    "reference": "Romans 8:31",
+    "genre": "Faith & Trust",
+    "explanation": "With the Creator of the universe on your team, the odds are always in your favor. Opposition doesn't matter.",
+    "version": "NIV"
+  },
+  {
+    "id": 301,
+    "text": "For we walk by faith, not by sight.",
+    "reference": "2 Corinthians 5:7",
+    "genre": "Faith & Trust",
+    "explanation": "Don't let your eyes fool you. Base your decisions on God's promises, not just on how things look right now.",
+    "version": "NKJV"
+  },
+  {
+    "id": 302,
+    "text": "Jesus said to him, 'If you can believe, all things are possible to him who believes.'",
+    "reference": "Mark 9:23",
+    "genre": "Faith & Trust",
+    "explanation": "Belief removes limits. When you trust God, the word 'impossible' loses its meaning.",
+    "version": "NKJV"
+  },
+  {
+    "id": 303,
+    "text": "But when you ask, you must believe and not doubt, because the one who doubts is like a wave of the sea, blown and tossed by the wind.",
+    "reference": "James 1:6",
+    "genre": "Faith & Trust",
+    "explanation": "Doubt makes you unstable. When you pray, choose a side and stick to it—trust that God is listening.",
+    "version": "NIV"
+  },
+  {
+    "id": 304,
+    "text": "Though he slay me, yet will I hope in him.",
+    "reference": "Job 13:15",
+    "genre": "Faith & Trust",
+    "explanation": "Real faith trusts God even when life hurts. It's deciding that God is good even when your situation isn't.",
+    "version": "NIV"
+  },
+  {
+    "id": 305,
+    "text": "I have fought the good fight, I have finished the race, I have kept the faith.",
+    "reference": "2 Timothy 4:7",
+    "genre": "Faith & Trust",
+    "explanation": "Faith is a marathon, not a sprint. The goal isn't just to start believing, but to keep believing until the very end.",
+    "version": "NIV"
+  },
+  {
+    "id": 306,
+    "text": "Truly I tell you, if you have faith as small as a mustard seed... nothing will be impossible for you.",
+    "reference": "Matthew 17:20",
+    "genre": "Faith & Trust",
+    "explanation": "You don't need massive faith; you just need genuine faith. Even a tiny amount of trust in a big God can move mountains.",
+    "version": "NIV"
+  },
+  {
+    "id": 307,
+    "text": "You will keep in perfect peace those whose minds are steadfast, because they trust in you.",
+    "reference": "Isaiah 26:3",
+    "genre": "Faith & Trust",
+    "explanation": "Peace is a byproduct of trust. Keep your mind locked on God, and He will keep your emotions steady.",
+    "version": "NIV"
+  },
+  {
+    "id": 308,
+    "text": "Fear of man will prove to be a snare, but whoever trusts in the Lord is kept safe.",
+    "reference": "Proverbs 29:25",
+    "genre": "Faith & Trust",
+    "explanation": "Worrying about what people think is a trap. Trusting what God thinks is your safety net.",
+    "version": "NIV"
+  },
+  {
+    "id": 309,
+    "text": "Take delight in the Lord, and he will give you the desires of your heart.",
+    "reference": "Psalm 37:4",
+    "genre": "Faith & Trust",
+    "explanation": "Focus on enjoying God first. When you prioritize Him, He aligns your desires with His and grants them.",
+    "version": "NIV"
+  },
+  {
+    "id": 310,
+    "text": "Let us hold unswervingly to the hope we profess, for he who promised is faithful.",
+    "reference": "Hebrews 10:23",
+    "genre": "Faith & Trust",
+    "explanation": "Don't wobble. You can hold tight to your hope because the One who made the promise never lies.",
+    "version": "NIV"
+  },
+  {
+    "id": 311,
+    "text": "Love is patient, love is kind. It does not envy, it does not boast, it is not proud.",
+    "reference": "1 Corinthians 13:4",
+    "genre": "Love & Relationships",
+    "explanation": "Love isn't just a feeling; it's an action. It means choosing to be kind and patient even when you don't feel like it.",
+    "version": "NIV"
+  },
+  {
+    "id": 312,
+    "text": "Above all, love each other deeply, because love covers over a multitude of sins.",
+    "reference": "1 Peter 4:8",
+    "genre": "Love & Relationships",
+    "explanation": "Love is the ultimate eraser. When you truly care for someone, you become willing to forgive their mistakes.",
+    "version": "NIV"
+  },
+  {
+    "id": 313,
+    "text": "A friend loves at all times, and a brother is born for a time of adversity.",
+    "reference": "Proverbs 17:17",
+    "genre": "Love & Relationships",
+    "explanation": "Fair-weather friends aren't real friends. True love sticks around when things get tough.",
+    "version": "NIV"
+  },
+  {
+    "id": 314,
+    "text": "Do to others as you would have them do to you.",
+    "reference": "Luke 6:31",
+    "genre": "Love & Relationships",
+    "explanation": "The golden rule of relationships: Treat people exactly how you wish they would treat you.",
+    "version": "NIV"
+  },
+  {
+    "id": 315,
+    "text": "Be completely humble and gentle; be patient, bearing with one another in love.",
+    "reference": "Ephesians 4:2",
+    "genre": "Love & Relationships",
+    "explanation": "Relationships work best when you drop the ego. Be gentle and put up with each other's quirks gracefully.",
+    "version": "NIV"
+  },
+  {
+    "id": 316,
+    "text": "Two are better than one... If either of them falls down, one can help the other up.",
+    "reference": "Ecclesiastes 4:9-10",
+    "genre": "Love & Relationships",
+    "explanation": "Life is a team sport. Having a partner or friend means you always have someone to pick you up when you crash.",
+    "version": "NIV"
+  },
+  {
+    "id": 317,
+    "text": "Let no debt remain outstanding, except the continuing debt to love one another.",
+    "reference": "Romans 13:8",
+    "genre": "Love & Relationships",
+    "explanation": "Pay your bills, but realize you will never finish 'paying' love to others. It's a lifetime obligation.",
+    "version": "NIV"
+  },
+  {
+    "id": 318,
+    "text": "Do not be misled: Bad company corrupts good character.",
+    "reference": "1 Corinthians 15:33",
+    "genre": "Love & Relationships",
+    "explanation": "Protect your heart by choosing your circle carefully. Toxic friends will eventually pull you down to their level.",
+    "version": "NIV"
+  },
+  {
+    "id": 319,
+    "text": "Hatred stirs up conflict, but love covers over all wrongs.",
+    "reference": "Proverbs 10:12",
+    "genre": "Love & Relationships",
+    "explanation": "Hate looks for fights; love looks for peace. Choose to let things go rather than stirring the pot.",
+    "version": "NIV"
+  },
+  {
+    "id": 320,
+    "text": "We love because he first loved us.",
+    "reference": "1 John 4:19",
+    "genre": "Love & Relationships",
+    "explanation": "You don't have to manufacture love on your own. You can love others only because God poured His love into you first.",
+    "version": "NIV"
+  },
+  {
+    "id": 321,
+    "text": "Give thanks to the Lord, for he is good; his love endures forever.",
+    "reference": "1 Chronicles 16:34",
+    "genre": "Gratitude & Praise",
+    "explanation": "God's mood doesn't change. He is always good and always loving, which is always a reason to say thanks.",
+    "version": "NIV"
+  },
+  {
+    "id": 322,
+    "text": "This is the day the Lord has made; We will rejoice and be glad in it.",
+    "reference": "Psalm 118:24",
+    "genre": "Gratitude & Praise",
+    "explanation": "Today is a gift custom-made for you. Don't waste it by complaining; choose to find the joy in it.",
+    "version": "NKJV"
+  },
+  {
+    "id": 323,
+    "text": "I will praise you, Lord, with all my heart; I will tell of all your wonderful deeds.",
+    "reference": "Psalm 9:1",
+    "genre": "Gratitude & Praise",
+    "explanation": "Don't be shy with your gratitude. Thank God with everything you've got and recount the cool things He has done.",
+    "version": "NIV"
+  },
+  {
+    "id": 324,
+    "text": "Let everything that has breath praise the Lord.",
+    "reference": "Psalm 150:6",
+    "genre": "Gratitude & Praise",
+    "explanation": "If you are breathing right now, you have a job to do: Praise the One who gave you that breath.",
+    "version": "NIV"
+  },
+  {
+    "id": 325,
+    "text": "Every good and perfect gift is from above, coming down from the Father.",
+    "reference": "James 1:17",
+    "genre": "Gratitude & Praise",
+    "explanation": "Good things aren't accidents. Every bright spot in your day is a delivery from God.",
+    "version": "NIV"
+  },
+  {
+    "id": 326,
+    "text": "Rejoice always, pray continually, give thanks in all circumstances.",
+    "reference": "1 Thessalonians 5:16-18",
+    "genre": "Gratitude & Praise",
+    "explanation": "Gratitude isn't just for the good days. Finding reasons to say 'thank you' even on bad days keeps your heart healthy.",
+    "version": "NIV"
+  },
+  {
+    "id": 327,
+    "text": "Enter his gates with thanksgiving and his courts with praise.",
+    "reference": "Psalm 100:4",
+    "genre": "Gratitude & Praise",
+    "explanation": "Gratitude is the password that gets you into God's presence. Start your prayer with thanks to get close to Him.",
+    "version": "NIV"
+  },
+  {
+    "id": 328,
+    "text": "The Lord is my strength and my shield... my heart leaps for joy, and with my song I praise him.",
+    "reference": "Psalm 28:7",
+    "genre": "Gratitude & Praise",
+    "explanation": "When you realize God is protecting you, relief turns into joy. Let that joy spill out as a song of thanks.",
+    "version": "NIV"
+  },
+  {
+    "id": 329,
+    "text": "Do not be anxious about anything, but in every situation, by prayer and petition, with thanksgiving, present your requests to God.",
+    "reference": "Philippians 4:6",
+    "genre": "Gratitude & Praise",
+    "explanation": "Wrap your worries in gratitude. When you ask God for help, say thank you in advance for the answer.",
+    "version": "NIV"
+  },
+  {
+    "id": 330,
+    "text": "Thanks be to God for his indescribable gift!",
+    "reference": "2 Corinthians 9:15",
+    "genre": "Gratitude & Praise",
+    "explanation": "Some blessings are too big for words. Jesus is a gift so amazing that we can't even fully explain it.",
+    "version": "NIV"
+  },
+  {
+    "id": 331,
+    "text": "I will give thanks to the Lord because of his righteousness; I will sing the praises of the name of the Lord Most High.",
+    "reference": "Psalm 7:17",
+    "genre": "Gratitude & Praise",
+    "explanation": "Focus on God's character. Even if your life is messy, God is still right and good, and that deserves praise.",
+    "version": "NIV"
+  },
+  {
+    "id": 332,
+    "text": "Let the message of Christ dwell among you richly... singing to God with gratitude in your hearts.",
+    "reference": "Colossians 3:16",
+    "genre": "Gratitude & Praise",
+    "explanation": "Let God's truth live in you. When your heart is full of gratitude, it naturally comes out as a song.",
+    "version": "NIV"
+  },
+  {
+    "id": 333,
+    "text": "Praise the Lord, my soul, and forget not all his benefits.",
+    "reference": "Psalm 103:2",
+    "genre": "Gratitude & Praise",
+    "explanation": "We forget so easily. Make a conscious effort to list the specific benefits and blessings God has given you.",
+    "version": "NIV"
+  },
+  {
+    "id": 334,
+    "text": "I will extol the Lord at all times; his praise will always be on my lips.",
+    "reference": "Psalm 34:1",
+    "genre": "Gratitude & Praise",
+    "explanation": "Make praise a habit, not a special event. Let gratitude be the background music of your entire life.",
+    "version": "NIV"
+  },
+  {
+    "id": 335,
+    "text": "The heavens declare the glory of God; the skies proclaim the work of his hands.",
+    "reference": "Psalm 19:1",
+    "genre": "Gratitude & Praise",
+    "explanation": "Look up. The sky and stars are constantly bragging about how awesome God is. Join them!",
+    "version": "NIV"
+  },
+  {
+    "id": 336,
+    "text": "But thanks be to God! He gives us the victory through our Lord Jesus Christ.",
+    "reference": "1 Corinthians 15:57",
+    "genre": "Gratitude & Praise",
+    "explanation": "You are fighting from a place of victory. Thank God that Jesus has already won the biggest war for you.",
+    "version": "NIV"
+  },
+  {
+    "id": 337,
+    "text": "It is good to praise the Lord and make music to your name, O Most High.",
+    "reference": "Psalm 92:1",
+    "genre": "Gratitude & Praise",
+    "explanation": "Praising God isn't a chore; it's good for you. It aligns your soul with reality and brings peace.",
+    "version": "NIV"
+  },
+  {
+    "id": 338,
+    "text": "And whatever you do... do it all in the name of the Lord Jesus, giving thanks to God the Father through him.",
+    "reference": "Colossians 3:17",
+    "genre": "Gratitude & Praise",
+    "explanation": "Turn your daily life into a prayer. Whether working or resting, do it with a thankful attitude.",
+    "version": "NIV"
+  },
+  {
+    "id": 339,
+    "text": "Come, let us sing for joy to the Lord; let us shout aloud to the Rock of our salvation.",
+    "reference": "Psalm 95:1",
+    "genre": "Gratitude & Praise",
+    "explanation": "Don't be quiet about your faith. God is your solid Rock, so make some noise and celebrate Him.",
+    "version": "NIV"
+  },
+  {
+    "id": 340,
+    "text": "You turned my wailing into dancing; you removed my sackcloth and clothed me with joy.",
+    "reference": "Psalm 30:11",
+    "genre": "Gratitude & Praise",
+    "explanation": "God is in the transformation business. He loves to trade your deep sadness for overwhelming joy.",
+    "version": "NIV"
+  },
+  {
+    "id": 341,
+    "text": "I can do all this through him who gives me strength.",
+    "reference": "Philippians 4:13",
+    "genre": "Strength & Courage",
+    "explanation": "You aren't limited by your own ability. Christ's power in you means you can face any situation.",
+    "version": "NIV"
+  },
+  {
+    "id": 342,
+    "text": "Be strong and courageous. Do not be afraid; do not be discouraged, for the Lord your God will be with you wherever you go.",
+    "reference": "Joshua 1:9",
+    "genre": "Strength & Courage",
+    "explanation": "Courage comes from company. You can be brave because you know God is right there beside you.",
+    "version": "NIV"
+  },
+  {
+    "id": 343,
+    "text": "The Lord is my strength and my shield; my heart trusts in him, and he helps me.",
+    "reference": "Psalm 28:7",
+    "genre": "Strength & Courage",
+    "explanation": "God is both your offense and defense. He gives you power to move forward and protection from attacks.",
+    "version": "NIV"
+  },
+  {
+    "id": 344,
+    "text": "God is our refuge and strength, an ever-present help in trouble.",
+    "reference": "Psalm 46:1",
+    "genre": "Strength & Courage",
+    "explanation": "When trouble hits, God doesn't run away. He is instantly available to be your safe place.",
+    "version": "NIV"
+  },
+  {
+    "id": 345,
+    "text": "But those who hope in the Lord will renew their strength. They will soar on wings like eagles.",
+    "reference": "Isaiah 40:31",
+    "genre": "Strength & Courage",
+    "explanation": "Waiting on God isn't wasted time; it's charging time. Trusting Him refills your energy so you can fly.",
+    "version": "NIV"
+  },
+  {
+    "id": 346,
+    "text": "For the Spirit God gave us does not make us timid, but gives us power, love and self-discipline.",
+    "reference": "2 Timothy 1:7",
+    "genre": "Strength & Courage",
+    "explanation": "Fear is not your factory setting. God built you with a spirit of power and control.",
+    "version": "NIV"
+  },
+  {
+    "id": 347,
+    "text": "The Lord is my light and my salvation—whom shall I fear? The Lord is the stronghold of my life—of whom shall I be afraid?",
+    "reference": "Psalm 27:1",
+    "genre": "Strength & Courage",
+    "explanation": "With God as your personal bodyguard and guide, there is literally no one left to be afraid of.",
+    "version": "NIV"
+  },
+  {
+    "id": 348,
+    "text": "Be strong and let your heart take courage, all you who hope in the Lord.",
+    "reference": "Psalm 31:24",
+    "genre": "Strength & Courage",
+    "explanation": "Tell your heart to cheer up. If you are hoping in God, you have every reason to be brave.",
+    "version": "ESV"
+  },
+  {
+    "id": 349,
+    "text": "He gives strength to the weary and increases the power of the weak.",
+    "reference": "Isaiah 40:29",
+    "genre": "Strength & Courage",
+    "explanation": "It's okay to be tired. God specializes in giving fresh power to people who are worn out.",
+    "version": "NIV"
+  },
+  {
+    "id": 350,
+    "text": "Be on your guard; stand firm in the faith; be courageous; be strong.",
+    "reference": "1 Corinthians 16:13",
+    "genre": "Strength & Courage",
+    "explanation": "Stay alert and don't back down. Planting your feet firmly in faith is where real courage begins.",
+    "version": "NIV"
+  },
+  {
+    "id": 351,
+    "text": "Finally, be strong in the Lord and in his mighty power.",
+    "reference": "Ephesians 6:10",
+    "genre": "Strength & Courage",
+    "explanation": "Stop trying to be strong on your own. Borrow God's strength; His power is unlimited.",
+    "version": "NIV"
+  },
+  {
+    "id": 352,
+    "text": "My flesh and my heart may fail, but God is the strength of my heart and my portion forever.",
+    "reference": "Psalm 73:26",
+    "genre": "Strength & Courage",
+    "explanation": "Your body and emotions will get tired, but God won't. He is the battery that never runs out.",
+    "version": "NIV"
+  },
+  {
+    "id": 353,
+    "text": "So do not fear, for I am with you; do not be dismayed, for I am your God. I will strengthen you and help you.",
+    "reference": "Isaiah 41:10",
+    "genre": "Strength & Courage",
+    "explanation": "God makes a personal promise: He is not going anywhere, and He will personally help you stand up.",
+    "version": "NIV"
+  },
+  {
+    "id": 354,
+    "text": "It is God who arms me with strength and keeps my way secure.",
+    "reference": "Psalm 18:32",
+    "genre": "Strength & Courage",
+    "explanation": "God dresses you for battle. He wraps strength around you so you are ready for whatever the road holds.",
+    "version": "NIV"
+  },
+  {
+    "id": 355,
+    "text": "The Sovereign Lord is my strength; he makes my feet like the feet of a deer, he enables me to tread on the heights.",
+    "reference": "Habakkuk 3:19",
+    "genre": "Strength & Courage",
+    "explanation": "God gives you agility. He helps you navigate high and scary places with sure-footed confidence.",
+    "version": "NIV"
+  },
+  {
+    "id": 356,
+    "text": "Wait for the Lord; be strong and take heart and wait for the Lord.",
+    "reference": "Psalm 27:14",
+    "genre": "Strength & Courage",
+    "explanation": "Patience takes muscle. Be brave enough to trust God's timing instead of rushing ahead.",
+    "version": "NIV"
+  },
+  {
+    "id": 357,
+    "text": "Look to the Lord and his strength; seek his face always.",
+    "reference": "1 Chronicles 16:11",
+    "genre": "Strength & Courage",
+    "explanation": "Don't look at your problems; look at God's power. Keep your eyes fixed on Him to stay strong.",
+    "version": "NIV"
+  },
+  {
+    "id": 358,
+    "text": "The Lord is my strength and my song; he has given me victory.",
+    "reference": "Exodus 15:2",
+    "genre": "Strength & Courage",
+    "explanation": "God turns your battle into a song. He provides the strength you need to win.",
+    "version": "NLT"
+  },
+  {
+    "id": 359,
+    "text": "When I called, you answered me; you greatly emboldened me.",
+    "reference": "Psalm 138:3",
+    "genre": "Strength & Courage",
+    "explanation": "Prayer boosts your bravery. When you talk to God, He answers by making your soul feel bold.",
+    "version": "NIV"
+  },
+  {
+    "id": 360,
+    "text": "Whatever you do, work at it with all your heart, as working for the Lord.",
+    "reference": "Colossians 3:23",
+    "genre": "Strength & Courage",
+    "explanation": "Work hard, not for your boss, but for God. Doing your best for Him gives you the courage to excel.",
+    "version": "NIV"
+  },
+  {
+    "id": 361,
+    "text": "Where there is no revelation, people cast off restraint; but blessed is the one who heeds wisdom’s instruction.",
+    "reference": "Proverbs 29:18",
+    "genre": "Wisdom & Guidance",
+    "explanation": "You need a vision for your life. Without a clear direction from God, it is easy to lose discipline and drift off course.",
+    "version": "NIV"
+  },
+  {
+    "id": 362,
+    "text": "Who is wise and understanding among you? Let them show it by their good life, by deeds done in the humility that comes from wisdom.",
+    "reference": "James 3:13",
+    "genre": "Wisdom & Guidance",
+    "explanation": "Don't just tell people you are smart; show them. True wisdom is proven by living a good life with a humble attitude.",
+    "version": "NIV"
+  },
+  {
+    "id": 363,
+    "text": "When pride comes, then comes disgrace, but with humility comes wisdom.",
+    "reference": "Proverbs 11:2",
+    "genre": "Wisdom & Guidance",
+    "explanation": "Ego is a trap that leads to embarrassment. If you want to be truly wise, drop the pride and embrace humility.",
+    "version": "NIV"
+  },
+  {
+    "id": 364,
+    "text": "Know also that wisdom is like honey for you: If you find it, there is a future hope for you, and your hope will not be cut off.",
+    "reference": "Proverbs 24:14",
+    "genre": "Wisdom & Guidance",
+    "explanation": "Wisdom makes life sweet. Making smart choices today guarantees a better, brighter future for you tomorrow.",
+    "version": "NIV"
+  },
+  {
+    "id": 365,
+    "text": "Wisdom is a shelter as money is a shelter, but the advantage of knowledge is this: Wisdom preserves those who have it.",
+    "reference": "Ecclesiastes 7:12",
+    "genre": "Wisdom & Guidance",
+    "explanation": "Money can solve some problems, but wisdom saves your life. It protects you from dangers that money can't fix.",
+    "version": "NIV"
+  },
+  {
+    "id": 366,
+    "text": "Wisdom’s instruction is to fear the Lord, and humility comes before honor.",
+    "reference": "Proverbs 15:33",
+    "genre": "Wisdom & Guidance",
+    "explanation": "If you want to be honored, go low first. Respecting God and staying humble is the prerequisite for being lifted up.",
+    "version": "NIV"
+  },
+  {
+    "id": 367,
+    "text": "The wise in heart accept commands, but a chattering fool comes to ruin.",
+    "reference": "Proverbs 10:8",
+    "genre": "Wisdom & Guidance",
+    "explanation": "Smart people are coachable. Instead of arguing or talking back, accept good instruction to avoid ruining your life.",
+    "version": "NIV"
+  },
+  {
+    "id": 368,
+    "text": "The wisdom of the prudent is to give thought to their ways, but the folly of fools is deception.",
+    "reference": "Proverbs 14:8",
+    "genre": "Wisdom & Guidance",
+    "explanation": "Don't live on autopilot. A wise person hits pause to think about where their current habits are actually taking them.",
+    "version": "NIV"
+  },
+  {
+    "id": 369,
+    "text": "Whoever loves discipline loves knowledge, but whoever hates correction is stupid.",
+    "reference": "Proverbs 12:1",
+    "genre": "Wisdom & Guidance",
+    "explanation": "Correction stings, but it makes you smarter. Refusing to be corrected keeps you stuck in ignorance.",
+    "version": "NIV"
+  },
+  {
+    "id": 370,
+    "text": "If you are wise, your wisdom will reward you; if you are a mocker, you alone will suffer.",
+    "reference": "Proverbs 9:12",
+    "genre": "Wisdom & Guidance",
+    "explanation": "You are the biggest beneficiary of your own good choices. Being wise pays off for you personally.",
+    "version": "NIV"
+  },
+  {
+    "id": 371,
+    "text": "A person may think their own ways are right, but the Lord weighs the heart.",
+    "reference": "Proverbs 21:2",
+    "genre": "Wisdom & Guidance",
+    "explanation": "You can easily trick yourself into thinking you are right. Ask God to check your motives, because He sees the truth.",
+    "version": "NIV"
+  },
+  {
+    "id": 372,
+    "text": "Those who guard their lips preserve their lives, but those who speak rashly will come to ruin.",
+    "reference": "Proverbs 13:3",
+    "genre": "Wisdom & Guidance",
+    "explanation": "Your mouth can either save you or destroy you. Be careful with your words to keep your life peaceful.",
+    "version": "NIV"
+  },
+  {
+    "id": 373,
+    "text": "Gold there is, and rubies in abundance, but lips that speak knowledge are a rare jewel.",
+    "reference": "Proverbs 20:15",
+    "genre": "Wisdom & Guidance",
+    "explanation": "People with something smart to say are hard to find. Speaking truth and wisdom makes you more valuable than jewelry.",
+    "version": "NIV"
+  },
+  {
+    "id": 374,
+    "text": "Do not forsake your friend or a friend of your family, and do not go to your relative’s house when disaster strikes you—better a neighbor nearby than a relative far away.",
+    "reference": "Proverbs 27:10",
+    "genre": "Wisdom & Guidance",
+    "explanation": "Nurture the relationships right in front of you. In an emergency, a close neighbor is more helpful than a distant brother.",
+    "version": "NIV"
+  },
+  {
+    "id": 375,
+    "text": "Fools show their annoyance at once, but the prudent overlook an insult.",
+    "reference": "Proverbs 12:16",
+    "genre": "Wisdom & Guidance",
+    "explanation": "You don't have to react to every insult. It shows strength and intelligence to simply ignore a rude comment and move on.",
+    "version": "NIV"
+  },
+  {
+    "id": 376,
+    "text": "The simpleton believes every word he hears, but the prudent man looks and considers well where he is going.",
+    "reference": "Proverbs 14:15",
+    "genre": "Wisdom & Guidance",
+    "explanation": "Don't believe everything you hear or read. Verify the facts and look at where the path leads before you walk down it.",
+    "version": "AMP"
+  },
+  {
+    "id": 377,
+    "text": "Better a poor man whose walk is blameless than a fool whose lips are perverse.",
+    "reference": "Proverbs 19:1",
+    "genre": "Wisdom & Guidance",
+    "explanation": "Integrity is worth more than money. It is better to have less and be honest than to be rich and a liar.",
+    "version": "NIV"
+  },
+  {
+    "id": 378,
+    "text": "Walk with the wise and become wise, for a companion of fools suffers harm.",
+    "reference": "Proverbs 13:20",
+    "genre": "Wisdom & Guidance",
+    "explanation": "Wisdom is contagious. Hang out with people who make good decisions, and you will naturally start doing the same.",
+    "version": "NIV"
+  },
+  {
+    "id": 379,
+    "text": "By wisdom a house is built, and by understanding it is established.",
+    "reference": "Proverbs 24:3",
+    "genre": "Wisdom & Guidance",
+    "explanation": "You can't build a stable life or family on luck. It takes thoughtful planning and understanding to make it last.",
+    "version": "ESV"
+  },
+  {
+    "id": 380,
+    "text": "Start with God—the first step in learning is bowing down to God; only fools thumb their noses at such wisdom and learning.",
+    "reference": "Proverbs 1:7",
+    "genre": "Wisdom & Guidance",
+    "explanation": "Everything starts with respecting God. Ignoring Him is the quickest way to miss out on understanding how life works.",
+    "version": "MSG"
+  },
+  {
+    "id": 381,
+    "text": "Now that you have purified yourselves by obeying the truth so that you have sincere love for each other, love one another deeply, from the heart.",
+    "reference": "1 Peter 1:22",
+    "genre": "Love & Relationships",
+    "explanation": "Don't fake it. Since you know the truth, love the people around you with genuine depth and emotion.",
+    "version": "NIV"
+  },
+  {
+    "id": 382,
+    "text": "Love is not rude, it is not self-seeking, it is not easily angered, it keeps no record of wrongs.",
+    "reference": "1 Corinthians 13:5",
+    "genre": "Love & Relationships",
+    "explanation": "Love has manners. It doesn't keep a scoreboard of mistakes, and it doesn't prioritize itself over others.",
+    "version": "NIV"
+  },
+  {
+    "id": 383,
+    "text": "If I speak in the tongues of men or of angels, but do not have love, I am only a resounding gong or a clanging cymbal.",
+    "reference": "1 Corinthians 13:1",
+    "genre": "Love & Relationships",
+    "explanation": "You can be talented and eloquent, but if you treat people poorly, your life is just annoying noise.",
+    "version": "NIV"
+  },
+  {
+    "id": 384,
+    "text": "Walk in the way of love, just as Christ loved us and gave himself up for us.",
+    "reference": "Ephesians 5:2",
+    "genre": "Love & Relationships",
+    "explanation": "Make love your lifestyle. Follow Jesus's example by living a life that sacrifices for the good of others.",
+    "version": "NIV"
+  },
+  {
+    "id": 385,
+    "text": "And he has given us this command: Anyone who loves God must also love their brother and sister.",
+    "reference": "1 John 4:21",
+    "genre": "Love & Relationships",
+    "explanation": "You can't separate loving God from loving people. They are a package deal; if you have one, you must have the other.",
+    "version": "NIV"
+  },
+  {
+    "id": 386,
+    "text": "Love must be sincere. Hate what is evil; cling to what is good.",
+    "reference": "Romans 12:9",
+    "genre": "Love & Relationships",
+    "explanation": "Fake love is easy to spot. Be real with people, hating the things that hurt them and holding onto the things that help them.",
+    "version": "NIV"
+  },
+  {
+    "id": 387,
+    "text": "There is no fear in love. But perfect love drives out fear, because fear has to do with punishment.",
+    "reference": "1 John 4:18",
+    "genre": "Love & Relationships",
+    "explanation": "A healthy relationship shouldn't be scary. Being loved perfectly removes the anxiety of messing up or being rejected.",
+    "version": "NIV"
+  },
+  {
+    "id": 388,
+    "text": "Whoever does not love does not know God, because God is love.",
+    "reference": "1 John 4:8",
+    "genre": "Love & Relationships",
+    "explanation": "God defines love. If you don't show love to others, you are missing the most basic understanding of who God is.",
+    "version": "NIV"
+  },
+  {
+    "id": 389,
+    "text": "Carry each other’s burdens, and in this way you will fulfill the law of Christ.",
+    "reference": "Galatians 6:2",
+    "genre": "Love & Relationships",
+    "explanation": "Don't let your friends struggle alone. Pick up the heavy end of their load to show them what Jesus is like.",
+    "version": "NIV"
+  },
+  {
+    "id": 390,
+    "text": "Place me like a seal over your heart, like a seal on your arm; for love is as strong as death.",
+    "reference": "Song of Songs 8:6",
+    "genre": "Love & Relationships",
+    "explanation": "Love is a permanent mark. It is a force as powerful and undeniable as death itself, claiming you completely.",
+    "version": "NIV"
+  },
+  {
+    "id": 391,
+    "text": "Husbands, love your wives, just as Christ loved the church and gave himself up for her.",
+    "reference": "Ephesians 5:25",
+    "genre": "Love & Relationships",
+    "explanation": "Leadership means sacrifice. Love your partner by giving up your own preferences to serve them.",
+    "version": "NIV"
+  },
+  {
+    "id": 392,
+    "text": "A friend loves at all times, and a brother is born for a time of adversity.",
+    "reference": "Proverbs 17:17",
+    "genre": "Love & Relationships",
+    "explanation": "Real friends don't bail when life gets hard. They stick closer than family during the bad times.",
+    "version": "NIV"
+  },
+  {
+    "id": 393,
+    "text": "He who finds a wife finds what is good and receives favor from the Lord.",
+    "reference": "Proverbs 18:22",
+    "genre": "Love & Relationships",
+    "explanation": "A good partner is a blessing, not a burden. Finding someone to share life with is a sign of God's favor.",
+    "version": "NIV"
+  },
+  {
+    "id": 394,
+    "text": "Above all, love each other deeply, because love covers over a multitude of sins.",
+    "reference": "1 Peter 4:8",
+    "genre": "Love & Relationships",
+    "explanation": "Love has a short memory for mistakes. Loving deeply allows you to overlook the small flaws and failures of others.",
+    "version": "NIV"
+  },
+  {
+    "id": 395,
+    "text": "Let us not love with words or speech but with actions and in truth.",
+    "reference": "1 John 3:18",
+    "genre": "Love & Relationships",
+    "explanation": "Talk is cheap. Prove your love by doing something tangible and real for someone today.",
+    "version": "NIV"
+  },
+  {
+    "id": 396,
+    "text": "Do to others as you would have them do to you.",
+    "reference": "Luke 6:31",
+    "genre": "Love & Relationships",
+    "explanation": "Before you act, ask yourself: 'Would I want someone to do this to me?' That is the secret to great relationships.",
+    "version": "NIV"
+  },
+  {
+    "id": 397,
+    "text": "If it is possible, as far as it depends on you, live at peace with everyone.",
+    "reference": "Romans 12:18",
+    "genre": "Love & Relationships",
+    "explanation": "You can't force others to be nice, but you can control yourself. Do your part to keep the peace.",
+    "version": "NIV"
+  },
+  {
+    "id": 398,
+    "text": "Be devoted to one another in love. Honor one another above yourselves.",
+    "reference": "Romans 12:10",
+    "genre": "Love & Relationships",
+    "explanation": "Be loyal to your people. Try to outdo each other in showing respect and honor.",
+    "version": "NIV"
+  },
+  {
+    "id": 399,
+    "text": "Let no debt remain outstanding, except the continuing debt to love one another.",
+    "reference": "Romans 13:8",
+    "genre": "Love & Relationships",
+    "explanation": "You always 'owe' love to the people around you. It's a debt you pay every day but never fully pay off.",
+    "version": "NIV"
+  },
+  {
+    "id": 400,
+    "text": "The Lord God said, 'It is not good for the man to be alone. I will make a helper suitable for him.'",
+    "reference": "Genesis 2:18",
+    "genre": "Love & Relationships",
+    "explanation": "Isolation isn't healthy. God designed you for community and partnership, not to live life in solitary confinement.",
+    "version": "NIV"
+  },
+  {
+    "id": 401,
+    "text": "Let us think of ways to motivate one another to acts of love and good works.",
+    "reference": "Hebrews 10:24",
+    "genre": "Love & Relationships",
+    "explanation": "Be a cheerleader for your friends. Spend time thinking about how you can inspire the people around you to do good things.",
+    "version": "NLT"
+  },
+  {
+    "id": 402,
+    "text": "Dear friends, since God so loved us, we also ought to love one another.",
+    "reference": "1 John 4:11",
+    "genre": "Love & Relationships",
+    "explanation": "Love is a chain reaction. Since God started it by loving you perfectly, your job is to keep the chain going by loving others.",
+    "version": "NIV"
+  },
+  {
+    "id": 403,
+    "text": "No one has ever seen God; but if we love one another, God lives in us and his love is made complete in us.",
+    "reference": "1 John 4:12",
+    "genre": "Love & Relationships",
+    "explanation": "People can't see God physically, but they can see His love through you. Your relationships are the proof that God is real.",
+    "version": "NIV"
+  },
+  {
+    "id": 404,
+    "text": "And this is love: that we walk in obedience to his commands.",
+    "reference": "2 John 1:6",
+    "genre": "Love & Relationships",
+    "explanation": "Love isn't just an emotion; it's obedience. Doing what God asks is the ultimate way to show you love Him.",
+    "version": "NIV"
+  },
+  {
+    "id": 405,
+    "text": "Let the morning bring me word of your unfailing love, for I have put my trust in you.",
+    "reference": "Psalm 143:8",
+    "genre": "Love & Relationships",
+    "explanation": "Start your day by remembering you are loved. Before you check your phone, check in with God's unfailing care for you.",
+    "version": "NIV"
+  },
+  {
+    "id": 406,
+    "text": "Whoever pursues righteousness and love finds life, prosperity and honor.",
+    "reference": "Proverbs 21:21",
+    "genre": "Love & Relationships",
+    "explanation": "Chasing after love and doing the right thing is the secret formula. It leads to a life that is full, successful, and respected.",
+    "version": "NIV"
+  },
+  {
+    "id": 407,
+    "text": "Love each other with genuine affection, and take delight in honoring each other.",
+    "reference": "Romans 12:10",
+    "genre": "Love & Relationships",
+    "explanation": "Don't just be polite; be affectionate. Treat your friends and family like VIPs and enjoy making them feel special.",
+    "version": "NLT"
+  },
+  {
+    "id": 408,
+    "text": "Show me the wonders of your great love, you who save by your right hand those who take refuge in you.",
+    "reference": "Psalm 17:7",
+    "genre": "Love & Relationships",
+    "explanation": "God's love is wonderful and active. He uses His power to save and protect those who run to Him for safety.",
+    "version": "NIV"
+  },
+  {
+    "id": 409,
+    "text": "I love the Lord, for he heard my voice; he heard my cry for mercy.",
+    "reference": "Psalm 116:1",
+    "genre": "Love & Relationships",
+    "explanation": "It is easy to love God when you realize He listens to you. He isn't ignoring your calls; He hears every cry.",
+    "version": "NIV"
+  },
+  {
+    "id": 410,
+    "text": "Your love, Lord, reaches to the heavens, your faithfulness to the skies.",
+    "reference": "Psalm 36:5",
+    "genre": "Love & Relationships",
+    "explanation": "God's love is massive. It is bigger than the atmosphere and more reliable than the rising sun.",
+    "version": "NIV"
+  },
+  {
+    "id": 411,
+    "text": "A friend is always loyal, and a brother is born to help in time of need.",
+    "reference": "Proverbs 17:17",
+    "genre": "Love & Relationships",
+    "explanation": "Loyalty is the mark of a true friend. Be the person who shows up when everyone else is leaving.",
+    "version": "NLT"
+  },
+  {
+    "id": 412,
+    "text": "Never let loyalty and kindness leave you! Tie them around your neck as a reminder. Write them deep within your heart.",
+    "reference": "Proverbs 3:3",
+    "genre": "Love & Relationships",
+    "explanation": "Wear kindness like a necklace. Make it such a part of your character that you never leave home without it.",
+    "version": "NLT"
+  },
+  {
+    "id": 413,
+    "text": "Love prospers when a fault is forgiven, but dwelling on it separates close friends.",
+    "reference": "Proverbs 17:9",
+    "genre": "Love & Relationships",
+    "explanation": "Forgiveness builds bridges; grudges burn them. If you want your relationships to thrive, you have to let go of past mistakes.",
+    "version": "NLT"
+  },
+  {
+    "id": 414,
+    "text": "Most important of all, continue to show deep love for each other, for love covers a multitude of sins.",
+    "reference": "1 Peter 4:8",
+    "genre": "Love & Relationships",
+    "explanation": "Love is a thick blanket. It covers up flaws and mistakes, choosing to focus on the person rather than the problem.",
+    "version": "NLT"
+  },
+  {
+    "id": 415,
+    "text": "Be kind and compassionate to one another, forgiving each other, just as in Christ God forgave you.",
+    "reference": "Ephesians 4:32",
+    "genre": "Love & Relationships",
+    "explanation": "You have been forgiven a huge debt by God. Use that same generosity to forgive the small debts others owe you.",
+    "version": "NIV"
+  },
+  {
+    "id": 416,
+    "text": "But the fruit of the Spirit is love, joy, peace, forbearance, kindness, goodness, faithfulness.",
+    "reference": "Galatians 5:22",
+    "genre": "Love & Relationships",
+    "explanation": "When God lives in you, these things grow naturally. Love and kindness are the evidence that you are connected to Him.",
+    "version": "NIV"
+  },
+  {
+    "id": 417,
+    "text": "Greater love has no one than this: to lay down one’s life for one’s friends.",
+    "reference": "John 15:13",
+    "genre": "Love & Relationships",
+    "explanation": "Sacrifice is the highest form of love. Putting someone else's needs before your own is the ultimate way to show you care.",
+    "version": "NIV"
+  },
+  {
+    "id": 418,
+    "text": "Though the mountains be shaken... yet my unfailing love for you will not be shaken.",
+    "reference": "Isaiah 54:10",
+    "genre": "Love & Relationships",
+    "explanation": "Even if the physical world falls apart, God's affection for you is solid. His love is more permanent than the mountains.",
+    "version": "NIV"
+  },
+  {
+    "id": 419,
+    "text": "See what great love the Father has lavished on us, that we should be called children of God!",
+    "reference": "1 John 3:1",
+    "genre": "Love & Relationships",
+    "explanation": "You aren't just a creation; you are family. God spent a fortune to adopt you, and He is proud to call you His child.",
+    "version": "NIV"
+  },
+  {
+    "id": 420,
+    "text": "Clothe yourselves with compassion, kindness, humility, gentleness and patience.",
+    "reference": "Colossians 3:12",
+    "genre": "Love & Relationships",
+    "explanation": "Put on your character like you put on clothes. Dress yourself every morning in kindness and patience before you face the world.",
+    "version": "NIV"
+  },
+  {
+    "id": 421,
+    "text": "Trust in the Lord and do good; dwell in the land and enjoy safe pasture.",
+    "reference": "Psalm 37:3",
+    "genre": "Faith & Trust",
+    "explanation": "Trusting God isn't passive; it's active. While you trust Him, keep doing good things and He will keep you safe.",
+    "version": "NIV"
+  },
+  {
+    "id": 422,
+    "text": "He said to her, 'Daughter, your faith has healed you. Go in peace and be freed from your suffering.'",
+    "reference": "Mark 5:34",
+    "genre": "Faith & Trust",
+    "explanation": "Faith acts like a medicine. Trusting Jesus can unlock healing, peace, and freedom from what has been hurting you.",
+    "version": "NIV"
+  },
+  {
+    "id": 423,
+    "text": "Those who trust in the Lord are like Mount Zion, which cannot be shaken but endures forever.",
+    "reference": "Psalm 125:1",
+    "genre": "Faith & Trust",
+    "explanation": "Trusting God makes you unshakeable. Like a massive mountain, you will be able to weather any storm without falling.",
+    "version": "NIV"
+  },
+  {
+    "id": 424,
+    "text": "The apostles said to the Lord, 'Increase our faith!'",
+    "reference": "Luke 17:5",
+    "genre": "Faith & Trust",
+    "explanation": "It's okay to ask for an upgrade. If your trust feels small, ask God to help it grow bigger.",
+    "version": "NIV"
+  },
+  {
+    "id": 425,
+    "text": "For in the gospel the righteousness of God is revealed—a righteousness that is by faith from first to last.",
+    "reference": "Romans 1:17",
+    "genre": "Faith & Trust",
+    "explanation": "The Christian life is faith from start to finish. It's not about being good enough; it's about trusting God enough.",
+    "version": "NIV"
+  },
+  {
+    "id": 426,
+    "text": "Therefore, since we have been justified through faith, we have peace with God through our Lord Jesus Christ.",
+    "reference": "Romans 5:1",
+    "genre": "Faith & Trust",
+    "explanation": "Faith fixes your status with God. Because you believe, there is zero conflict between you and your Creator—only peace.",
+    "version": "NIV"
+  },
+  {
+    "id": 427,
+    "text": "So in Christ Jesus you are all children of God through faith.",
+    "reference": "Galatians 3:26",
+    "genre": "Faith & Trust",
+    "explanation": "Belief is your adoption paper. Trusting in Jesus is the legal signature that makes you a daughter or son of God.",
+    "version": "NIV"
+  },
+  {
+    "id": 428,
+    "text": "In him and through faith in him we may approach God with freedom and confidence.",
+    "reference": "Ephesians 3:12",
+    "genre": "Faith & Trust",
+    "explanation": "You don't need an appointment. Faith gives you the VIP pass to walk right up to God with total confidence.",
+    "version": "NIV"
+  },
+  {
+    "id": 429,
+    "text": "For though I am absent from you in body, I am present with you in spirit and delight to see how disciplined you are and how firm your faith in Christ is.",
+    "reference": "Colossians 2:5",
+    "genre": "Faith & Trust",
+    "explanation": "A solid faith requires discipline. Staying firm in what you believe brings joy to those who lead and love you.",
+    "version": "NIV"
+  },
+  {
+    "id": 430,
+    "text": "I have been crucified with Christ and I no longer live, but Christ lives in me. The life I now live in the body, I live by faith in the Son of God.",
+    "reference": "Galatians 2:20",
+    "genre": "Faith & Trust",
+    "explanation": "Your old self is gone. Your new life is powered entirely by trusting Jesus to live through you.",
+    "version": "NIV"
+  },
+  {
+    "id": 431,
+    "text": "But blessed is the one who trusts in the Lord, whose confidence is in him.",
+    "reference": "Jeremiah 17:7",
+    "genre": "Faith & Trust",
+    "explanation": "The secret to a blessed life isn't self-confidence; it's God-confidence. Rely on Him, and you will be happy.",
+    "version": "NIV"
+  },
+  {
+    "id": 432,
+    "text": "Immediately the boy’s father exclaimed, 'I do believe; help me overcome my unbelief!'",
+    "reference": "Mark 9:24",
+    "genre": "Faith & Trust",
+    "explanation": "You don't have to have perfect faith. It's okay to say, 'God, I trust you, but please help the part of me that is still doubting.'",
+    "version": "NIV"
+  },
+  {
+    "id": 433,
+    "text": "Keep your lives free from the love of money and be content with what you have, because God has said, 'Never will I leave you.'",
+    "reference": "Hebrews 13:5",
+    "genre": "Faith & Trust",
+    "explanation": "You don't need to hoard money for security. You can be content because your true security is God's promise to stay with you.",
+    "version": "NIV"
+  },
+  {
+    "id": 434,
+    "text": "Trust in the Lord forever, for the Lord, the Lord himself, is the Rock eternal.",
+    "reference": "Isaiah 26:4",
+    "genre": "Faith & Trust",
+    "explanation": "God is the only thing in the universe that doesn't change. Build your life on the Eternal Rock.",
+    "version": "NIV"
+  },
+  {
+    "id": 435,
+    "text": "But when you ask, you must believe and not doubt, because the one who doubts is like a wave of the sea, blown and tossed by the wind.",
+    "reference": "James 1:6",
+    "genre": "Faith & Trust",
+    "explanation": "Doubt makes you seasick. Pick a side—trust God—and stand firm so you don't get tossed around by emotions.",
+    "version": "NIV"
+  },
+  {
+    "id": 436,
+    "text": "Whoever believes in me, as Scripture has said, rivers of living water will flow from within them.",
+    "reference": "John 7:38",
+    "genre": "Faith & Trust",
+    "explanation": "Faith doesn't just fill you up; it spills out. Trusting Jesus turns you into a source of life and refreshment for others.",
+    "version": "NIV"
+  },
+  {
+    "id": 437,
+    "text": "Though you have not seen him, you love him; and even though you do not see him now, you believe in him and are filled with an inexpressible and glorious joy.",
+    "reference": "1 Peter 1:8",
+    "genre": "Faith & Trust",
+    "explanation": "You don't need eyes to see God; you need a heart to trust Him. That trust produces a joy words can't describe.",
+    "version": "NIV"
+  },
+  {
+    "id": 438,
+    "text": "We remember before our God and Father your work produced by faith, your labor prompted by love, and your endurance inspired by hope.",
+    "reference": "1 Thessalonians 1:3",
+    "genre": "Faith & Trust",
+    "explanation": "Real faith does work. It isn't just a thought in your head; it's the fuel that powers your daily actions.",
+    "version": "NIV"
+  },
+  {
+    "id": 439,
+    "text": "Therefore I tell you, whatever you ask for in prayer, believe that you have received it, and it will be yours.",
+    "reference": "Mark 11:24",
+    "genre": "Faith & Trust",
+    "explanation": "Pray with the confidence that the delivery truck is already on the way. Believe the answer is yours before you even see it.",
+    "version": "NIV"
+  },
+  {
+    "id": 440,
+    "text": "For everyone born of God overcomes the world. This is the victory that has overcome the world, even our faith.",
+    "reference": "1 John 5:4",
+    "genre": "Faith & Trust",
+    "explanation": "Faith is your winning ticket. It is the superpower that allows you to beat the negativity and struggles of the world.",
+    "version": "NIV"
+  },
+  {
+    "id": 441,
+    "text": "David said to the Philistine, 'You come against me with sword and spear and javelin, but I come against you in the name of the Lord Almighty.'",
+    "reference": "1 Samuel 17:45",
+    "genre": "Strength & Courage",
+    "explanation": "Weapons don't determine the winner; God does. Facing your giants with God's name is stronger than any physical weapon.",
+    "version": "NIV"
+  },
+  {
+    "id": 442,
+    "text": "David found strength in the Lord his God.",
+    "reference": "1 Samuel 30:6",
+    "genre": "Strength & Courage",
+    "explanation": "When everyone else turned against him, David didn't quit. He went to God to recharge his battery, and you can too.",
+    "version": "NIV"
+  },
+  {
+    "id": 443,
+    "text": "The Lord is my rock, my fortress and my deliverer; my God is my rock, in whom I take refuge.",
+    "reference": "2 Samuel 22:2-3",
+    "genre": "Strength & Courage",
+    "explanation": "God is your personal panic room. He is solid ground when the world shakes and a fortress where you are totally safe.",
+    "version": "NIV"
+  },
+  {
+    "id": 444,
+    "text": "For who is God besides the Lord? And who is the Rock except our God?",
+    "reference": "2 Samuel 22:32",
+    "genre": "Strength & Courage",
+    "explanation": "There is no backup plan because there is no one like God. He is the only stable foundation worth building your life on.",
+    "version": "NIV"
+  },
+  {
+    "id": 445,
+    "text": "It is God who arms me with strength and keeps my way secure.",
+    "reference": "2 Samuel 22:33",
+    "genre": "Strength & Courage",
+    "explanation": "You aren't defenseless. God straps strength onto you like body armor and ensures your path isn't slippery.",
+    "version": "NIV"
+  },
+  {
+    "id": 446,
+    "text": "You made my enemies turn their backs in flight, and I destroyed my foes.",
+    "reference": "2 Samuel 22:41",
+    "genre": "Strength & Courage",
+    "explanation": "With God, you play offense, not just defense. He has the power to make your problems turn around and run away.",
+    "version": "NIV"
+  },
+  {
+    "id": 447,
+    "text": "Yours, Lord, is the greatness and the power and the glory and the majesty and the splendor.",
+    "reference": "1 Chronicles 29:11",
+    "genre": "Strength & Courage",
+    "explanation": "God owns all the power in the universe. When you are on His side, that power is working for you.",
+    "version": "NIV"
+  },
+  {
+    "id": 448,
+    "text": "Rise up; this matter is in your hands. We will support you, so take courage and do it.",
+    "reference": "Ezra 10:4",
+    "genre": "Strength & Courage",
+    "explanation": "Stop waiting and start doing. You have support, so stand up, be brave, and take action on what needs to be done.",
+    "version": "NIV"
+  },
+  {
+    "id": 449,
+    "text": "Now I know that the Lord saves his anointed; he answers him from his holy heaven with the saving power of his right hand.",
+    "reference": "Psalm 20:6",
+    "genre": "Strength & Courage",
+    "explanation": "God hears you from heaven, but He acts on earth. He uses His power to personally intervene and save you.",
+    "version": "NIV"
+  },
+  {
+    "id": 450,
+    "text": "The king rejoices in your strength, Lord. How great is his joy in the victories you give!",
+    "reference": "Psalm 21:1",
+    "genre": "Strength & Courage",
+    "explanation": "Winning comes from God. When He lends you His strength, the result is victory and huge joy.",
+    "version": "NIV"
+  },
+  {
+    "id": 451,
+    "text": "You are my strength, I watch for you; you, God, are my fortress.",
+    "reference": "Psalm 59:9",
+    "genre": "Strength & Courage",
+    "explanation": "Keep a lookout for God. He is the strong castle where you can run when life gets overwhelming.",
+    "version": "NIV"
+  },
+  {
+    "id": 452,
+    "text": "Sing for joy to God our strength; shout aloud to the God of Jacob!",
+    "reference": "Psalm 81:1",
+    "genre": "Strength & Courage",
+    "explanation": "Don't whisper your faith; shout it. Celebrating God as your power source actually makes you feel stronger.",
+    "version": "NIV"
+  },
+  {
+    "id": 453,
+    "text": "For you are the glory of their strength.",
+    "reference": "Psalm 89:17",
+    "genre": "Strength & Courage",
+    "explanation": "Your strength isn't something to brag about; it's a gift to reflect. God is the beautiful source of all your power.",
+    "version": "NKJV"
+  },
+  {
+    "id": 454,
+    "text": "The Lord is my strength and my song; he has given me victory.",
+    "reference": "Psalm 118:14",
+    "genre": "Strength & Courage",
+    "explanation": "God doesn't just help you fight; He gives you a reason to sing. He turns your battle into a win.",
+    "version": "NLT"
+  },
+  {
+    "id": 455,
+    "text": "My soul is weary with sorrow; strengthen me according to your word.",
+    "reference": "Psalm 119:28",
+    "genre": "Strength & Courage",
+    "explanation": "If you are exhausted from being sad, go to the Bible. God's words act like a charger for your weary soul.",
+    "version": "NIV"
+  },
+  {
+    "id": 456,
+    "text": "Though I walk in the midst of trouble, you preserve my life.",
+    "reference": "Psalm 138:7",
+    "genre": "Strength & Courage",
+    "explanation": "You might be surrounded by chaos, but you are unbreakable. God keeps you safe right in the middle of the mess.",
+    "version": "NIV"
+  },
+  {
+    "id": 457,
+    "text": "He trains my hands for war, my fingers for battle.",
+    "reference": "Psalm 144:1",
+    "genre": "Strength & Courage",
+    "explanation": "God is your personal coach. He teaches you the skills you need to handle the conflicts and struggles of life.",
+    "version": "NIV"
+  },
+  {
+    "id": 458,
+    "text": "A wise man is full of strength, and a man of knowledge enhances his might.",
+    "reference": "Proverbs 24:5",
+    "genre": "Strength & Courage",
+    "explanation": "Brains beat brawn. Knowing God and having wisdom actually makes you stronger than just having big muscles.",
+    "version": "ESV"
+  },
+  {
+    "id": 459,
+    "text": "Trust in the Lord forever, for the Lord, the Lord himself, is the Rock eternal.",
+    "reference": "Isaiah 26:4",
+    "genre": "Strength & Courage",
+    "explanation": "Everything else changes, but God is a Rock. You can lean your full weight on Him forever and He won't move.",
+    "version": "NIV"
+  },
+  {
+    "id": 460,
+    "text": "In quietness and trust is your strength.",
+    "reference": "Isaiah 30:15",
+    "genre": "Strength & Courage",
+    "explanation": "You don't have to be loud to be strong. Staying calm and trusting God is a massive display of power.",
+    "version": "NIV"
+  },
+  {
+    "id": 461,
+    "text": "Those who hope in the Lord will renew their strength.",
+    "reference": "Isaiah 40:31",
+    "genre": "Strength & Courage",
+    "explanation": "Hope is the charger. If you are running low, plug into God's hope and watch your strength bar fill back up.",
+    "version": "NIV"
+  },
+  {
+    "id": 462,
+    "text": "So do not fear, for I am with you; do not be dismayed, for I am your God.",
+    "reference": "Isaiah 41:10",
+    "genre": "Strength & Courage",
+    "explanation": "You are not alone in this. The God of the universe is standing right next to you, so panic isn't necessary.",
+    "version": "NIV"
+  },
+  {
+    "id": 463,
+    "text": "I will strengthen you and help you; I will uphold you with my righteous right hand.",
+    "reference": "Isaiah 41:10",
+    "genre": "Strength & Courage",
+    "explanation": "God has a grip on you. He promises to not only make you strong but to physically hold you up when you stumble.",
+    "version": "NIV"
+  },
+  {
+    "id": 464,
+    "text": "But as for me, I am filled with power, with the Spirit of the Lord, and with justice and might.",
+    "reference": "Micah 3:8",
+    "genre": "Strength & Courage",
+    "explanation": "You aren't empty; you are full. The Spirit of the Lord fills you with a power and justice that the world can't match.",
+    "version": "NIV"
+  },
+  {
+    "id": 465,
+    "text": "The Lord is good, a refuge in times of trouble. He cares for those who trust in him.",
+    "reference": "Nahum 1:7",
+    "genre": "Strength & Courage",
+    "explanation": "God is a safe bunker. When trouble starts shooting, run to Him. He knows you and will keep you safe.",
+    "version": "NIV"
+  },
+  {
+    "id": 466,
+    "text": "Be strong and courageous. Do not be afraid or terrified because of them, for the Lord your God goes with you.",
+    "reference": "Deuteronomy 31:6",
+    "genre": "Strength & Courage",
+    "explanation": "Terror has to leave when God enters. You can be brave because the scariest thing to your enemies—God—is on your side.",
+    "version": "NIV"
+  },
+  {
+    "id": 467,
+    "text": "Have I not commanded you? Be strong and courageous. Do not be afraid; do not be discouraged.",
+    "reference": "Joshua 1:9",
+    "genre": "Strength & Courage",
+    "explanation": "Bravery is an order, not a suggestion. God commands you to be strong because He has equipped you to handle this.",
+    "version": "NIV"
+  },
+  {
+    "id": 468,
+    "text": "Be on your guard; stand firm in the faith; be courageous; be strong.",
+    "reference": "1 Corinthians 16:13",
+    "genre": "Strength & Courage",
+    "explanation": "Don't sleepwalk through life. Stay awake, hold your ground in faith, and act like a warrior.",
+    "version": "NIV"
+  },
+  {
+    "id": 469,
+    "text": "Finally, be strong in the Lord and in his mighty power.",
+    "reference": "Ephesians 6:10",
+    "genre": "Strength & Courage",
+    "explanation": "Your strength has a limit, but God's doesn't. Stop using your own battery and plug into His mighty power source.",
+    "version": "NIV"
+  },
+  {
+    "id": 470,
+    "text": "I can do all this through him who gives me strength.",
+    "reference": "Philippians 4:13",
+    "genre": "Strength & Courage",
+    "explanation": "Limitations don't apply when you are with Jesus. Through His strength, you can handle any situation life throws at you.",
+    "version": "NIV"
+  },
+  {
+    "id": 471,
+    "text": "I will give thanks to the Lord because of his righteousness.",
+    "reference": "Psalm 7:17",
+    "genre": "Gratitude & Praise",
+    "explanation": "Thank God for doing things the right way. Even when life feels unfair, God's righteousness is a rock you can celebrate.",
+    "version": "NIV"
+  },
+  {
+    "id": 472,
+    "text": "I will praise you, Lord, with all my heart; I will tell of all your wonderful deeds.",
+    "reference": "Psalm 9:1",
+    "genre": "Gratitude & Praise",
+    "explanation": "Don't be half-hearted. Go all in with your gratitude and talk about the cool things God has done for you.",
+    "version": "NIV"
+  },
+  {
+    "id": 473,
+    "text": "The Lord is my strength and my shield... my heart leaps for joy, and with my song I praise him.",
+    "reference": "Psalm 28:7",
+    "genre": "Gratitude & Praise",
+    "explanation": "Protection brings joy. When you realize God is shielding you, let that relief explode into a song of thanks.",
+    "version": "NIV"
+  },
+  {
+    "id": 474,
+    "text": "Sing the praises of the Lord, you his faithful people; praise his holy name.",
+    "reference": "Psalm 30:4",
+    "genre": "Gratitude & Praise",
+    "explanation": "If you are loyal to God, singing is part of your job description. Celebrate His name with music.",
+    "version": "NIV"
+  },
+  {
+    "id": 475,
+    "text": "I will extol the Lord at all times; his praise will always be on my lips.",
+    "reference": "Psalm 34:1",
+    "genre": "Gratitude & Praise",
+    "explanation": "Good times or bad times—it doesn't matter. Keep a word of thanks ready on your lips 24/7.",
+    "version": "NIV"
+  },
+  {
+    "id": 476,
+    "text": "Sacrifice thank offerings to God, fulfill your vows to the Most High.",
+    "reference": "Psalm 50:14",
+    "genre": "Gratitude & Praise",
+    "explanation": "Giving thanks is a form of worship. Keep your promises to God and offer Him your gratitude as a gift.",
+    "version": "NIV"
+  },
+  {
+    "id": 477,
+    "text": "I will praise God’s name in song and glorify him with thanksgiving.",
+    "reference": "Psalm 69:30",
+    "genre": "Gratitude & Praise",
+    "explanation": "Make God famous with your thanks. Using music and gratitude is the best way to shine a spotlight on Him.",
+    "version": "NIV"
+  },
+  {
+    "id": 478,
+    "text": "We praise you, God, we praise you, for your Name is near; people tell of your wonderful deeds.",
+    "reference": "Psalm 75:1",
+    "genre": "Gratitude & Praise",
+    "explanation": "God isn't far away; He is right here. Thank Him for being close enough to hear you and help you.",
+    "version": "NIV"
+  },
+  {
+    "id": 479,
+    "text": "It is good to praise the Lord and make music to your name, O Most High.",
+    "reference": "Psalm 92:1",
+    "genre": "Gratitude & Praise",
+    "explanation": "Gratitude is healthy. It is a good, positive thing for your soul to make music and thank God.",
+    "version": "NIV"
+  },
+  {
+    "id": 480,
+    "text": "Come, let us bow down in worship, let us kneel before the Lord our Maker.",
+    "reference": "Psalm 95:6",
+    "genre": "Gratitude & Praise",
+    "explanation": "Humility is part of praise. Kneeling before the One who made you is a powerful way to say 'Thank You' with your body.",
+    "version": "NIV"
+  },
+  {
+    "id": 481,
+    "text": "Whatever you do, work at it with all your heart, as working for the Lord, not for human masters.",
+    "reference": "Colossians 3:23",
+    "genre": "Strength & Courage",
+    "explanation": "Work hard, not for a paycheck or a boss, but for God. Doing your best for Him gives you the stamina to excel.",
+    "version": "NIV"
+  },
+  {
+    "id": 482,
+    "text": "But you, Lord, are a shield around me, my glory, the One who lifts my head high.",
+    "reference": "Psalm 3:3",
+    "genre": "Strength & Courage",
+    "explanation": "When you feel beaten down, God protects you and gently lifts your chin up. He restores your dignity and courage.",
+    "version": "NIV"
+  },
+  {
+    "id": 483,
+    "text": "The Lord is my light and my salvation—whom shall I fear? The Lord is the stronghold of my life—of whom shall I be afraid?",
+    "reference": "Psalm 27:1",
+    "genre": "Strength & Courage",
+    "explanation": "Fear evaporates when you realize who is standing next to you. God is your personal fortress and bodyguard.",
+    "version": "NIV"
+  },
+  {
+    "id": 484,
+    "text": "I can do all this through him who gives me strength.",
+    "reference": "Philippians 4:13",
+    "genre": "Strength & Courage",
+    "explanation": "Limitations don't apply when you are powered by Jesus. He provides the specific strength for whatever you are facing right now.",
+    "version": "NIV"
+  },
+  {
+    "id": 485,
+    "text": "Have I not commanded you? Be strong and courageous. Do not be afraid; do not be discouraged.",
+    "reference": "Joshua 1:9",
+    "genre": "Strength & Courage",
+    "explanation": "Courage is a command, not just a feeling. You can be brave because God has promised to go with you.",
+    "version": "NIV"
+  },
+  {
+    "id": 486,
+    "text": "But those who hope in the Lord will renew their strength. They will soar on wings like eagles.",
+    "reference": "Isaiah 40:31",
+    "genre": "Strength & Courage",
+    "explanation": "Waiting on God isn't passive; it's recharging. Trusting Him refills your energy so you can rise above the stress.",
+    "version": "NIV"
+  },
+  {
+    "id": 487,
+    "text": "God is our refuge and strength, an ever-present help in trouble.",
+    "reference": "Psalm 46:1",
+    "genre": "Strength & Courage",
+    "explanation": "God doesn't run away when things get messy. He is right there in the trouble, ready to help immediately.",
+    "version": "NIV"
+  },
+  {
+    "id": 488,
+    "text": "Be on your guard; stand firm in the faith; be courageous; be strong.",
+    "reference": "1 Corinthians 16:13",
+    "genre": "Strength & Courage",
+    "explanation": "Don't drift through life. Stay alert, keep your feet planted in faith, and face challenges like a warrior.",
+    "version": "NIV"
+  },
+  {
+    "id": 489,
+    "text": "For the Spirit God gave us does not make us timid, but gives us power, love and self-discipline.",
+    "reference": "2 Timothy 1:7",
+    "genre": "Strength & Courage",
+    "explanation": "Fear is not your native language. God designed you with a spirit that is powerful, loving, and fully in control.",
+    "version": "NIV"
+  },
+  {
+    "id": 490,
+    "text": "Finally, be strong in the Lord and in his mighty power.",
+    "reference": "Ephesians 6:10",
+    "genre": "Strength & Courage",
+    "explanation": "Stop using your own battery. Plug into God's mighty power source to find the strength you need.",
+    "version": "NIV"
+  },
+  {
+    "id": 491,
+    "text": "Let us not love with words or speech but with actions and in truth.",
+    "reference": "1 John 3:18",
+    "genre": "Love & Relationships",
+    "explanation": "Don't just talk about it; be about it. Real love proves itself through tangible actions, not just nice words.",
+    "version": "NIV"
+  },
+  {
+    "id": 492,
+    "text": "Do to others as you would have them do to you.",
+    "reference": "Luke 6:31",
+    "genre": "Love & Relationships",
+    "explanation": "This is the golden rule. Treat people exactly the way you wish they would treat you.",
+    "version": "NIV"
+  },
+  {
+    "id": 493,
+    "text": "A friend loves at all times, and a brother is born for a time of adversity.",
+    "reference": "Proverbs 17:17",
+    "genre": "Love & Relationships",
+    "explanation": "Fair-weather friends aren't real friends. True love sticks around when things get hard.",
+    "version": "NIV"
+  },
+  {
+    "id": 494,
+    "text": "Above all, love each other deeply, because love covers over a multitude of sins.",
+    "reference": "1 Peter 4:8",
+    "genre": "Love & Relationships",
+    "explanation": "Love is a thick blanket. It chooses to cover up offenses and move on rather than exposing every mistake.",
+    "version": "NIV"
+  },
+  {
+    "id": 495,
+    "text": "Be completely humble and gentle; be patient, bearing with one another in love.",
+    "reference": "Ephesians 4:2",
+    "genre": "Love & Relationships",
+    "explanation": "Relationships thrive on humility. Drop the ego, be gentle, and put up with each other's quirks gracefully.",
+    "version": "NIV"
+  },
+  {
+    "id": 496,
+    "text": "Love is patient, love is kind. It does not envy, it does not boast, it is not proud.",
+    "reference": "1 Corinthians 13:4",
+    "genre": "Love & Relationships",
+    "explanation": "Love is a choice, not just a feeling. It chooses patience and kindness even when the other person is annoying.",
+    "version": "NIV"
+  },
+  {
+    "id": 497,
+    "text": "We love because he first loved us.",
+    "reference": "1 John 4:19",
+    "genre": "Love & Relationships",
+    "explanation": "You can love others only because God loved you first. His love is the fuel for your relationships.",
+    "version": "NIV"
+  },
+  {
+    "id": 498,
+    "text": "Greater love has no one than this: to lay down one’s life for one’s friends.",
+    "reference": "John 15:13",
+    "genre": "Love & Relationships",
+    "explanation": "The highest level of love is sacrifice. Putting someone else's needs above your own is true friendship.",
+    "version": "NIV"
+  },
+  {
+    "id": 499,
+    "text": "If it is possible, as far as it depends on you, live at peace with everyone.",
+    "reference": "Romans 12:18",
+    "genre": "Love & Relationships",
+    "explanation": "You can't control others, but you can control yourself. Do your part to keep the drama to a minimum.",
+    "version": "NIV"
+  },
+  {
+    "id": 500,
+    "text": "Be devoted to one another in love. Honor one another above yourselves.",
+    "reference": "Romans 12:10",
+    "genre": "Love & Relationships",
+    "explanation": "Make it a competition to see who can be more respectful. Treat others like they are more important than you.",
+    "version": "NIV"
+  },
+  {
+    "id": 501,
+    "text": "For the Lord gives wisdom; from his mouth come knowledge and understanding.",
+    "reference": "Proverbs 2:6",
+    "genre": "Wisdom & Guidance",
+    "explanation": "Smart decisions come from God. Go to the source—His words—to find the understanding you are missing.",
+    "version": "NIV"
+  },
+  {
+    "id": 502,
+    "text": "Trust in the Lord with all your heart and lean not on your own understanding.",
+    "reference": "Proverbs 3:5",
+    "genre": "Wisdom & Guidance",
+    "explanation": "Your brain has limits. Trusting God's perspective is safer than relying only on what you think you know.",
+    "version": "NIV"
+  },
+  {
+    "id": 503,
+    "text": "In all your ways submit to him, and he will make your paths straight.",
+    "reference": "Proverbs 3:6",
+    "genre": "Wisdom & Guidance",
+    "explanation": "Before you move, check with God. If you involve Him in the process, He will clear the obstacles ahead.",
+    "version": "NIV"
+  },
+  {
+    "id": 504,
+    "text": "Do not be wise in your own eyes; fear the Lord and shun evil.",
+    "reference": "Proverbs 3:7",
+    "genre": "Wisdom & Guidance",
+    "explanation": "Don't be impressed by your own intelligence. Real wisdom starts with humility and respect for God.",
+    "version": "NIV"
+  },
+  {
+    "id": 505,
+    "text": "Wisdom is supreme; therefore get wisdom. Though it cost all you have, get understanding.",
+    "reference": "Proverbs 4:7",
+    "genre": "Wisdom & Guidance",
+    "explanation": "Make wisdom your top priority. It is worth more than money because it protects and guides your entire life.",
+    "version": "NIV"
+  },
+  {
+    "id": 506,
+    "text": "The fear of the Lord is the beginning of wisdom, and knowledge of the Holy One is understanding.",
+    "reference": "Proverbs 9:10",
+    "genre": "Wisdom & Guidance",
+    "explanation": "You can't be truly smart without knowing God. Respecting Him is the foundation of all good decisions.",
+    "version": "NIV"
+  },
+  {
+    "id": 507,
+    "text": "Where there is no guidance, a people falls, but in an abundance of counselors there is safety.",
+    "reference": "Proverbs 11:14",
+    "genre": "Wisdom & Guidance",
+    "explanation": "Isolation is dangerous. You are much safer when you get advice from multiple smart people before acting.",
+    "version": "ESV"
+  },
+  {
+    "id": 508,
+    "text": "The way of fools seems right to them, but the wise listen to advice.",
+    "reference": "Proverbs 12:15",
+    "genre": "Wisdom & Guidance",
+    "explanation": "Stubbornness is foolish. A wise person knows they don't know everything and is willing to listen to input.",
+    "version": "NIV"
+  },
+  {
+    "id": 509,
+    "text": "Walk with the wise and become wise, for a companion of fools suffers harm.",
+    "reference": "Proverbs 13:20",
+    "genre": "Wisdom & Guidance",
+    "explanation": "Wisdom is contagious. If you hang out with people who make good choices, you will start doing it too.",
+    "version": "NIV"
+  },
+  {
+    "id": 510,
+    "text": "There is a way that appears to be right, but in the end it leads to death.",
+    "reference": "Proverbs 14:12",
+    "genre": "Wisdom & Guidance",
+    "explanation": "Your gut feeling isn't always right. Some paths look easy but end in disaster. Check your direction with God.",
+    "version": "NIV"
+  },
+  {
+    "id": 511,
+    "text": "A gentle answer turns away wrath, but a harsh word stirs up anger.",
+    "reference": "Proverbs 15:1",
+    "genre": "Wisdom & Guidance",
+    "explanation": "You can de-escalate a fight just by lowering your voice. Gentleness is a smart strategy for peace.",
+    "version": "NIV"
+  },
+  {
+    "id": 512,
+    "text": "Commit to the Lord whatever you do, and he will establish your plans.",
+    "reference": "Proverbs 16:3",
+    "genre": "Wisdom & Guidance",
+    "explanation": "Don't just work hard; work with God. When you dedicate your efforts to Him, He helps you succeed.",
+    "version": "NIV"
+  },
+  {
+    "id": 513,
+    "text": "In their hearts humans plan their course, but the Lord establishes their steps.",
+    "reference": "Proverbs 16:9",
+    "genre": "Wisdom & Guidance",
+    "explanation": "It's good to plan, but hold them loosely. God has the final say on where your feet actually land.",
+    "version": "NIV"
+  },
+  {
+    "id": 514,
+    "text": "Pride goes before destruction, a haughty spirit before a fall.",
+    "reference": "Proverbs 16:18",
+    "genre": "Wisdom & Guidance",
+    "explanation": "Arrogance is a tripwire. If you are full of pride, you are setting yourself up for a painful crash.",
+    "version": "NIV"
+  },
+  {
+    "id": 515,
+    "text": "Even a fool who keeps silent is considered wise; when he closes his lips, he is deemed intelligent.",
+    "reference": "Proverbs 17:28",
+    "genre": "Wisdom & Guidance",
+    "explanation": "If you don't know the answer, don't fake it. Silence can make you look smarter than rambling.",
+    "version": "ESV"
+  },
+  {
+    "id": 516,
+    "text": "The name of the Lord is a fortified tower; the righteous run to it and are safe.",
+    "reference": "Proverbs 18:10",
+    "genre": "Wisdom & Guidance",
+    "explanation": "When life gets dangerous, run to God. He is a safe tower where the enemy can't reach you.",
+    "version": "NIV"
+  },
+  {
+    "id": 517,
+    "text": "Listen to advice and accept discipline, and at the end you will be counted among the wise.",
+    "reference": "Proverbs 19:20",
+    "genre": "Wisdom & Guidance",
+    "explanation": "Correction hurts in the moment, but it pays off later. Accept feedback now to be wise in the future.",
+    "version": "NIV"
+  },
+  {
+    "id": 518,
+    "text": "Many are the plans in a person’s heart, but it is the Lord’s purpose that prevails.",
+    "reference": "Proverbs 19:21",
+    "genre": "Wisdom & Guidance",
+    "explanation": "You might have a dozen ideas, but only God's plan will truly last. Align yourself with His purpose.",
+    "version": "NIV"
+  },
+  {
+    "id": 519,
+    "text": "As iron sharpens iron, so one person sharpens another.",
+    "reference": "Proverbs 27:17",
+    "genre": "Wisdom & Guidance",
+    "explanation": "You need friction to grow. Honest friends sharpen your character and make you better.",
+    "version": "NIV"
+  },
+  {
+    "id": 520,
+    "text": "Where there is no revelation, people cast off restraint; but blessed is the one who heeds wisdom’s instruction.",
+    "reference": "Proverbs 29:18",
+    "genre": "Wisdom & Guidance",
+    "explanation": "You need a vision from God. Without it, you lose discipline. With it, you find happiness and focus.",
+    "version": "NIV"
+  },
+  {
+    "id": 521,
+    "text": "If any of you lacks wisdom, you should ask God, who gives generously to all without finding fault.",
+    "reference": "James 1:5",
+    "genre": "Wisdom & Guidance",
+    "explanation": "God isn't stingy with wisdom. If you ask Him for help, He will give it to you freely and without judgment.",
+    "version": "NIV"
+  },
+  {
+    "id": 522,
+    "text": "Now faith is confidence in what we hope for and assurance about what we do not see.",
+    "reference": "Hebrews 11:1",
+    "genre": "Faith & Trust",
+    "explanation": "Faith is confidence in a reality you can't see yet. It's knowing God has it handled before the result shows up.",
+    "version": "NIV"
+  },
+  {
+    "id": 523,
+    "text": "And without faith it is impossible to please God, because anyone who comes to him must believe that he exists and that he rewards those who earnestly seek him.",
+    "reference": "Hebrews 11:6",
+    "genre": "Faith & Trust",
+    "explanation": "Trust is the key to God's heart. Believing He is there and that He is good is what pleases Him most.",
+    "version": "NIV"
+  },
+  {
+    "id": 524,
+    "text": "For we live by faith, not by sight.",
+    "reference": "2 Corinthians 5:7",
+    "genre": "Faith & Trust",
+    "explanation": "Don't be fooled by your eyes. Make your life decisions based on God's promises, not just on current appearances.",
+    "version": "NIV"
+  },
+  {
+    "id": 525,
+    "text": "Jesus said to him, 'If you can believe, all things are possible to him who believes.'",
+    "reference": "Mark 9:23",
+    "genre": "Faith & Trust",
+    "explanation": "Faith removes the ceiling. When you trust God, the word 'impossible' stops being a barrier.",
+    "version": "NKJV"
+  },
+  {
+    "id": 526,
+    "text": "But when you ask, you must believe and not doubt, because the one who doubts is like a wave of the sea, blown and tossed by the wind.",
+    "reference": "James 1:6",
+    "genre": "Faith & Trust",
+    "explanation": "Doubt makes you unstable. When you pray, pick a side—trust God—and stand firm.",
+    "version": "NIV"
+  },
+  {
+    "id": 527,
+    "text": "Trust in the Lord with all your heart and lean not on your own understanding.",
+    "reference": "Proverbs 3:5",
+    "genre": "Faith & Trust",
+    "explanation": "Your logic is limited; God's isn't. Lean your full weight on His understanding, not your own.",
+    "version": "NIV"
+  },
+  {
+    "id": 528,
+    "text": "So faith comes from hearing, and hearing through the word of Christ.",
+    "reference": "Romans 10:17",
+    "genre": "Faith & Trust",
+    "explanation": "Faith needs food. If your trust feels weak, feed it by listening to the words of Jesus.",
+    "version": "ESV"
+  },
+  {
+    "id": 529,
+    "text": "I have fought the good fight, I have finished the race, I have kept the faith.",
+    "reference": "2 Timothy 4:7",
+    "genre": "Faith & Trust",
+    "explanation": "Faith is an endurance race. The goal is to keep trusting God all the way to the finish line.",
+    "version": "NIV"
+  },
+  {
+    "id": 530,
+    "text": "Though he slay me, yet will I hope in him.",
+    "reference": "Job 13:15",
+    "genre": "Faith & Trust",
+    "explanation": "Real faith trusts God even in the worst pain. It's deciding He is good even when your situation isn't.",
+    "version": "NIV"
+  },
+  {
+    "id": 531,
+    "text": "Truly I tell you, if you have faith as small as a mustard seed... nothing will be impossible for you.",
+    "reference": "Matthew 17:20",
+    "genre": "Faith & Trust",
+    "explanation": "You don't need huge faith; you need genuine faith. Even a tiny bit of trust in a big God works miracles.",
+    "version": "NIV"
+  },
+  {
+    "id": 532,
+    "text": "You will keep in perfect peace those whose minds are steadfast, because they trust in you.",
+    "reference": "Isaiah 26:3",
+    "genre": "Faith & Trust",
+    "explanation": "Peace comes from focus. Keep your mind locked on God, and He will keep your emotions steady.",
+    "version": "NIV"
+  },
+  {
+    "id": 533,
+    "text": "Fear of man will prove to be a snare, but whoever trusts in the Lord is kept safe.",
+    "reference": "Proverbs 29:25",
+    "genre": "Faith & Trust",
+    "explanation": "Worrying about people's opinions is a trap. Trusting God's opinion is your safety net.",
+    "version": "NIV"
+  },
+  {
+    "id": 534,
+    "text": "Take delight in the Lord, and he will give you the desires of your heart.",
+    "reference": "Psalm 37:4",
+    "genre": "Faith & Trust",
+    "explanation": "Enjoy God first. When you prioritize Him, He aligns your heart with His and grants your desires.",
+    "version": "NIV"
+  },
+  {
+    "id": 535,
+    "text": "Let us hold unswervingly to the hope we profess, for he who promised is faithful.",
+    "reference": "Hebrews 10:23",
+    "genre": "Faith & Trust",
+    "explanation": "Hold tight. God never breaks a promise, so you can be confident in what you hope for.",
+    "version": "NIV"
+  },
+  {
+    "id": 536,
+    "text": "Whatever you ask for in prayer, believe that you have received it, and it will be yours.",
+    "reference": "Mark 11:24",
+    "genre": "Faith & Trust",
+    "explanation": "Pray with boldness. Believe the answer is already on the way, and you will see it happen.",
+    "version": "NIV"
+  },
+  {
+    "id": 537,
+    "text": "For everyone born of God overcomes the world. This is the victory that has overcome the world, even our faith.",
+    "reference": "1 John 5:4",
+    "genre": "Faith & Trust",
+    "explanation": "Faith is your victory. It is the tool God gave you to beat the struggles of this world.",
+    "version": "NIV"
+  },
+  {
+    "id": 538,
+    "text": "But Jesus immediately said to them: 'Take courage! It is I. Don’t be afraid.'",
+    "reference": "Matthew 14:27",
+    "genre": "Faith & Trust",
+    "explanation": "Fear leaves when Jesus arrives. His presence is all the reason you need to be brave.",
+    "version": "NIV"
+  },
+  {
+    "id": 539,
+    "text": "If you believe, you will receive whatever you ask for in prayer.",
+    "reference": "Matthew 21:22",
+    "genre": "Faith & Trust",
+    "explanation": "Prayer isn't just talking; it's believing. Confident prayer unlocks heaven's answers.",
+    "version": "NIV"
+  },
+  {
+    "id": 540,
+    "text": "Overhearing what they said, Jesus told him, 'Don’t be afraid; just believe.'",
+    "reference": "Mark 5:36",
+    "genre": "Faith & Trust",
+    "explanation": "Fear and belief are opposites. When bad news comes, simplify your job: just keep believing.",
+    "version": "NIV"
+  },
+  {
+    "id": 541,
+    "text": "Then Jesus told him, 'Because you have seen me, you have believed; blessed are those who have not seen and yet have believed.'",
+    "reference": "John 20:29",
+    "genre": "Faith & Trust",
+    "explanation": "Believing without seeing takes courage. God has a special blessing for those who trust Him in the dark.",
+    "version": "NIV"
+  },
+  {
+    "id": 542,
+    "text": "I am the resurrection and the life. The one who believes in me will live, even though they die.",
+    "reference": "John 11:25",
+    "genre": "Faith & Trust",
+    "explanation": "Faith defeats death. Trusting Jesus secures a life that lasts forever, regardless of physical death.",
+    "version": "NIV"
+  },
+  {
+    "id": 543,
+    "text": "For in the gospel the righteousness of God is revealed—a righteousness that is by faith from first to last.",
+    "reference": "Romans 1:17",
+    "genre": "Faith & Trust",
+    "explanation": "The Christian life is 100% faith. It's not about your performance; it's about trusting God from start to finish.",
+    "version": "NIV"
+  },
+  {
+    "id": 544,
+    "text": "Therefore, since we have been justified through faith, we have peace with God through our Lord Jesus Christ.",
+    "reference": "Romans 5:1",
+    "genre": "Faith & Trust",
+    "explanation": "Faith brings peace. Because you trust Jesus, there is zero conflict between you and God.",
+    "version": "NIV"
+  },
+  {
+    "id": 545,
+    "text": "So in Christ Jesus you are all children of God through faith.",
+    "reference": "Galatians 3:26",
+    "genre": "Faith & Trust",
+    "explanation": "Faith makes you family. Trusting Jesus is the only requirement to become a child of God.",
+    "version": "NIV"
+  },
+  {
+    "id": 546,
+    "text": "For it is by grace you have been saved, through faith—and this is not from yourselves, it is the gift of God.",
+    "reference": "Ephesians 2:8",
+    "genre": "Faith & Trust",
+    "explanation": "Salvation is a gift, not a wage. You simply accept it by trusting the Giver.",
+    "version": "NIV"
+  },
+  {
+    "id": 547,
+    "text": "In him and through faith in him we may approach God with freedom and confidence.",
+    "reference": "Ephesians 3:12",
+    "genre": "Faith & Trust",
+    "explanation": "You have a VIP pass. Faith allows you to walk right up to God with total freedom and no fear.",
+    "version": "NIV"
+  },
+  {
+    "id": 548,
+    "text": "Take up the shield of faith, with which you can extinguish all the flaming arrows of the evil one.",
+    "reference": "Ephesians 6:16",
+    "genre": "Faith & Trust",
+    "explanation": "Faith is your armor. When lies attack you, trusting God blocks them from doing any damage.",
+    "version": "NIV"
+  },
+  {
+    "id": 549,
+    "text": "I have been crucified with Christ and I no longer live, but Christ lives in me. The life I now live in the body, I live by faith in the Son of God.",
+    "reference": "Galatians 2:20",
+    "genre": "Faith & Trust",
+    "explanation": "You run on faith fuel. Every day is powered by trusting Jesus, who loved you enough to die for you.",
+    "version": "NIV"
+  },
+  {
+    "id": 550,
+    "text": "And we know that in all things God works for the good of those who love him.",
+    "reference": "Romans 8:28",
+    "genre": "Faith & Trust",
+    "explanation": "God is a master weaver. He takes every messy detail of your life and works it into a beautiful picture.",
+    "version": "NIV"
   }
 ]
