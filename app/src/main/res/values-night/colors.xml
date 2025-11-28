@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Core -->
+    <color name="black">#FFFFFFFF</color>
+    <color name="white">#FF000000</color>
+
+    <!-- Backgrounds (Dark Grays) -->
+    <color name="bg_main">#111827</color>
+    <color name="bg_surface">#1F2937</color>
+    <color name="bg_bottom_sheet">#1F2937</color>
+
+    <!-- Text (Light for Dark Mode) -->
+    <color name="text_primary">#F9FAFB</color>
+    <color name="text_secondary">#9CA3AF</color>
+
+    <!-- Branding (Softer for Dark Mode) -->
+    <color name="brand_primary">#818CF8</color>
+    <color name="brand_light">#312E81</color>
+
+    <color name="accent_text">#818CF8</color>
+    <color name="accent_subtext">#D1D5DB</color>
+    <color name="divider">#374151</color>
+
+    <!-- Legacy Compatibility (Prevents Crashes) -->
+    <color name="indigo_600">#818CF8</color>
+    <color name="indigo_50">#312E81</color>
+    <color name="amber_50">#1F2937</color>
+    <color name="amber_100">#374151</color>
+    <color name="amber_800">#818CF8</color>
+    <color name="gray_900">#F9FAFB</color>
+    <color name="gray_500">#9CA3AF</color>
+</resources>

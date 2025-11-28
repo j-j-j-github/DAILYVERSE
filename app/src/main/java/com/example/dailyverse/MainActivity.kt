@@ -2,6 +2,7 @@ package com.example.dailyverse
 
 import android.content.Intent
 import android.content.res.ColorStateList
+import android.net.Uri
 import android.os.Bundle
 import android.view.Gravity
 import android.view.View
@@ -32,8 +33,12 @@ class MainActivity : AppCompatActivity() {
 
         repo = VerseRepository(this)
 
-        // Force Light Mode
-        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+        // 1. Apply Theme Preference
+        if (repo.isDarkMode()) {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+        } else {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+        }
 
         loadContent()
 
@@ -61,7 +66,7 @@ class MainActivity : AppCompatActivity() {
         val view = layoutInflater.inflate(R.layout.bottom_sheet_settings, null)
         dialog.setContentView(view)
 
-        // 1. Dark Mode Toggle
+        // --- Dark Mode ---
         val switchDark = view.findViewById<SwitchMaterial>(R.id.switchDarkMode)
         switchDark.isChecked = repo.isDarkMode()
         switchDark.setOnCheckedChangeListener { _, isChecked ->
@@ -73,22 +78,22 @@ class MainActivity : AppCompatActivity() {
             }, 300)
         }
 
-        // 2. Genre Selector
+        // --- Genre Selector ---
         val btnGenre = view.findViewById<LinearLayout>(R.id.btnSelectGenre)
         val tvCurrent = view.findViewById<TextView>(R.id.tvCurrentGenreSettings)
         tvCurrent.text = repo.getGenrePreference()
 
         btnGenre.setOnClickListener {
             dialog.dismiss()
-            // Slight delay for smooth transition (Sheet down -> Sheet up)
             window.decorView.postDelayed({ showNiceGenreSelector() }, 150)
         }
 
-        // 3. About Developer
+        // --- About Developer ---
         val btnAbout = view.findViewById<LinearLayout>(R.id.btnAboutDev)
         val layoutDetails = view.findViewById<LinearLayout>(R.id.layoutDevDetails)
         val iconExpand = view.findViewById<TextView>(R.id.iconExpandDev)
 
+        // Expand/Collapse Logic
         btnAbout.setOnClickListener {
             if (layoutDetails.visibility == View.VISIBLE) {
                 layoutDetails.visibility = View.GONE
@@ -101,11 +106,33 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+        // --- Developer Action Buttons ---
+
+        // 1. Report Bug (Email)
+        view.findViewById<TextView>(R.id.btnBugReport).setOnClickListener {
+            val intent = Intent(Intent.ACTION_SENDTO).apply {
+                data = Uri.parse("mailto:jeevaljollyjacob@gmail.com")
+                putExtra(Intent.EXTRA_SUBJECT, "Daily Verse App - Bug Report")
+            }
+            try { startActivity(intent) } catch (e: Exception) { e.printStackTrace() }
+        }
+
+        // 2. Buy Coffee (Web)
+        view.findViewById<TextView>(R.id.btnBuyCoffee).setOnClickListener {
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.buymeacoffee.com/jeevaljollyjacob"))
+            startActivity(intent)
+        }
+
+        // 3. Website (Web)
+        view.findViewById<TextView>(R.id.btnWebsite).setOnClickListener {
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://j-j-j-github.github.io/MY-PORTFOLIO/"))
+            startActivity(intent)
+        }
+
         dialog.show()
     }
 
     private fun showNiceGenreSelector() {
-        // CHANGED: Use BottomSheetDialog for smooth transition
         val dialog = BottomSheetDialog(this)
         val view = layoutInflater.inflate(R.layout.dialog_genre_selection, null)
         dialog.setContentView(view)
@@ -118,13 +145,11 @@ class MainActivity : AppCompatActivity() {
         for (genre in genres) {
             val isSelected = genre.equals(currentGenre, ignoreCase = true)
 
-            // Row Container
             val itemLayout = LinearLayout(this).apply {
                 orientation = LinearLayout.HORIZONTAL
                 gravity = Gravity.CENTER_VERTICAL
                 setPadding(48, 32, 48, 32)
 
-                // Highlight background if selected
                 if (isSelected) {
                     background = ContextCompat.getDrawable(this@MainActivity, R.drawable.bg_badge)
                     backgroundTintList = ColorStateList.valueOf(ContextCompat.getColor(this@MainActivity, R.color.brand_light))
@@ -140,7 +165,6 @@ class MainActivity : AppCompatActivity() {
                 layoutParams = params
             }
 
-            // Genre Text
             val tv = TextView(this).apply {
                 text = genre
                 textSize = 16f
@@ -155,19 +179,17 @@ class MainActivity : AppCompatActivity() {
             }
             itemLayout.addView(tv)
 
-            // CLEANER CHECKMARK
             if (isSelected) {
                 val check = ImageView(this).apply {
-                    setImageResource(R.drawable.ic_check) // Using new clean icon
+                    setImageResource(R.drawable.ic_check)
                     setColorFilter(ContextCompat.getColor(this@MainActivity, R.color.brand_primary))
                 }
                 itemLayout.addView(check)
             }
 
-            // Click Logic
             itemLayout.setOnClickListener {
                 repo.saveGenrePreference(genre)
-                loadContent() // Updates home screen pill instantly
+                loadContent()
                 dialog.dismiss()
             }
 
