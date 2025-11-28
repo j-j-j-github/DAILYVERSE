@@ -3,16 +3,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white">
+    android:background="@color/white"
+    android:fitsSystemWindows="true">
 
-    <!-- Header -->
+    <!-- Note: android:fitsSystemWindows="true" added above handles the spacing automatically -->
+
+    <!-- 1. HEADER ROW -->
     <LinearLayout
         android:id="@+id/header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:padding="24dp">
+        android:padding="8dp">
 
         <TextView
             android:layout_width="0dp"
@@ -20,7 +23,7 @@
             android:layout_weight="1"
             android:text="Daily Verse"
             android:textColor="@color/gray_900"
-            android:textSize="20sp"
+            android:textSize="24sp"
             android:textStyle="bold" />
 
         <ImageView
@@ -30,10 +33,11 @@
             android:src="@drawable/ic_settings"
             app:tint="@color/gray_500"
             android:background="?attr/selectableItemBackgroundBorderless"
-            android:clickable="true" />
+            android:clickable="true"
+            android:contentDescription="Settings" />
     </LinearLayout>
 
-    <!-- Scrollable Area -->
+    <!-- 2. SCROLLABLE CONTENT AREA -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -48,6 +52,7 @@
             android:paddingHorizontal="24dp"
             android:paddingBottom="40dp">
 
+            <!-- Genre Badge (Pill) -->
             <TextView
                 android:id="@+id/tvGenreBadge"
                 android:layout_width="wrap_content"
@@ -57,12 +62,13 @@
                 android:background="@drawable/bg_badge"
                 android:paddingHorizontal="12dp"
                 android:paddingVertical="6dp"
-                android:text="GENRE"
+                android:text="ENCOURAGEMENT"
                 android:textColor="@color/indigo_600"
                 android:textSize="12sp"
                 android:textStyle="bold"
                 android:letterSpacing="0.05"/>
 
+            <!-- Main Verse Text -->
             <TextView
                 android:id="@+id/tvVerseText"
                 android:layout_width="match_parent"
@@ -74,6 +80,7 @@
                 android:textColor="@color/gray_900"
                 android:textSize="28sp" />
 
+            <!-- Bible Reference -->
             <TextView
                 android:id="@+id/tvReference"
                 android:layout_width="match_parent"
@@ -86,12 +93,14 @@
                 android:textSize="16sp"
                 android:textStyle="italic" />
 
+            <!-- Divider Line -->
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="#F3F4F6"
                 android:layout_marginBottom="32dp"/>
 
+            <!-- Meaning Card -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -119,7 +128,7 @@
                         android:id="@+id/tvMeaning"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Explanation..."
+                        android:text="Explanation goes here..."
                         android:textColor="#B45309"
                         android:lineSpacingMultiplier="1.3"
                         android:textSize="15sp" />
@@ -129,7 +138,7 @@
         </LinearLayout>
     </ScrollView>
 
-    <!-- Bottom Bar -->
+    <!-- 3. BOTTOM ACTION BAR -->
     <LinearLayout
         android:id="@+id/bottomBar"
         android:layout_width="match_parent"
@@ -138,7 +147,7 @@
         android:background="@color/white"
         android:elevation="8dp"
         android:gravity="center"
-        android:padding="16dp">
+        android:padding="8dp">
 
         <LinearLayout
             android:id="@+id/btnShare"
@@ -151,10 +160,11 @@
             android:padding="12dp">
 
             <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:src="@drawable/ic_share"
-                app:tint="@color/gray_500" />
+                app:tint="@color/gray_500"
+                android:contentDescription="Share Verse" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -164,5 +174,7 @@
                 android:textColor="@color/gray_500"
                 android:textSize="12sp" />
         </LinearLayout>
+
     </LinearLayout>
+
 </RelativeLayout>
