@@ -9,7 +9,6 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.content.ContextCompat
@@ -33,7 +32,7 @@ class MainActivity : AppCompatActivity() {
 
         repo = VerseRepository(this)
 
-        // 1. Apply Theme Preference
+        // Apply saved dark mode setting
         if (repo.isDarkMode()) {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
         } else {
@@ -51,13 +50,24 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    // ---------------------------------------------
+    // Load SAME verse as widget
+    // ---------------------------------------------
     private fun loadContent() {
-        currentVerse = repo.getDailyVerse()
-        if (currentVerse != null) {
-            findViewById<TextView>(R.id.tvVerseText).text = "\"${currentVerse!!.text}\""
-            findViewById<TextView>(R.id.tvReference).text = "- ${currentVerse!!.reference}"
-            findViewById<TextView>(R.id.tvGenreBadge).text = currentVerse!!.genre.uppercase()
-            findViewById<TextView>(R.id.tvMeaning).text = currentVerse!!.explanation
+        // Get the last saved ID, if any
+        val savedId = repo.getSavedId()
+
+        currentVerse = if (savedId != -1) {
+            repo.getVerseById(savedId)
+        } else {
+            repo.getDailyVerse()
+        }
+
+        currentVerse?.let { verse ->
+            findViewById<TextView>(R.id.tvVerseText).text = "\"${verse.text}\""
+            findViewById<TextView>(R.id.tvReference).text = "- ${verse.reference}"
+            findViewById<TextView>(R.id.tvGenreBadge).text = verse.genre.uppercase()
+            findViewById<TextView>(R.id.tvMeaning).text = verse.explanation
         }
     }
 
@@ -66,7 +76,7 @@ class MainActivity : AppCompatActivity() {
         val view = layoutInflater.inflate(R.layout.bottom_sheet_settings, null)
         dialog.setContentView(view)
 
-        // --- Dark Mode ---
+        // --- Dark Mode Toggle ---
         val switchDark = view.findViewById<SwitchMaterial>(R.id.switchDarkMode)
         switchDark.isChecked = repo.isDarkMode()
         switchDark.setOnCheckedChangeListener { _, isChecked ->
@@ -88,12 +98,11 @@ class MainActivity : AppCompatActivity() {
             window.decorView.postDelayed({ showNiceGenreSelector() }, 150)
         }
 
-        // --- About Developer ---
+        // --- About Developer Toggle ---
         val btnAbout = view.findViewById<LinearLayout>(R.id.btnAboutDev)
         val layoutDetails = view.findViewById<LinearLayout>(R.id.layoutDevDetails)
         val iconExpand = view.findViewById<TextView>(R.id.iconExpandDev)
 
-        // Expand/Collapse Logic
         btnAbout.setOnClickListener {
             if (layoutDetails.visibility == View.VISIBLE) {
                 layoutDetails.visibility = View.GONE
@@ -106,27 +115,21 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        // --- Developer Action Buttons ---
-
-        // 1. Report Bug (Email)
+        // --- Developer Buttons ---
         view.findViewById<TextView>(R.id.btnBugReport).setOnClickListener {
             val intent = Intent(Intent.ACTION_SENDTO).apply {
                 data = Uri.parse("mailto:jeevaljollyjacob@gmail.com")
                 putExtra(Intent.EXTRA_SUBJECT, "Daily Verse App - Bug Report")
             }
-            try { startActivity(intent) } catch (e: Exception) { e.printStackTrace() }
+            startActivity(intent)
         }
 
-        // 2. Buy Coffee (Web)
         view.findViewById<TextView>(R.id.btnBuyCoffee).setOnClickListener {
-            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.buymeacoffee.com/jeevaljollyjacob"))
-            startActivity(intent)
+            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://www.buymeacoffee.com/jeevaljollyjacob")))
         }
 
-        // 3. Website (Web)
         view.findViewById<TextView>(R.id.btnWebsite).setOnClickListener {
-            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://j-j-j-github.github.io/MY-PORTFOLIO/"))
-            startActivity(intent)
+            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://j-j-j-github.github.io/MY-PORTFOLIO/")))
         }
 
         dialog.show()
@@ -149,34 +152,26 @@ class MainActivity : AppCompatActivity() {
                 orientation = LinearLayout.HORIZONTAL
                 gravity = Gravity.CENTER_VERTICAL
                 setPadding(48, 32, 48, 32)
-
-                if (isSelected) {
-                    background = ContextCompat.getDrawable(this@MainActivity, R.drawable.bg_badge)
-                    backgroundTintList = ColorStateList.valueOf(ContextCompat.getColor(this@MainActivity, R.color.brand_light))
-                } else {
-                    background = ContextCompat.getDrawable(this@MainActivity, android.R.color.transparent)
-                }
-
-                val params = LinearLayout.LayoutParams(
-                    LinearLayout.LayoutParams.MATCH_PARENT,
-                    LinearLayout.LayoutParams.WRAP_CONTENT
-                )
-                params.setMargins(0, 8, 0, 8)
-                layoutParams = params
+                background = if (isSelected)
+                    ContextCompat.getDrawable(this@MainActivity, R.drawable.bg_badge)
+                else
+                    ContextCompat.getDrawable(this@MainActivity, android.R.color.transparent)
             }
 
             val tv = TextView(this).apply {
                 text = genre
                 textSize = 16f
-                if (isSelected) {
-                    setTextColor(ContextCompat.getColor(this@MainActivity, R.color.brand_primary))
-                    typeface = android.graphics.Typeface.DEFAULT_BOLD
-                } else {
-                    setTextColor(ContextCompat.getColor(this@MainActivity, R.color.text_primary))
-                    typeface = android.graphics.Typeface.DEFAULT
-                }
+                setTextColor(
+                    if (isSelected)
+                        ContextCompat.getColor(this@MainActivity, R.color.brand_primary)
+                    else
+                        ContextCompat.getColor(this@MainActivity, R.color.text_primary)
+                )
+                typeface = if (isSelected) android.graphics.Typeface.DEFAULT_BOLD
+                else android.graphics.Typeface.DEFAULT
                 layoutParams = LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1f)
             }
+
             itemLayout.addView(tv)
 
             if (isSelected) {
@@ -196,21 +191,20 @@ class MainActivity : AppCompatActivity() {
             container.addView(itemLayout)
         }
 
-        btnClose.setOnClickListener {
-            dialog.dismiss()
-        }
+        btnClose.setOnClickListener { dialog.dismiss() }
 
         dialog.show()
     }
 
     private fun shareVerse() {
-        if (currentVerse == null) return
-        val shareText = "\"${currentVerse!!.text}\"\n\n- ${currentVerse!!.reference}\n\nShared via Daily Verse App"
-        val sendIntent = Intent().apply {
-            action = Intent.ACTION_SEND
-            putExtra(Intent.EXTRA_TEXT, shareText)
-            type = "text/plain"
+        currentVerse?.let {
+            val shareText = "\"${it.text}\"\n\n- ${it.reference}\n\nShared via Daily Verse App"
+            val sendIntent = Intent().apply {
+                action = Intent.ACTION_SEND
+                putExtra(Intent.EXTRA_TEXT, shareText)
+                type = "text/plain"
+            }
+            startActivity(Intent.createChooser(sendIntent, null))
         }
-        startActivity(Intent.createChooser(sendIntent, null))
     }
 }

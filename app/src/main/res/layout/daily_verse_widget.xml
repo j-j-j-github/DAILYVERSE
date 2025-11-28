@@ -16,7 +16,7 @@
         android:textStyle="bold"
         android:letterSpacing="0.1" />
 
-    <!-- THE HOOK: The Meaning / Explanation -->
+    <!-- THE MEANING (Updated Font & Size) -->
     <TextView
         android:id="@+id/widgetContent"
         android:layout_width="match_parent"
@@ -24,9 +24,10 @@
         android:layout_below="@id/widgetTitle"
         android:layout_marginTop="8dp"
         android:text="Loading today's thought..."
-        android:textSize="16sp"
+        android:textSize="20sp"
+        android:fontFamily="serif"
         android:textColor="#333333"
-        android:maxLines="4"
+        android:maxLines="5"
         android:ellipsize="end" />
 
     <!-- Prompt to click -->
