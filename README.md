@@ -56,7 +56,7 @@ The project follows a standard Android structure. Key files include:
 ### Installation
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/yourusername/daily-verse.git](https://github.com/yourusername/daily-verse.git)
+    git clone [https://github.com/j-j-j-github/DAILYVERSE.git](https://github.com/j-j-j-github/DAILYVERSE.git)
     ```
 2.  **Open in Android Studio.**
 3.  **Sync Gradle:** Allow the project to download dependencies.
