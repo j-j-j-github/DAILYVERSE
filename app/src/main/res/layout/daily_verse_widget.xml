@@ -1,37 +1,39 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widgetRoot"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
     android:padding="16dp"
     android:theme="@style/Theme.DailyVerse.AppWidgetContainer">
 
-    <!-- Title -->
+    <!-- Title (Changed to DAILY VERSE) -->
     <TextView
         android:id="@+id/widgetTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="DAILY THOUGHT"
+        android:text="DAILY VERSE"
         android:textSize="12sp"
         android:textColor="#5C6BC0"
         android:textStyle="bold"
         android:letterSpacing="0.1" />
 
-    <!-- THE MEANING (Updated Font & Size) -->
+    <!-- Content -->
     <TextView
         android:id="@+id/widgetContent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/widgetTitle"
         android:layout_marginTop="8dp"
-        android:text="Loading today's thought..."
+        android:text="Loading..."
         android:textSize="20sp"
         android:fontFamily="serif"
         android:textColor="#333333"
         android:maxLines="5"
         android:ellipsize="end" />
 
-    <!-- Prompt to click -->
+    <!-- Prompt -->
     <TextView
+        android:id="@+id/widgetPrompt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"

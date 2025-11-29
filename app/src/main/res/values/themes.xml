@@ -1,17 +1,19 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
     <style name="Base.Theme.DailyVerse" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Brand Color -->
         <item name="colorPrimary">@color/brand_primary</item>
 
-        <!-- Status Bar Config (Transparent with adaptive icons) -->
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:windowLightStatusBar">?attr/isLightTheme</item>
+
+        <item name="android:windowBackground">@color/bg_main</item>
+
+        <item name="android:navigationBarColor">@color/bg_bottom_bar</item>
+
+        <item name="android:windowLightNavigationBar" tools:targetApi="27">?attr/isLightTheme</item>
     </style>
 
     <style name="Theme.DailyVerse" parent="Base.Theme.DailyVerse" />
 
-    <!-- Widget Style (Required to fix build error) -->
     <style name="Theme.DailyVerse.AppWidgetContainer" parent="Theme.DailyVerse">
         <item name="appWidgetRadius">16dp</item>
         <item name="appWidgetInnerRadius">8dp</item>

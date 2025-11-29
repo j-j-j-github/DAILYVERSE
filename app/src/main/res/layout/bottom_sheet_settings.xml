@@ -7,7 +7,6 @@
     android:orientation="vertical"
     android:padding="24dp">
 
-    <!-- Handle Bar -->
     <View
         android:layout_width="40dp"
         android:layout_height="4dp"
@@ -22,7 +21,7 @@
         android:textColor="@color/text_primary"
         android:textSize="22sp"
         android:textStyle="bold"
-        android:layout_marginBottom="24dp"/>
+        android:layout_marginBottom="32dp"/>
 
     <!-- 1. Dark Mode -->
     <LinearLayout
@@ -46,7 +45,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Light / Dark mode"
+                android:text="Light/Dark mode"
                 android:textColor="@color/text_secondary"
                 android:textSize="12sp"/>
         </LinearLayout>
@@ -59,7 +58,7 @@
 
     <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/divider" android:layout_marginVertical="16dp"/>
 
-    <!-- 2. Genre -->
+    <!-- 2. Genre Selector -->
     <LinearLayout
         android:id="@+id/btnSelectGenre"
         android:layout_width="match_parent"
@@ -95,7 +94,142 @@
 
     <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/divider" android:layout_marginVertical="16dp"/>
 
-    <!-- 3. About Developer -->
+    <!-- 3. Widget Color -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Widget Color"
+        android:textColor="@color/text_primary"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="12dp"/>
+
+    <LinearLayout
+        android:id="@+id/widgetColorRow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <!-- WHITE -->
+        <FrameLayout
+            android:id="@+id/colorWhite"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="12dp"
+            android:padding="6dp"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:background="@drawable/bg_color_circle_base">
+            <ImageView
+                android:id="@+id/colorWhiteFill"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/bg_color_circle_fill"/>
+            <!-- Tick Overlay (Tint removed to show border) -->
+            <ImageView
+                android:id="@+id/checkWhite"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_check_bold"
+                android:visibility="invisible"/>
+        </FrameLayout>
+
+        <!-- BLACK -->
+        <FrameLayout
+            android:id="@+id/colorBlack"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="12dp"
+            android:padding="6dp"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:background="@drawable/bg_color_circle_base">
+            <ImageView
+                android:id="@+id/colorBlackFill"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/bg_color_circle_fill"/>
+            <ImageView
+                android:id="@+id/checkBlack"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_check_bold"
+                android:visibility="invisible"/>
+        </FrameLayout>
+
+        <!-- BLUE -->
+        <FrameLayout
+            android:id="@+id/colorBlue"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="12dp"
+            android:padding="6dp"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:background="@drawable/bg_color_circle_base">
+            <ImageView
+                android:id="@+id/colorBlueFill"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/bg_color_circle_fill"/>
+            <ImageView
+                android:id="@+id/checkBlue"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_check_bold"
+                android:visibility="invisible"/>
+        </FrameLayout>
+
+        <!-- GREEN -->
+        <FrameLayout
+            android:id="@+id/colorGreen"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="12dp"
+            android:padding="6dp"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:background="@drawable/bg_color_circle_base">
+            <ImageView
+                android:id="@+id/colorGreenFill"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/bg_color_circle_fill"/>
+            <ImageView
+                android:id="@+id/checkGreen"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_check_bold"
+                android:visibility="invisible"/>
+        </FrameLayout>
+
+        <!-- PURPLE -->
+        <FrameLayout
+            android:id="@+id/colorPurple"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:padding="6dp"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:background="@drawable/bg_color_circle_base">
+            <ImageView
+                android:id="@+id/colorPurpleFill"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/bg_color_circle_fill"/>
+            <ImageView
+                android:id="@+id/checkPurple"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_check_bold"
+                android:visibility="invisible"/>
+        </FrameLayout>
+    </LinearLayout>
+
+    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/divider" android:layout_marginVertical="16dp"/>
+
+    <!-- 4. About Developer Header -->
     <LinearLayout
         android:id="@+id/btnAboutDev"
         android:layout_width="match_parent"
@@ -108,7 +242,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="About the Developer"
+            android:text="About Developer"
             android:textColor="@color/text_primary"
             android:textSize="16sp"
             android:textStyle="bold"/>
@@ -120,7 +254,7 @@
             android:textColor="@color/text_secondary"/>
     </LinearLayout>
 
-    <!-- Hidden Developer Details (FIXED BACKGROUND HERE) -->
+    <!-- DEVELOPER DETAILS -->
     <LinearLayout
         android:id="@+id/layoutDevDetails"
         android:layout_width="match_parent"
@@ -128,7 +262,7 @@
         android:orientation="vertical"
         android:visibility="gone"
         android:background="@drawable/bg_card_highlight"
-        android:padding="20dp"
+        android:padding="16dp"
         android:layout_marginTop="12dp">
 
         <!-- Profile Row -->
@@ -163,7 +297,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Made with Curiosity and Code️. ✍🏼🔥"
+                    android:text="Built with Curiosity and Code! ✍🏼🔥"
                     android:textColor="@color/text_secondary"
                     android:textSize="12sp"/>
             </LinearLayout>
@@ -177,12 +311,12 @@
             android:layout_marginVertical="12dp"
             android:alpha="0.2"/>
 
-        <!-- Action Buttons -->
+        <!-- Links -->
         <TextView
             android:id="@+id/btnBugReport"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Suggest Feature / Report a Bug"
+            android:text="Report a Bug"
             android:textColor="@color/text_primary"
             android:textSize="14sp"
             android:paddingVertical="10dp"
@@ -210,7 +344,6 @@
             android:paddingVertical="10dp"
             android:clickable="true"
             android:background="?attr/selectableItemBackground"/>
-
     </LinearLayout>
 
     <Space android:layout_width="match_parent" android:layout_height="40dp"/>

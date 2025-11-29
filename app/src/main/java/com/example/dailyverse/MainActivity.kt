@@ -3,11 +3,14 @@ package com.example.dailyverse
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.content.res.ColorStateList
+import android.graphics.Color
+import android.graphics.drawable.GradientDrawable
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.view.Gravity
 import android.view.View
+import android.widget.FrameLayout
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
@@ -17,6 +20,9 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.content.ContextCompat
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowCompat
+import androidx.core.view.WindowInsetsCompat
 import androidx.work.ExistingPeriodicWorkPolicy
 import androidx.work.PeriodicWorkRequestBuilder
 import androidx.work.WorkManager
@@ -51,80 +57,103 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        // 1. Window Setup for Edge-to-Edge
+        WindowCompat.setDecorFitsSystemWindows(window, false)
         setContentView(R.layout.activity_main)
 
         repo = VerseRepository(this)
 
-        // 1. Apply Theme
+        // 2. Apply Theme
         if (repo.isDarkMode()) {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
         } else {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         }
 
-        // 2. Initial Verse Load
-        loadInitialVerse()
+        // Force Nav Bar Color
+        window.navigationBarColor = ContextCompat.getColor(this, R.color.bg_bottom_bar)
 
-        // 3. Notifications
+        // 3. Apply Insets (Padding)
+        applyBottomBarInsets()
+        applyHeaderInsets()
+
+        // 4. Initial Logic
+        loadInitialVerse()
         checkAndScheduleNotifications()
 
-        // 4. START SPLASH SCREEN FADE LOGIC
+        // 5. Splash Fade Logic
         val splashContainer = findViewById<View>(R.id.splashContainer)
         splashContainer.postDelayed({
             splashContainer.animate()
                 .alpha(0f)
-                .setDuration(500) // Fade out speed (0.5 sec)
+                .setDuration(500)
                 .withEndAction {
                     splashContainer.visibility = View.GONE
                 }
                 .start()
-        }, 2000) // Time to wait (2.0 sec)
+        }, 2000)
 
         // --- LISTENERS ---
 
-        // Settings
-        findViewById<ImageView>(R.id.btnSettings).setOnClickListener {
-            showSettingsBottomSheet()
-        }
+        findViewById<ImageView>(R.id.btnSettings).setOnClickListener { showSettingsBottomSheet() }
+        findViewById<LinearLayout>(R.id.btnShare).setOnClickListener { shareVerse() }
 
-        // Share
-        findViewById<LinearLayout>(R.id.btnShare).setOnClickListener {
-            shareVerse()
-        }
-
-        // LEFT ARROW (Previous)
+        // LEFT ARROW
         findViewById<ImageView>(R.id.btnPrev).setOnClickListener {
             if (historyIndex > 0) {
                 historyIndex--
                 val prevVerse = verseHistory[historyIndex]
                 displayVerse(prevVerse)
-                repo.saveVerse(prevVerse) // Sync widget
+                repo.saveVerse(prevVerse)
             } else {
                 Toast.makeText(this, "No previous verses", Toast.LENGTH_SHORT).show()
             }
         }
 
-        // RIGHT ARROW (Next)
+        // RIGHT ARROW
         findViewById<ImageView>(R.id.btnNext).setOnClickListener {
-            // If we are browsing history, go forward
             if (historyIndex < verseHistory.size - 1) {
                 historyIndex++
                 val nextHistory = verseHistory[historyIndex]
                 displayVerse(nextHistory)
                 repo.saveVerse(nextHistory)
             } else {
-                // Generate NEW random verse
                 val newVerse = repo.generateNewVerse()
                 if (newVerse != null) {
                     addToHistory(newVerse)
                     displayVerse(newVerse)
-                    repo.saveVerse(newVerse) // Save & Sync Widget
+                    repo.saveVerse(newVerse)
                 }
             }
         }
     }
 
-    // --- HELPER FUNCTIONS ---
+    // --- INSET HELPERS ---
+
+    private fun applyBottomBarInsets() {
+        val bottomBar = findViewById<View>(R.id.bottomBar)
+        val originalPaddingBottom = bottomBar.paddingBottom
+
+        ViewCompat.setOnApplyWindowInsetsListener(bottomBar) { v, ins ->
+            val b = ins.getInsets(WindowInsetsCompat.Type.systemBars()).bottom
+            v.setPadding(v.paddingLeft, v.paddingTop, v.paddingRight, originalPaddingBottom + b)
+            ins
+        }
+    }
+
+    private fun applyHeaderInsets() {
+        val header = findViewById<View>(R.id.header)
+        val originalPaddingTop = header.paddingTop
+
+        ViewCompat.setOnApplyWindowInsetsListener(header) { v, ins ->
+            val statusBarHeight = ins.getInsets(WindowInsetsCompat.Type.statusBars()).top
+            v.setPadding(v.paddingLeft, originalPaddingTop + statusBarHeight, v.paddingRight, v.paddingBottom)
+            ins
+        }
+    }
+
+    // --- VERSE LOGIC ---
 
     private fun loadInitialVerse() {
         val daily = repo.getDailyVerse()
@@ -150,6 +179,8 @@ class MainActivity : AppCompatActivity() {
         findViewById<TextView>(R.id.tvMeaning).text = verse.explanation
     }
 
+    // --- NOTIFICATIONS ---
+
     private fun checkAndScheduleNotifications() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.POST_NOTIFICATIONS) ==
@@ -165,7 +196,6 @@ class MainActivity : AppCompatActivity() {
 
     private fun scheduleDailyNotification() {
         val workManager = WorkManager.getInstance(this)
-
         val currentDate = Calendar.getInstance()
         val dueDate = Calendar.getInstance()
 
@@ -192,6 +222,10 @@ class MainActivity : AppCompatActivity() {
         )
     }
 
+    // ────────────────────────────────────────────────
+    // ⭐ SETTINGS BOTTOM SHEET
+    // ────────────────────────────────────────────────
+
     private fun showSettingsBottomSheet() {
         val dialog = BottomSheetDialog(this)
         val view = layoutInflater.inflate(R.layout.bottom_sheet_settings, null)
@@ -203,8 +237,10 @@ class MainActivity : AppCompatActivity() {
         switchDark.setOnCheckedChangeListener { _, isChecked ->
             repo.saveDarkMode(isChecked)
             view.postDelayed({
-                if (isChecked) AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-                else AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+                AppCompatDelegate.setDefaultNightMode(
+                    if (isChecked) AppCompatDelegate.MODE_NIGHT_YES
+                    else AppCompatDelegate.MODE_NIGHT_NO
+                )
                 dialog.dismiss()
             }, 300)
         }
@@ -219,7 +255,73 @@ class MainActivity : AppCompatActivity() {
             window.decorView.postDelayed({ showNiceGenreSelector() }, 150)
         }
 
-        // --- About Developer Toggle ---
+        // --- COLOR SELECTOR LOGIC (Tick + Border Safe) ---
+
+        // 1. Find Containers
+        val containerWhite = view.findViewById<FrameLayout>(R.id.colorWhite)
+        val containerBlack = view.findViewById<FrameLayout>(R.id.colorBlack)
+        val containerBlue = view.findViewById<FrameLayout>(R.id.colorBlue)
+        val containerGreen = view.findViewById<FrameLayout>(R.id.colorGreen)
+        val containerPurple = view.findViewById<FrameLayout>(R.id.colorPurple)
+
+        // 2. Find Fills
+        val fillWhite = view.findViewById<ImageView>(R.id.colorWhiteFill)
+        val fillBlack = view.findViewById<ImageView>(R.id.colorBlackFill)
+        val fillBlue = view.findViewById<ImageView>(R.id.colorBlueFill)
+        val fillGreen = view.findViewById<ImageView>(R.id.colorGreenFill)
+        val fillPurple = view.findViewById<ImageView>(R.id.colorPurpleFill)
+
+        // 3. Find Ticks
+        val checkWhite = view.findViewById<ImageView>(R.id.checkWhite)
+        val checkBlack = view.findViewById<ImageView>(R.id.checkBlack)
+        val checkBlue = view.findViewById<ImageView>(R.id.checkBlue)
+        val checkGreen = view.findViewById<ImageView>(R.id.checkGreen)
+        val checkPurple = view.findViewById<ImageView>(R.id.checkPurple)
+
+        // 4. Helper to Set Colors while preserving XML Stroke
+        fun setCircleColor(view: ImageView, color: Int) {
+            // mutate() ensures we don't change all circles sharing the same drawable state
+            val drawable = view.drawable.mutate()
+            if (drawable is GradientDrawable) {
+                drawable.setColor(color)
+                // We don't touch setStroke, so the XML border remains!
+            }
+        }
+
+        // 5. Apply Colors
+        setCircleColor(fillWhite, Color.WHITE)
+        setCircleColor(fillBlack, Color.BLACK)
+        setCircleColor(fillBlue, Color.parseColor("#4A6CF7"))
+        setCircleColor(fillGreen, Color.parseColor("#2ECC71"))
+        setCircleColor(fillPurple, Color.parseColor("#9B59B6"))
+
+        val allChecks = listOf(checkWhite, checkBlack, checkBlue, checkGreen, checkPurple)
+
+        fun updateSelection(selectedCheck: ImageView, color: Int) {
+            allChecks.forEach { it.visibility = View.INVISIBLE }
+            selectedCheck.visibility = View.VISIBLE
+            repo.saveWidgetColor(color)
+        }
+
+        // 6. Listeners
+        containerWhite.setOnClickListener { updateSelection(checkWhite, Color.WHITE) }
+        containerBlack.setOnClickListener { updateSelection(checkBlack, Color.BLACK) }
+        containerBlue.setOnClickListener { updateSelection(checkBlue, Color.parseColor("#4A6CF7")) }
+        containerGreen.setOnClickListener { updateSelection(checkGreen, Color.parseColor("#2ECC71")) }
+        containerPurple.setOnClickListener { updateSelection(checkPurple, Color.parseColor("#9B59B6")) }
+
+        // 7. Load Initial State
+        val savedColor = repo.getWidgetColor()
+        when (savedColor) {
+            Color.WHITE -> updateSelection(checkWhite, Color.WHITE)
+            Color.BLACK -> updateSelection(checkBlack, Color.BLACK)
+            Color.parseColor("#4A6CF7") -> updateSelection(checkBlue, Color.parseColor("#4A6CF7"))
+            Color.parseColor("#2ECC71") -> updateSelection(checkGreen, Color.parseColor("#2ECC71"))
+            Color.parseColor("#9B59B6") -> updateSelection(checkPurple, Color.parseColor("#9B59B6"))
+            else -> { /* none */ }
+        }
+
+        // --- About Developer ---
         val btnAbout = view.findViewById<LinearLayout>(R.id.btnAboutDev)
         val layoutDetails = view.findViewById<LinearLayout>(R.id.layoutDevDetails)
         val iconExpand = view.findViewById<TextView>(R.id.iconExpandDev)
@@ -236,7 +338,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        // --- Developer Buttons ---
+        // Developer Links
         view.findViewById<TextView>(R.id.btnBugReport).setOnClickListener {
             val intent = Intent(Intent.ACTION_SENDTO).apply {
                 data = Uri.parse("mailto:jeevaljollyjacob@gmail.com")
@@ -313,7 +415,6 @@ class MainActivity : AppCompatActivity() {
 
             itemLayout.setOnClickListener {
                 repo.saveGenrePreference(genre)
-                // Force a new verse when genre changes
                 val newVerse = repo.generateNewVerse()
                 if (newVerse != null) {
                     addToHistory(newVerse)

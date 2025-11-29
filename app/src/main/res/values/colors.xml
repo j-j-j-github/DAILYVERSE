@@ -1,29 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Basic -->
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <!-- Backgrounds (Required by Settings Sheet) -->
     <color name="bg_main">#FFFFFFFF</color>
     <color name="bg_surface">#FFFBEB</color>
     <color name="bg_bottom_sheet">#FFFFFFFF</color>
 
-    <!-- Text Colors -->
+    <color name="bg_bottom_bar">#FFFFFFFF</color>
+
     <color name="text_primary">#111827</color>
     <color name="text_secondary">#6B7280</color>
 
-    <!-- Brand Colors -->
     <color name="brand_primary">#4F46E5</color>
     <color name="brand_light">#EEF2FF</color>
     <color name="accent_text">#92400E</color>
     <color name="accent_subtext">#B45309</color>
     <color name="divider">#F3F4F6</color>
 
-    <!-- Compatibility mappings -->
     <color name="indigo_600">#4F46E5</color>
     <color name="indigo_50">#EEF2FF</color>
     <color name="amber_50">#FFFBEB</color>
+    <color name="amber_100">#FEF3C7</color>
     <color name="amber_800">#92400E</color>
     <color name="gray_900">#111827</color>
     <color name="gray_500">#6B7280</color>
