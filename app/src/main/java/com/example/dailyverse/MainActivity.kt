@@ -1,5 +1,5 @@
 package com.example.dailyverse
-import android.app.PendingIntent
+
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.content.res.ColorStateList
@@ -55,29 +55,39 @@ class MainActivity : AppCompatActivity() {
 
         repo = VerseRepository(this)
 
-        // Apply Theme
+        // 1. Apply Theme
         if (repo.isDarkMode()) {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
         } else {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         }
 
-        // Initial Load
-        val daily = repo.getDailyVerse()
-        if (daily != null) {
-            addToHistory(daily)
-            displayVerse(daily)
-        }
+        // 2. Initial Verse Load
+        loadInitialVerse()
 
-        // Notifications
+        // 3. Notifications
         checkAndScheduleNotifications()
+
+        // 4. START SPLASH SCREEN FADE LOGIC
+        val splashContainer = findViewById<View>(R.id.splashContainer)
+        splashContainer.postDelayed({
+            splashContainer.animate()
+                .alpha(0f)
+                .setDuration(500) // Fade out speed (0.5 sec)
+                .withEndAction {
+                    splashContainer.visibility = View.GONE
+                }
+                .start()
+        }, 2000) // Time to wait (2.0 sec)
 
         // --- LISTENERS ---
 
+        // Settings
         findViewById<ImageView>(R.id.btnSettings).setOnClickListener {
             showSettingsBottomSheet()
         }
 
+        // Share
         findViewById<LinearLayout>(R.id.btnShare).setOnClickListener {
             shareVerse()
         }
@@ -116,9 +126,15 @@ class MainActivity : AppCompatActivity() {
 
     // --- HELPER FUNCTIONS ---
 
+    private fun loadInitialVerse() {
+        val daily = repo.getDailyVerse()
+        if (daily != null) {
+            addToHistory(daily)
+            displayVerse(daily)
+        }
+    }
+
     private fun addToHistory(verse: Verse) {
-        // If we generated a new verse while in the middle of history,
-        // remove the "future" history so the path stays linear
         while (verseHistory.size > historyIndex + 1) {
             verseHistory.removeAt(verseHistory.size - 1)
         }
@@ -153,6 +169,7 @@ class MainActivity : AppCompatActivity() {
         val currentDate = Calendar.getInstance()
         val dueDate = Calendar.getInstance()
 
+        // Schedule for 8:00 AM
         dueDate.set(Calendar.HOUR_OF_DAY, 8)
         dueDate.set(Calendar.MINUTE, 0)
         dueDate.set(Calendar.SECOND, 0)
@@ -180,6 +197,7 @@ class MainActivity : AppCompatActivity() {
         val view = layoutInflater.inflate(R.layout.bottom_sheet_settings, null)
         dialog.setContentView(view)
 
+        // --- Dark Mode Toggle ---
         val switchDark = view.findViewById<SwitchMaterial>(R.id.switchDarkMode)
         switchDark.isChecked = repo.isDarkMode()
         switchDark.setOnCheckedChangeListener { _, isChecked ->
@@ -191,6 +209,7 @@ class MainActivity : AppCompatActivity() {
             }, 300)
         }
 
+        // --- Genre Selector ---
         val btnGenre = view.findViewById<LinearLayout>(R.id.btnSelectGenre)
         val tvCurrent = view.findViewById<TextView>(R.id.tvCurrentGenreSettings)
         tvCurrent.text = repo.getGenrePreference()
@@ -200,6 +219,7 @@ class MainActivity : AppCompatActivity() {
             window.decorView.postDelayed({ showNiceGenreSelector() }, 150)
         }
 
+        // --- About Developer Toggle ---
         val btnAbout = view.findViewById<LinearLayout>(R.id.btnAboutDev)
         val layoutDetails = view.findViewById<LinearLayout>(R.id.layoutDevDetails)
         val iconExpand = view.findViewById<TextView>(R.id.iconExpandDev)
@@ -216,7 +236,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        // Links
+        // --- Developer Buttons ---
         view.findViewById<TextView>(R.id.btnBugReport).setOnClickListener {
             val intent = Intent(Intent.ACTION_SENDTO).apply {
                 data = Uri.parse("mailto:jeevaljollyjacob@gmail.com")

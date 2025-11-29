@@ -5,9 +5,9 @@
     <color name="white">#FF000000</color>
 
     <!-- Backgrounds (Dark Grays) -->
-    <color name="bg_main">#111827</color>
-    <color name="bg_surface">#1F2937</color>
-    <color name="bg_bottom_sheet">#1F2937</color>
+    <color name="bg_main">#000000</color>
+    <color name="bg_surface">#121212</color>
+    <color name="bg_bottom_sheet">#121212</color>
 
     <!-- Text (Light for Dark Mode) -->
     <color name="text_primary">#F9FAFB</color>
