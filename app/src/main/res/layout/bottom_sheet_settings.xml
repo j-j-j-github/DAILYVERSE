@@ -58,7 +58,42 @@
 
     <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/divider" android:layout_marginVertical="16dp"/>
 
-    <!-- 2. Genre Selector -->
+    <!-- 2. WIDGET CONTENT TOGGLE (NEW) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingVertical="8dp">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Widget Content"
+                android:textColor="@color/text_primary"
+                android:textSize="16sp"
+                android:textStyle="bold"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Show verse instead of it's meaning"
+                android:textColor="@color/text_secondary"
+                android:textSize="12sp"/>
+        </LinearLayout>
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/switchWidgetContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:trackTint="@color/brand_light"/>
+    </LinearLayout>
+
+    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/divider" android:layout_marginVertical="16dp"/>
+
+    <!-- 3. Genre Selector -->
     <LinearLayout
         android:id="@+id/btnSelectGenre"
         android:layout_width="match_parent"
@@ -94,7 +129,7 @@
 
     <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/divider" android:layout_marginVertical="16dp"/>
 
-    <!-- 3. Widget Color -->
+    <!-- 4. Widget Color -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -125,7 +160,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:src="@drawable/bg_color_circle_fill"/>
-            <!-- Tick Overlay (Tint removed to show border) -->
             <ImageView
                 android:id="@+id/checkWhite"
                 android:layout_width="24dp"
@@ -155,6 +189,7 @@
                 android:layout_height="24dp"
                 android:layout_gravity="center"
                 android:src="@drawable/ic_check_bold"
+                app:tint="#FFFFFF"
                 android:visibility="invisible"/>
         </FrameLayout>
 
@@ -178,6 +213,7 @@
                 android:layout_height="24dp"
                 android:layout_gravity="center"
                 android:src="@drawable/ic_check_bold"
+                app:tint="#FFFFFF"
                 android:visibility="invisible"/>
         </FrameLayout>
 
@@ -201,6 +237,7 @@
                 android:layout_height="24dp"
                 android:layout_gravity="center"
                 android:src="@drawable/ic_check_bold"
+                app:tint="#FFFFFF"
                 android:visibility="invisible"/>
         </FrameLayout>
 
@@ -223,13 +260,14 @@
                 android:layout_height="24dp"
                 android:layout_gravity="center"
                 android:src="@drawable/ic_check_bold"
+                app:tint="#FFFFFF"
                 android:visibility="invisible"/>
         </FrameLayout>
     </LinearLayout>
 
     <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/divider" android:layout_marginVertical="16dp"/>
 
-    <!-- 4. About Developer Header -->
+    <!-- 5. About Developer Header -->
     <LinearLayout
         android:id="@+id/btnAboutDev"
         android:layout_width="match_parent"
@@ -265,7 +303,6 @@
         android:padding="16dp"
         android:layout_marginTop="12dp">
 
-        <!-- Profile Row -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -303,7 +340,6 @@
             </LinearLayout>
         </LinearLayout>
 
-        <!-- Divider -->
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
@@ -311,7 +347,6 @@
             android:layout_marginVertical="12dp"
             android:alpha="0.2"/>
 
-        <!-- Links -->
         <TextView
             android:id="@+id/btnBugReport"
             android:layout_width="match_parent"

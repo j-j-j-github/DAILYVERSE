@@ -17,6 +17,24 @@ class VerseRepository(private val context: Context) {
 
     private val prefs: SharedPreferences = context.getSharedPreferences("DailyVersePrefs", Context.MODE_PRIVATE)
 
+    // --- Widget Content Toggle (NEW) ---
+    fun saveShowVerseOnWidget(enabled: Boolean) {
+        prefs.edit().putBoolean("pref_show_verse_widget", enabled).apply()
+        // Refresh widget immediately
+        val current = getDailyVerse()
+        if (current != null) updateWidgets(current)
+    }
+
+    fun isShowVerseOnWidget(): Boolean = prefs.getBoolean("pref_show_verse_widget", false)
+
+    // --- Widget Color Logic ---
+    fun saveWidgetColor(color: Int) {
+        prefs.edit().putInt("pref_widget_color", color).apply()
+        val current = getDailyVerse()
+        if (current != null) updateWidgets(current)
+    }
+    fun getWidgetColor(): Int = prefs.getInt("pref_widget_color", Color.WHITE)
+
     // --- Dark mode ---
     fun saveDarkMode(enabled: Boolean) = prefs.edit().putBoolean("pref_dark_mode", enabled).apply()
     fun isDarkMode(): Boolean = prefs.getBoolean("pref_dark_mode", false)
@@ -28,15 +46,6 @@ class VerseRepository(private val context: Context) {
         if (newVerse != null) saveVerse(newVerse)
     }
     fun getGenrePreference(): String = prefs.getString("pref_genre", "All") ?: "All"
-
-    // --- Widget Color Logic ---
-    fun saveWidgetColor(color: Int) {
-        prefs.edit().putInt("pref_widget_color", color).apply()
-        // Refresh widget immediately with current verse
-        val current = getDailyVerse()
-        if (current != null) updateWidgets(current)
-    }
-    fun getWidgetColor(): Int = prefs.getInt("pref_widget_color", Color.WHITE)
 
     // --- Saved verse ID ---
     fun getSavedId(): Int = prefs.getInt("saved_id", -1)
@@ -129,28 +138,28 @@ class VerseRepository(private val context: Context) {
         val appWidgetManager = AppWidgetManager.getInstance(context)
         val ids = appWidgetManager.getAppWidgetIds(ComponentName(context, DailyVerseWidget::class.java))
 
-        // 1. Get Saved Background Color
+        // 1. Color Logic
         val bgColor = getWidgetColor()
-
-        // 2. Calculate Luminance (brightness)
-        // Formula: 0.299*R + 0.587*G + 0.114*B
         val luminance = (0.299 * Color.red(bgColor) + 0.587 * Color.green(bgColor) + 0.114 * Color.blue(bgColor)) / 255
-
-        // 3. Determine Text Colors based on Luminance
-        // If background is dark (< 0.5), text should be Light.
         val isDarkBg = luminance < 0.5
 
         val textColor = if (isDarkBg) Color.WHITE else Color.parseColor("#333333")
         val titleColor = if (isDarkBg) Color.parseColor("#818CF8") else Color.parseColor("#5C6BC0")
         val promptColor = if (isDarkBg) Color.parseColor("#CCCCCC") else Color.parseColor("#888888")
 
+        // 2. Content Logic (NEW)
+        val showVerse = isShowVerseOnWidget()
+        val contentText = if (showVerse) "\"${verse.text}\"" else verse.explanation
+        val promptText = if (showVerse) "Tap to reveal meaning →" else "Tap to reveal verse →"
+
         for (id in ids) {
             val views = RemoteViews(context.packageName, R.layout.daily_verse_widget)
 
             // Set Content
-            views.setTextViewText(R.id.widgetContent, verse.explanation)
+            views.setTextViewText(R.id.widgetContent, contentText)
+            views.setTextViewText(R.id.widgetPrompt, promptText)
 
-            // Set Colors dynamically
+            // Set Colors
             views.setInt(R.id.widgetRoot, "setBackgroundColor", bgColor)
             views.setTextColor(R.id.widgetContent, textColor)
             views.setTextColor(R.id.widgetTitle, titleColor)

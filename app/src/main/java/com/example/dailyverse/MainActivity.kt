@@ -245,6 +245,16 @@ class MainActivity : AppCompatActivity() {
             }, 300)
         }
 
+        // --- WIDGET CONTENT TOGGLE (NEW) ---
+        val switchWidgetContent = view.findViewById<SwitchMaterial>(R.id.switchWidgetContent)
+        // Set initial state from repo
+        switchWidgetContent.isChecked = repo.isShowVerseOnWidget()
+
+        // Save change immediately when toggled
+        switchWidgetContent.setOnCheckedChangeListener { _, isChecked ->
+            repo.saveShowVerseOnWidget(isChecked)
+        }
+
         // --- Genre Selector ---
         val btnGenre = view.findViewById<LinearLayout>(R.id.btnSelectGenre)
         val tvCurrent = view.findViewById<TextView>(R.id.tvCurrentGenreSettings)
@@ -255,40 +265,33 @@ class MainActivity : AppCompatActivity() {
             window.decorView.postDelayed({ showNiceGenreSelector() }, 150)
         }
 
-        // --- COLOR SELECTOR LOGIC (Tick + Border Safe) ---
+        // --- COLOR SELECTOR LOGIC ---
 
-        // 1. Find Containers
         val containerWhite = view.findViewById<FrameLayout>(R.id.colorWhite)
         val containerBlack = view.findViewById<FrameLayout>(R.id.colorBlack)
         val containerBlue = view.findViewById<FrameLayout>(R.id.colorBlue)
         val containerGreen = view.findViewById<FrameLayout>(R.id.colorGreen)
         val containerPurple = view.findViewById<FrameLayout>(R.id.colorPurple)
 
-        // 2. Find Fills
         val fillWhite = view.findViewById<ImageView>(R.id.colorWhiteFill)
         val fillBlack = view.findViewById<ImageView>(R.id.colorBlackFill)
         val fillBlue = view.findViewById<ImageView>(R.id.colorBlueFill)
         val fillGreen = view.findViewById<ImageView>(R.id.colorGreenFill)
         val fillPurple = view.findViewById<ImageView>(R.id.colorPurpleFill)
 
-        // 3. Find Ticks
         val checkWhite = view.findViewById<ImageView>(R.id.checkWhite)
         val checkBlack = view.findViewById<ImageView>(R.id.checkBlack)
         val checkBlue = view.findViewById<ImageView>(R.id.checkBlue)
         val checkGreen = view.findViewById<ImageView>(R.id.checkGreen)
         val checkPurple = view.findViewById<ImageView>(R.id.checkPurple)
 
-        // 4. Helper to Set Colors while preserving XML Stroke
+        // Helper to Set Colors directly on Drawable
         fun setCircleColor(view: ImageView, color: Int) {
-            // mutate() ensures we don't change all circles sharing the same drawable state
             val drawable = view.drawable.mutate()
             if (drawable is GradientDrawable) {
                 drawable.setColor(color)
-                // We don't touch setStroke, so the XML border remains!
             }
         }
-
-        // 5. Apply Colors
         setCircleColor(fillWhite, Color.WHITE)
         setCircleColor(fillBlack, Color.BLACK)
         setCircleColor(fillBlue, Color.parseColor("#4A6CF7"))
@@ -303,14 +306,12 @@ class MainActivity : AppCompatActivity() {
             repo.saveWidgetColor(color)
         }
 
-        // 6. Listeners
         containerWhite.setOnClickListener { updateSelection(checkWhite, Color.WHITE) }
         containerBlack.setOnClickListener { updateSelection(checkBlack, Color.BLACK) }
         containerBlue.setOnClickListener { updateSelection(checkBlue, Color.parseColor("#4A6CF7")) }
         containerGreen.setOnClickListener { updateSelection(checkGreen, Color.parseColor("#2ECC71")) }
         containerPurple.setOnClickListener { updateSelection(checkPurple, Color.parseColor("#9B59B6")) }
 
-        // 7. Load Initial State
         val savedColor = repo.getWidgetColor()
         when (savedColor) {
             Color.WHITE -> updateSelection(checkWhite, Color.WHITE)
@@ -321,7 +322,7 @@ class MainActivity : AppCompatActivity() {
             else -> { /* none */ }
         }
 
-        // --- About Developer ---
+        // --- About Developer Toggle ---
         val btnAbout = view.findViewById<LinearLayout>(R.id.btnAboutDev)
         val layoutDetails = view.findViewById<LinearLayout>(R.id.layoutDevDetails)
         val iconExpand = view.findViewById<TextView>(R.id.iconExpandDev)
@@ -338,7 +339,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        // Developer Links
+        // --- Developer Buttons ---
         view.findViewById<TextView>(R.id.btnBugReport).setOnClickListener {
             val intent = Intent(Intent.ACTION_SENDTO).apply {
                 data = Uri.parse("mailto:jeevaljollyjacob@gmail.com")
