@@ -1,5 +1,4 @@
 package com.example.dailyverse
-
 import android.app.PendingIntent
 import android.appwidget.AppWidgetManager
 import android.content.ComponentName
@@ -16,53 +15,91 @@ class VerseRepository(private val context: Context) {
 
     private val prefs: SharedPreferences = context.getSharedPreferences("DailyVersePrefs", Context.MODE_PRIVATE)
 
-    // --- Dark mode ---
-    fun saveDarkMode(enabled: Boolean) = prefs.edit().putBoolean("pref_dark_mode", enabled).apply()
-    fun isDarkMode(): Boolean = prefs.getBoolean("pref_dark_mode", false)
+    // --- DARK MODE LOGIC ---
+    fun saveDarkMode(enabled: Boolean) {
+        prefs.edit().putBoolean("pref_dark_mode", enabled).apply()
+    }
 
-    // --- Genre preference ---
+    fun isDarkMode(): Boolean {
+        return prefs.getBoolean("pref_dark_mode", false)
+    }
+
+    // --- GENRE LOGIC ---
     fun saveGenrePreference(genre: String) {
         prefs.edit().putString("pref_genre", genre).apply()
-        forceNewVerse()
+        // Force a refresh immediately when genre changes
+        val newVerse = generateNewVerse()
+        if (newVerse != null) {
+            saveVerse(newVerse)
+        }
     }
-    fun getGenrePreference(): String = prefs.getString("pref_genre", "All") ?: "All"
 
-    // --- Saved verse ID ---
-    fun getSavedId(): Int = prefs.getInt("saved_id", -1)
+    fun getGenrePreference(): String {
+        return prefs.getString("pref_genre", "All") ?: "All"
+    }
 
-    // --- Daily verse logic ---
+    // --- DAILY VERSE LOGIC ---
+
+    // 1. Get Verse (Check Date)
     fun getDailyVerse(): Verse? {
         val todayDate = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(Date())
         val lastSavedDate = prefs.getString("saved_date", "")
 
-        return if (todayDate != lastSavedDate) {
-            forceNewVerse()
+        if (todayDate != lastSavedDate) {
+            // New Day: Generate and Save
+            val newVerse = generateNewVerse()
+            if (newVerse != null) {
+                saveVerse(newVerse)
+            }
+            return newVerse
         } else {
-            val id = getSavedId()
-            if (id == -1) pickRandomVerse("All")
-            else getVerseById(id)
+            // Same Day: Load Saved
+            val id = prefs.getInt("saved_id", -1)
+
+            // If save is missing/corrupt, regenerate
+            if (id == -1) {
+                val newVerse = generateNewVerse()
+                if (newVerse != null) saveVerse(newVerse)
+                return newVerse
+            }
+
+            // Otherwise return saved verse
+            // We reconstruct it from prefs to avoid re-reading JSON if possible,
+            // or fetch by ID if you prefer strict consistency.
+            // Here we simply reconstruct for speed:
+            return Verse(
+                id = id,
+                text = prefs.getString("saved_text", "") ?: "",
+                reference = prefs.getString("saved_reference", "") ?: "",
+                genre = prefs.getString("saved_genre", "") ?: "",
+                explanation = prefs.getString("saved_explanation", "") ?: ""
+            )
         }
     }
 
-    fun getVerseById(id: Int): Verse? {
-        val jsonString = loadJSONFromAsset() ?: return null
-        try {
-            val jsonArray = JSONArray(jsonString)
-            for (i in 0 until jsonArray.length()) {
-                val obj = jsonArray.getJSONObject(i)
-                if (obj.getInt("id") == id) {
-                    return Verse(
-                        id = id,
-                        text = obj.getString("text"),
-                        reference = obj.getString("reference"),
-                        genre = obj.getString("genre"),
-                        explanation = obj.getString("explanation")
-                    )
-                }
-            }
-        } catch (e: Exception) { e.printStackTrace() }
-        return null
+    // 2. PUBLIC: Generate New Verse (Used by Next Arrow)
+    fun generateNewVerse(): Verse? {
+        return pickRandomVerse(getGenrePreference())
     }
+
+    // 3. PUBLIC: Save Specific Verse (Used by Prev/Next Arrows)
+    fun saveVerse(verse: Verse) {
+        val todayDate = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(Date())
+        prefs.edit().apply {
+            putString("saved_date", todayDate)
+            putInt("saved_id", verse.id)
+            putString("saved_text", verse.text)
+            putString("saved_reference", verse.reference)
+            putString("saved_genre", verse.genre)
+            putString("saved_explanation", verse.explanation)
+            apply()
+        }
+
+        // Force Widget Update
+        updateWidgets(verse)
+    }
+
+    // --- INTERNAL HELPERS ---
 
     private fun pickRandomVerse(genreFilter: String): Verse? {
         val jsonString = loadJSONFromAsset() ?: return null
@@ -73,58 +110,36 @@ class VerseRepository(private val context: Context) {
                 val obj = jsonArray.getJSONObject(i)
                 val vGenre = obj.getString("genre")
                 if (genreFilter == "All" || vGenre.equals(genreFilter, ignoreCase = true)) {
-                    candidates.add(
-                        Verse(
-                            obj.getInt("id"),
-                            obj.getString("text"),
-                            obj.getString("reference"),
-                            vGenre,
-                            obj.getString("explanation")
-                        )
-                    )
+                    candidates.add(Verse(obj.getInt("id"), obj.getString("text"), obj.getString("reference"), vGenre, obj.getString("explanation")))
                 }
             }
         } catch (e: Exception) { e.printStackTrace() }
         return if (candidates.isNotEmpty()) candidates.random() else null
     }
 
-    // --- Generate new verse and save ---
-    fun forceNewVerse(): Verse? {
-        val newVerse = pickRandomVerse(getGenrePreference())
-        newVerse?.let {
-            val todayDate = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(Date())
-            saveVerse(it, todayDate)
-        }
-        return newVerse
-    }
-
-    private fun saveVerse(verse: Verse, date: String) {
-        prefs.edit().apply {
-            putString("saved_date", date)
-            putInt("saved_id", verse.id)
-            putString("saved_text", verse.text)
-            putString("saved_reference", verse.reference)
-            putString("saved_genre", verse.genre)
-            putString("saved_explanation", verse.explanation)
-            apply()
-        }
-        updateWidgets(verse)
-    }
-
     private fun updateWidgets(verse: Verse) {
-        val appWidgetManager = AppWidgetManager.getInstance(context)
-        val ids = appWidgetManager.getAppWidgetIds(ComponentName(context, DailyVerseWidget::class.java))
-        for (id in ids) {
-            val views = RemoteViews(context.packageName, R.layout.daily_verse_widget)
-            views.setTextViewText(R.id.widgetContent, verse.explanation)
-            val intent = Intent(context, MainActivity::class.java)
-            val pendingIntent = PendingIntent.getActivity(
-                context, 0, intent,
-                PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
-            )
-            views.setOnClickPendingIntent(R.id.widgetContent, pendingIntent)
-            views.setOnClickPendingIntent(R.id.widgetTitle, pendingIntent)
-            appWidgetManager.updateAppWidget(id, views)
+        try {
+            val appWidgetManager = AppWidgetManager.getInstance(context)
+            val ids = appWidgetManager.getAppWidgetIds(ComponentName(context, DailyVerseWidget::class.java))
+
+            if (ids.isEmpty()) return
+
+            for (id in ids) {
+                val views = RemoteViews(context.packageName, R.layout.daily_verse_widget)
+                views.setTextViewText(R.id.widgetContent, verse.explanation)
+
+                val intent = Intent(context, MainActivity::class.java)
+                val pendingIntent = PendingIntent.getActivity(
+                    context, 0, intent,
+                    PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
+                )
+                views.setOnClickPendingIntent(R.id.widgetContent, pendingIntent)
+                views.setOnClickPendingIntent(R.id.widgetTitle, pendingIntent)
+
+                appWidgetManager.updateAppWidget(id, views)
+            }
+        } catch (e: Exception) {
+            e.printStackTrace()
         }
     }
 

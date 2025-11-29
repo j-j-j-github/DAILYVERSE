@@ -1,5 +1,5 @@
 package com.example.dailyverse
-
+import android.app.PendingIntent
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.content.res.ColorStateList
@@ -11,6 +11,7 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -29,13 +30,17 @@ class MainActivity : AppCompatActivity() {
     private lateinit var repo: VerseRepository
     private var currentVerse: Verse? = null
 
+    // --- HISTORY LOGIC ---
+    private val verseHistory = mutableListOf<Verse>()
+    private var historyIndex = -1
+
     private val genres = arrayOf(
         "All", "Encouragement & Hope", "Wisdom & Guidance",
         "Love & Relationships", "Faith & Trust",
         "Strength & Courage", "Gratitude & Praise"
     )
 
-    // --- 1. Permission Launcher for Android 13+ ---
+    // --- Permission Launcher ---
     private val requestPermissionLauncher = registerForActivityResult(
         ActivityResultContracts.RequestPermission()
     ) { isGranted: Boolean ->
@@ -57,23 +62,78 @@ class MainActivity : AppCompatActivity() {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         }
 
-        loadContent()
+        // Initial Load
+        val daily = repo.getDailyVerse()
+        if (daily != null) {
+            addToHistory(daily)
+            displayVerse(daily)
+        }
 
-        // Check Permissions & Schedule Alarm
+        // Notifications
         checkAndScheduleNotifications()
 
-        // Settings Button
+        // --- LISTENERS ---
+
         findViewById<ImageView>(R.id.btnSettings).setOnClickListener {
             showSettingsBottomSheet()
         }
 
-        // Share Button
         findViewById<LinearLayout>(R.id.btnShare).setOnClickListener {
             shareVerse()
         }
+
+        // LEFT ARROW (Previous)
+        findViewById<ImageView>(R.id.btnPrev).setOnClickListener {
+            if (historyIndex > 0) {
+                historyIndex--
+                val prevVerse = verseHistory[historyIndex]
+                displayVerse(prevVerse)
+                repo.saveVerse(prevVerse) // Sync widget
+            } else {
+                Toast.makeText(this, "No previous verses", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+        // RIGHT ARROW (Next)
+        findViewById<ImageView>(R.id.btnNext).setOnClickListener {
+            // If we are browsing history, go forward
+            if (historyIndex < verseHistory.size - 1) {
+                historyIndex++
+                val nextHistory = verseHistory[historyIndex]
+                displayVerse(nextHistory)
+                repo.saveVerse(nextHistory)
+            } else {
+                // Generate NEW random verse
+                val newVerse = repo.generateNewVerse()
+                if (newVerse != null) {
+                    addToHistory(newVerse)
+                    displayVerse(newVerse)
+                    repo.saveVerse(newVerse) // Save & Sync Widget
+                }
+            }
+        }
     }
 
-    // --- 2. Check Permissions ---
+    // --- HELPER FUNCTIONS ---
+
+    private fun addToHistory(verse: Verse) {
+        // If we generated a new verse while in the middle of history,
+        // remove the "future" history so the path stays linear
+        while (verseHistory.size > historyIndex + 1) {
+            verseHistory.removeAt(verseHistory.size - 1)
+        }
+        verseHistory.add(verse)
+        historyIndex = verseHistory.size - 1
+    }
+
+    private fun displayVerse(verse: Verse) {
+        currentVerse = verse
+        findViewById<TextView>(R.id.tvVerseText).text = "\"${verse.text}\""
+        findViewById<TextView>(R.id.tvReference).text = "- ${verse.reference}"
+        findViewById<TextView>(R.id.tvGenreBadge).text = verse.genre.uppercase()
+        findViewById<TextView>(R.id.tvMeaning).text = verse.explanation
+    }
+
     private fun checkAndScheduleNotifications() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.POST_NOTIFICATIONS) ==
@@ -87,32 +147,27 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    // --- 3. FINAL SCHEDULING LOGIC (8:00 AM DAILY) ---
     private fun scheduleDailyNotification() {
         val workManager = WorkManager.getInstance(this)
 
-        // Calculate time until 8:00 AM
         val currentDate = Calendar.getInstance()
         val dueDate = Calendar.getInstance()
 
-        dueDate.set(Calendar.HOUR_OF_DAY, 8) // 8 AM
+        dueDate.set(Calendar.HOUR_OF_DAY, 8)
         dueDate.set(Calendar.MINUTE, 0)
         dueDate.set(Calendar.SECOND, 0)
 
-        // If 8 AM has already passed today, schedule for tomorrow
         if (dueDate.before(currentDate)) {
             dueDate.add(Calendar.HOUR_OF_DAY, 24)
         }
 
         val timeDiff = dueDate.timeInMillis - currentDate.timeInMillis
 
-        // Create the Periodic Request
         val dailyWorkRequest = PeriodicWorkRequestBuilder<DailyWorker>(24, TimeUnit.HOURS)
             .setInitialDelay(timeDiff, TimeUnit.MILLISECONDS)
             .addTag("daily_verse_notification")
             .build()
 
-        // Enqueue Unique Work (Prevents duplicate alarms if app is opened multiple times)
         workManager.enqueueUniquePeriodicWork(
             "daily_verse_notification_work",
             ExistingPeriodicWorkPolicy.UPDATE,
@@ -120,24 +175,11 @@ class MainActivity : AppCompatActivity() {
         )
     }
 
-    // --- 4. UI & Logic ---
-
-    private fun loadContent() {
-        currentVerse = repo.getDailyVerse()
-        currentVerse?.let { verse ->
-            findViewById<TextView>(R.id.tvVerseText).text = "\"${verse.text}\""
-            findViewById<TextView>(R.id.tvReference).text = "- ${verse.reference}"
-            findViewById<TextView>(R.id.tvGenreBadge).text = verse.genre.uppercase()
-            findViewById<TextView>(R.id.tvMeaning).text = verse.explanation
-        }
-    }
-
     private fun showSettingsBottomSheet() {
         val dialog = BottomSheetDialog(this)
         val view = layoutInflater.inflate(R.layout.bottom_sheet_settings, null)
         dialog.setContentView(view)
 
-        // Dark Mode
         val switchDark = view.findViewById<SwitchMaterial>(R.id.switchDarkMode)
         switchDark.isChecked = repo.isDarkMode()
         switchDark.setOnCheckedChangeListener { _, isChecked ->
@@ -149,7 +191,6 @@ class MainActivity : AppCompatActivity() {
             }, 300)
         }
 
-        // Genre Selector
         val btnGenre = view.findViewById<LinearLayout>(R.id.btnSelectGenre)
         val tvCurrent = view.findViewById<TextView>(R.id.tvCurrentGenreSettings)
         tvCurrent.text = repo.getGenrePreference()
@@ -159,7 +200,6 @@ class MainActivity : AppCompatActivity() {
             window.decorView.postDelayed({ showNiceGenreSelector() }, 150)
         }
 
-        // Developer Section
         val btnAbout = view.findViewById<LinearLayout>(R.id.btnAboutDev)
         val layoutDetails = view.findViewById<LinearLayout>(R.id.layoutDevDetails)
         val iconExpand = view.findViewById<TextView>(R.id.iconExpandDev)
@@ -253,7 +293,13 @@ class MainActivity : AppCompatActivity() {
 
             itemLayout.setOnClickListener {
                 repo.saveGenrePreference(genre)
-                loadContent()
+                // Force a new verse when genre changes
+                val newVerse = repo.generateNewVerse()
+                if (newVerse != null) {
+                    addToHistory(newVerse)
+                    displayVerse(newVerse)
+                    repo.saveVerse(newVerse)
+                }
                 dialog.dismiss()
             }
 
