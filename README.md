@@ -1,7 +1,5 @@
 # Daily Verse - Android App ✝️
 
-![App Icon](app/src/main/res/mipmap-xxxhdpi/ic_launcher.png)
-
 **Daily Verse** is a minimalist, offline-first Android application designed to deliver daily spiritual inspiration. It features a clean UI, a home screen widget, and a curated collection of Bible verses with easy-to-understand explanations.
 
 ---
