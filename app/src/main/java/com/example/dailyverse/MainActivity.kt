@@ -1,19 +1,28 @@
 package com.example.dailyverse
 
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.content.res.ColorStateList
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.view.Gravity
 import android.view.View
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.content.ContextCompat
+import androidx.work.ExistingPeriodicWorkPolicy
+import androidx.work.PeriodicWorkRequestBuilder
+import androidx.work.WorkManager
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.switchmaterial.SwitchMaterial
+import java.util.*
+import java.util.concurrent.TimeUnit
 
 class MainActivity : AppCompatActivity() {
 
@@ -26,13 +35,22 @@ class MainActivity : AppCompatActivity() {
         "Strength & Courage", "Gratitude & Praise"
     )
 
+    // --- 1. Permission Launcher for Android 13+ ---
+    private val requestPermissionLauncher = registerForActivityResult(
+        ActivityResultContracts.RequestPermission()
+    ) { isGranted: Boolean ->
+        if (isGranted) {
+            scheduleDailyNotification()
+        }
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         repo = VerseRepository(this)
 
-        // Apply saved dark mode setting
+        // Apply Theme
         if (repo.isDarkMode()) {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
         } else {
@@ -41,28 +59,71 @@ class MainActivity : AppCompatActivity() {
 
         loadContent()
 
+        // Check Permissions & Schedule Alarm
+        checkAndScheduleNotifications()
+
+        // Settings Button
         findViewById<ImageView>(R.id.btnSettings).setOnClickListener {
             showSettingsBottomSheet()
         }
 
+        // Share Button
         findViewById<LinearLayout>(R.id.btnShare).setOnClickListener {
             shareVerse()
         }
     }
 
-    // ---------------------------------------------
-    // Load SAME verse as widget
-    // ---------------------------------------------
-    private fun loadContent() {
-        // Get the last saved ID, if any
-        val savedId = repo.getSavedId()
-
-        currentVerse = if (savedId != -1) {
-            repo.getVerseById(savedId)
+    // --- 2. Check Permissions ---
+    private fun checkAndScheduleNotifications() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.POST_NOTIFICATIONS) ==
+                PackageManager.PERMISSION_GRANTED) {
+                scheduleDailyNotification()
+            } else {
+                requestPermissionLauncher.launch(android.Manifest.permission.POST_NOTIFICATIONS)
+            }
         } else {
-            repo.getDailyVerse()
+            scheduleDailyNotification()
+        }
+    }
+
+    // --- 3. FINAL SCHEDULING LOGIC (8:00 AM DAILY) ---
+    private fun scheduleDailyNotification() {
+        val workManager = WorkManager.getInstance(this)
+
+        // Calculate time until 8:00 AM
+        val currentDate = Calendar.getInstance()
+        val dueDate = Calendar.getInstance()
+
+        dueDate.set(Calendar.HOUR_OF_DAY, 8) // 8 AM
+        dueDate.set(Calendar.MINUTE, 0)
+        dueDate.set(Calendar.SECOND, 0)
+
+        // If 8 AM has already passed today, schedule for tomorrow
+        if (dueDate.before(currentDate)) {
+            dueDate.add(Calendar.HOUR_OF_DAY, 24)
         }
 
+        val timeDiff = dueDate.timeInMillis - currentDate.timeInMillis
+
+        // Create the Periodic Request
+        val dailyWorkRequest = PeriodicWorkRequestBuilder<DailyWorker>(24, TimeUnit.HOURS)
+            .setInitialDelay(timeDiff, TimeUnit.MILLISECONDS)
+            .addTag("daily_verse_notification")
+            .build()
+
+        // Enqueue Unique Work (Prevents duplicate alarms if app is opened multiple times)
+        workManager.enqueueUniquePeriodicWork(
+            "daily_verse_notification_work",
+            ExistingPeriodicWorkPolicy.UPDATE,
+            dailyWorkRequest
+        )
+    }
+
+    // --- 4. UI & Logic ---
+
+    private fun loadContent() {
+        currentVerse = repo.getDailyVerse()
         currentVerse?.let { verse ->
             findViewById<TextView>(R.id.tvVerseText).text = "\"${verse.text}\""
             findViewById<TextView>(R.id.tvReference).text = "- ${verse.reference}"
@@ -76,7 +137,7 @@ class MainActivity : AppCompatActivity() {
         val view = layoutInflater.inflate(R.layout.bottom_sheet_settings, null)
         dialog.setContentView(view)
 
-        // --- Dark Mode Toggle ---
+        // Dark Mode
         val switchDark = view.findViewById<SwitchMaterial>(R.id.switchDarkMode)
         switchDark.isChecked = repo.isDarkMode()
         switchDark.setOnCheckedChangeListener { _, isChecked ->
@@ -88,7 +149,7 @@ class MainActivity : AppCompatActivity() {
             }, 300)
         }
 
-        // --- Genre Selector ---
+        // Genre Selector
         val btnGenre = view.findViewById<LinearLayout>(R.id.btnSelectGenre)
         val tvCurrent = view.findViewById<TextView>(R.id.tvCurrentGenreSettings)
         tvCurrent.text = repo.getGenrePreference()
@@ -98,7 +159,7 @@ class MainActivity : AppCompatActivity() {
             window.decorView.postDelayed({ showNiceGenreSelector() }, 150)
         }
 
-        // --- About Developer Toggle ---
+        // Developer Section
         val btnAbout = view.findViewById<LinearLayout>(R.id.btnAboutDev)
         val layoutDetails = view.findViewById<LinearLayout>(R.id.layoutDevDetails)
         val iconExpand = view.findViewById<TextView>(R.id.iconExpandDev)
@@ -115,13 +176,13 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        // --- Developer Buttons ---
+        // Links
         view.findViewById<TextView>(R.id.btnBugReport).setOnClickListener {
             val intent = Intent(Intent.ACTION_SENDTO).apply {
                 data = Uri.parse("mailto:jeevaljollyjacob@gmail.com")
                 putExtra(Intent.EXTRA_SUBJECT, "Daily Verse App - Bug Report")
             }
-            startActivity(intent)
+            try { startActivity(intent) } catch (e: Exception) { e.printStackTrace() }
         }
 
         view.findViewById<TextView>(R.id.btnBuyCoffee).setOnClickListener {
@@ -152,26 +213,34 @@ class MainActivity : AppCompatActivity() {
                 orientation = LinearLayout.HORIZONTAL
                 gravity = Gravity.CENTER_VERTICAL
                 setPadding(48, 32, 48, 32)
-                background = if (isSelected)
-                    ContextCompat.getDrawable(this@MainActivity, R.drawable.bg_badge)
-                else
-                    ContextCompat.getDrawable(this@MainActivity, android.R.color.transparent)
+
+                if (isSelected) {
+                    background = ContextCompat.getDrawable(this@MainActivity, R.drawable.bg_badge)
+                    backgroundTintList = ColorStateList.valueOf(ContextCompat.getColor(this@MainActivity, R.color.brand_light))
+                } else {
+                    background = ContextCompat.getDrawable(this@MainActivity, android.R.color.transparent)
+                }
+
+                val params = LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.MATCH_PARENT,
+                    LinearLayout.LayoutParams.WRAP_CONTENT
+                )
+                params.setMargins(0, 8, 0, 8)
+                layoutParams = params
             }
 
             val tv = TextView(this).apply {
                 text = genre
                 textSize = 16f
-                setTextColor(
-                    if (isSelected)
-                        ContextCompat.getColor(this@MainActivity, R.color.brand_primary)
-                    else
-                        ContextCompat.getColor(this@MainActivity, R.color.text_primary)
-                )
-                typeface = if (isSelected) android.graphics.Typeface.DEFAULT_BOLD
-                else android.graphics.Typeface.DEFAULT
+                if (isSelected) {
+                    setTextColor(ContextCompat.getColor(this@MainActivity, R.color.brand_primary))
+                    typeface = android.graphics.Typeface.DEFAULT_BOLD
+                } else {
+                    setTextColor(ContextCompat.getColor(this@MainActivity, R.color.text_primary))
+                    typeface = android.graphics.Typeface.DEFAULT
+                }
                 layoutParams = LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1f)
             }
-
             itemLayout.addView(tv)
 
             if (isSelected) {
@@ -192,7 +261,6 @@ class MainActivity : AppCompatActivity() {
         }
 
         btnClose.setOnClickListener { dialog.dismiss() }
-
         dialog.show()
     }
 
