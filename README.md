@@ -24,16 +24,6 @@
 
 ---
 
-## 📸 Screenshots
-
-| Light Mode | OLED Dark Mode | Settings Sheet | Widget |
-|:---:|:---:|:---:|:---:|
-| ![Home Light](path/to/screenshot_light.png) | ![Home Dark](path/to/screenshot_dark.png) | ![Settings](path/to/screenshot_settings.png) | ![Widget](path/to/screenshot_widget.png) |
-
-*(Replace `path/to/screenshot_*.png` with actual paths to your images in the repo, usually inside a `screenshots/` folder)*
-
----
-
 ## 🛠️ Tech Stack
 
 * **Language:** [Kotlin](https://kotlinlang.org/)
