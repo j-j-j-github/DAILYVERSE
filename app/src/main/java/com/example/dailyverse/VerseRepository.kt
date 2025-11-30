@@ -19,6 +19,15 @@ class VerseRepository(private val context: Context) {
     private val prefs: SharedPreferences =
         context.getSharedPreferences("DailyVersePrefs", Context.MODE_PRIVATE)
 
+    // --- TUTORIAL LOGIC ---
+    fun isFirstRun(): Boolean {
+        return prefs.getBoolean("is_first_run_tutorial", true)
+    }
+
+    fun setFirstRunCompleted() {
+        prefs.edit().putBoolean("is_first_run_tutorial", false).apply()
+    }
+
     // -----------------------------------------------------------
     // PUBLIC METHODS USED BY APP + WIDGET
     // -----------------------------------------------------------
@@ -78,7 +87,7 @@ class VerseRepository(private val context: Context) {
     }
 
     // -----------------------------------------------------------
-    // WIDGET CONFIGURATION METHODS (UNCHANGED)
+    // WIDGET CONFIGURATION METHODS
     // -----------------------------------------------------------
 
     fun saveShowVerseOnWidget(enabled: Boolean) {
@@ -211,6 +220,9 @@ class VerseRepository(private val context: Context) {
 
         ids.forEach { id ->
             val views = RemoteViews(context.packageName, R.layout.daily_verse_widget)
+
+            // FIX: Force title to stay as "Daily Verse" instead of changing to reference
+            views.setTextViewText(R.id.widgetTitle, "Daily Verse")
 
             views.setTextViewText(R.id.widgetContent, contentText)
             views.setTextViewText(R.id.widgetPrompt, promptText)

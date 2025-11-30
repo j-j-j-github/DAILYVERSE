@@ -1,6 +1,7 @@
 package com.example.dailyverse
 
 import android.app.AlarmManager
+import android.app.Dialog
 import android.app.PendingIntent
 import android.content.BroadcastReceiver
 import android.content.Context
@@ -9,20 +10,30 @@ import android.content.IntentFilter
 import android.content.pm.PackageManager
 import android.content.res.ColorStateList
 import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.graphics.drawable.GradientDrawable
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.view.Gravity
+import android.view.MotionEvent
 import android.view.View
+import android.view.ViewTreeObserver
+import android.view.Window
+import android.view.WindowManager
+import android.view.animation.DecelerateInterpolator
+import android.view.animation.OvershootInterpolator
+import android.widget.Button
 import android.widget.FrameLayout
 import android.widget.ImageView
 import android.widget.LinearLayout
+import android.widget.RelativeLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowCompat
@@ -80,15 +91,46 @@ class MainActivity : AppCompatActivity() {
 
         loadInitialVerse()
         checkAndScheduleTasks()
-        registerTimeChangeReceiver() // Start listening for time changes
+        registerTimeChangeReceiver()
 
-        val splashContainer = findViewById<View>(R.id.splashContainer)
-        splashContainer.postDelayed({
-            splashContainer.animate().alpha(0f).setDuration(500)
-                .withEndAction { splashContainer.visibility = View.GONE }.start()
-        }, 2000)
+        // --- SPLASH SCREEN LOGIC ---
+        // Reverted: Now shows splash screen every time onCreate is called (including theme changes)
+        showSplash()
 
         setupListeners()
+    }
+
+    private fun showSplash() {
+        val splashContainer = findViewById<View>(R.id.splashContainer)
+        splashContainer.visibility = View.VISIBLE
+        splashContainer.alpha = 1f
+
+        // Use OnPreDrawListener to ensure the view is fully measured and attached before animating
+        splashContainer.viewTreeObserver.addOnPreDrawListener(
+            object : ViewTreeObserver.OnPreDrawListener {
+                override fun onPreDraw(): Boolean {
+                    splashContainer.viewTreeObserver.removeOnPreDrawListener(this)
+
+                    // Delay for 2 seconds (branding presence), then fade out
+                    splashContainer.postDelayed({
+                        // NOW UI is fully ready and splash animation won't be cut
+                        splashContainer.animate()
+                            .alpha(0f)
+                            .setDuration(500)
+                            .withEndAction {
+                                splashContainer.visibility = View.GONE
+                                // Show tutorial strictly AFTER splash is gone
+                                if (repo.isFirstRun()) {
+                                    showTutorial()
+                                }
+                            }
+                            .start()
+                    }, 2000)
+
+                    return true
+                }
+            }
+        )
     }
 
     // Force update when coming back from Settings
@@ -108,7 +150,6 @@ class MainActivity : AppCompatActivity() {
             addAction(Intent.ACTION_DATE_CHANGED)
             addAction(Intent.ACTION_TIMEZONE_CHANGED)
         }
-        // Registering context-based receiver for instant feedback during testing
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             registerReceiver(timeChangeReceiver, filter, Context.RECEIVER_NOT_EXPORTED)
         } else {
@@ -169,7 +210,6 @@ class MainActivity : AppCompatActivity() {
         if (daily != null) {
             addToHistory(daily)
             displayVerse(daily)
-            // CRITICAL: Always push to widget when app logic runs
             repo.updateWidgets(daily)
         }
     }
@@ -208,22 +248,17 @@ class MainActivity : AppCompatActivity() {
         val intent = Intent(this, WidgetUpdateReceiver::class.java).apply {
             action = "com.example.dailyverse.MIDNIGHT_UPDATE"
         }
-
-        // Remove old alarm to prevent conflicts
         val oldPendingIntent = PendingIntent.getBroadcast(this, 1001, intent, PendingIntent.FLAG_NO_CREATE or PendingIntent.FLAG_IMMUTABLE)
         if (oldPendingIntent != null) alarmManager.cancel(oldPendingIntent)
-
         val pendingIntent = PendingIntent.getBroadcast(this, 1001, intent, PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE)
-
         val calendar = Calendar.getInstance().apply {
             timeInMillis = System.currentTimeMillis()
             set(Calendar.HOUR_OF_DAY, 0)
             set(Calendar.MINUTE, 0)
             set(Calendar.SECOND, 0)
             set(Calendar.MILLISECOND, 0)
-            add(Calendar.DAY_OF_YEAR, 1) // Next Midnight
+            add(Calendar.DAY_OF_YEAR, 1)
         }
-
         try {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S && alarmManager.canScheduleExactAlarms()) {
                 alarmManager.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, calendar.timeInMillis, pendingIntent)
@@ -254,6 +289,189 @@ class MainActivity : AppCompatActivity() {
         workManager.enqueueUniquePeriodicWork("daily_verse_notification_work", ExistingPeriodicWorkPolicy.UPDATE, notificationRequest)
     }
 
+    // ────────────────────────────────────────────────
+    // ⭐ IMPROVED TUTORIAL LOGIC
+    // ────────────────────────────────────────────────
+
+    private data class TutorialStep(val title: String, val desc: String, val iconRes: Int)
+
+    private fun showTutorial() {
+        val dialog = Dialog(this, android.R.style.Theme_Translucent_NoTitleBar)
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+        dialog.setContentView(R.layout.dialog_tutorial)
+
+        dialog.window?.let { window ->
+            // Fix 1: Make Dialog Edge-to-Edge so system bars are transparent (no black bars)
+            WindowCompat.setDecorFitsSystemWindows(window, false)
+            window.statusBarColor = Color.TRANSPARENT
+            window.navigationBarColor = Color.TRANSPARENT
+
+            window.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.MATCH_PARENT)
+            window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+            window.setDimAmount(0.85f)
+            window.addFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND)
+        }
+
+        // Updated Steps
+        val steps = listOf(
+            TutorialStep("Welcome to\nDaily Verse!", "Discover daily inspiration with verses tailored for you. Start your day with hope and wisdom.", R.drawable.ic_sparkles),
+            TutorialStep("Home Screen Widgets", "Add the Daily Verse widget to your home screen to see new verses instantly without opening the app.", R.drawable.ic_widgets_outline),
+            TutorialStep("Customize Categories", "Go to Settings to select specific topics like 'Hope', 'Faith', or 'Wisdom' that match your needs.", R.drawable.ic_category_filter),
+            TutorialStep("Your Style", "Switch between Light & Dark mode and pick your favorite widget color in Settings.", R.drawable.ic_palette_outline),
+            TutorialStep("You're all set!", "You are ready to explore.\nI hope this app brings a little light to your day.", R.drawable.ic_check)
+        )
+
+        var currentStepIndex = 0
+
+        val tvTitle = dialog.findViewById<TextView>(R.id.tvTutorialTitle)
+        val tvDesc = dialog.findViewById<TextView>(R.id.tvTutorialDesc)
+        val btnNext = dialog.findViewById<Button>(R.id.btnNext)
+        val btnSkip = dialog.findViewById<TextView>(R.id.btnSkip)
+        val containerIndicators = dialog.findViewById<LinearLayout>(R.id.layoutIndicators)
+        val imgIcon = dialog.findViewById<ImageView>(R.id.imgTutorialIcon)
+        val card = dialog.findViewById<CardView>(R.id.cardTutorial)
+
+        // Fix 2: Set fixed lines to prevent dialog resizing jumping
+        tvDesc.setLines(4)
+        tvDesc.maxLines = 4
+
+        // Dark Mode Adaptation & Premium Gradient
+        val isDark = repo.isDarkMode()
+        val gradientDrawable = GradientDrawable(
+            GradientDrawable.Orientation.TL_BR,
+            if (isDark) intArrayOf(Color.parseColor("#2C2C2C"), Color.parseColor("#121212")) // Dark Gradient
+            else intArrayOf(Color.parseColor("#FFFFFF"), Color.parseColor("#F5F7FA")) // Soft White Gradient
+        )
+        gradientDrawable.cornerRadius = 28f * resources.displayMetrics.density
+
+        (card.getChildAt(0) as? LinearLayout)?.background = gradientDrawable
+        card.setCardBackgroundColor(if (isDark) Color.parseColor("#2C2C2C") else Color.WHITE)
+
+        if (isDark) {
+            tvTitle.setTextColor(Color.WHITE)
+            tvDesc.setTextColor(Color.parseColor("#B0B0B0"))
+            btnSkip.setTextColor(Color.parseColor("#909090"))
+        } else {
+            tvTitle.setTextColor(Color.BLACK)
+            tvDesc.setTextColor(Color.parseColor("#757575"))
+            btnSkip.setTextColor(Color.parseColor("#757575"))
+        }
+
+        // Fix Skip Button (Remove Orange Box)
+        btnSkip.background = null
+        btnSkip.setOnTouchListener { v, event ->
+            when (event.action) {
+                MotionEvent.ACTION_DOWN -> v.animate().alpha(0.5f).setDuration(100).start()
+                MotionEvent.ACTION_UP, MotionEvent.ACTION_CANCEL -> v.animate().alpha(1f).setDuration(100).start()
+            }
+            false
+        }
+
+        fun updateUI() {
+            val step = steps[currentStepIndex]
+            tvTitle.text = step.title
+            tvDesc.text = step.desc
+            imgIcon.setImageResource(step.iconRes)
+
+            // Animation Logic for Icons
+            imgIcon.animate().cancel()
+            imgIcon.scaleX = 1f; imgIcon.scaleY = 1f; imgIcon.alpha = 1f; imgIcon.translationY = 0f; imgIcon.rotation = 0f; imgIcon.translationX = 0f
+
+            when (currentStepIndex) {
+                0 -> { // Pulse
+                    imgIcon.scaleX = 0.5f; imgIcon.scaleY = 0.5f; imgIcon.alpha = 0f
+                    imgIcon.animate().scaleX(1.1f).scaleY(1.1f).alpha(1f).setDuration(500).withEndAction {
+                        imgIcon.animate().scaleX(1f).scaleY(1f).setDuration(200).start()
+                    }.start()
+                }
+                1 -> { // Widget Slide
+                    imgIcon.translationX = -50f; imgIcon.alpha = 0f
+                    imgIcon.animate().translationX(0f).alpha(1f).setDuration(400).setInterpolator(OvershootInterpolator()).start()
+                }
+                2 -> { // Categories Float Up
+                    imgIcon.translationY = 50f; imgIcon.alpha = 0f
+                    imgIcon.animate().translationY(0f).alpha(1f).setDuration(500).setInterpolator(DecelerateInterpolator()).start()
+                }
+                3 -> { // Style Rotate
+                    imgIcon.rotation = -90f; imgIcon.alpha = 0f
+                    imgIcon.animate().rotation(0f).alpha(1f).setDuration(600).setInterpolator(OvershootInterpolator()).start()
+                }
+                4 -> { // Check Pop
+                    imgIcon.scaleX = 0f; imgIcon.scaleY = 0f
+                    imgIcon.animate().scaleX(1.2f).scaleY(1.2f).setDuration(400).setInterpolator(OvershootInterpolator()).withEndAction {
+                        imgIcon.animate().scaleX(1f).scaleY(1f).setDuration(200).start()
+                    }.start()
+                }
+            }
+
+            val params = btnNext.layoutParams as RelativeLayout.LayoutParams
+
+            if (currentStepIndex == steps.size - 1) {
+                // Final Screen Logic (Center Button)
+                btnNext.text = "Get Started"
+                btnSkip.visibility = View.INVISIBLE
+
+                params.removeRule(RelativeLayout.ALIGN_PARENT_END)
+                params.addRule(RelativeLayout.CENTER_HORIZONTAL)
+            } else {
+                // Normal Screen Logic (Right Button)
+                btnNext.text = "Next"
+                btnSkip.visibility = View.VISIBLE
+
+                params.removeRule(RelativeLayout.CENTER_HORIZONTAL)
+                params.addRule(RelativeLayout.ALIGN_PARENT_END)
+            }
+            btnNext.layoutParams = params
+
+            // Enhanced Indicators
+            containerIndicators.removeAllViews()
+            for (i in steps.indices) {
+                val dot = View(this)
+                val width = if (i == currentStepIndex) 32 else 12
+                val height = 12
+                val paramsDot = LinearLayout.LayoutParams(width, height)
+                paramsDot.marginEnd = 12
+                dot.layoutParams = paramsDot
+
+                val drawable = GradientDrawable()
+                drawable.shape = GradientDrawable.RECTANGLE
+                drawable.cornerRadius = 20f
+
+                if (i == currentStepIndex) {
+                    drawable.setColor(ContextCompat.getColor(this, R.color.brand_primary))
+                } else {
+                    drawable.setColor(if(isDark) Color.parseColor("#424242") else Color.parseColor("#E0E0E0"))
+                }
+                dot.background = drawable
+                containerIndicators.addView(dot)
+            }
+
+            card.alpha = 0.8f
+            card.animate().alpha(1f).setDuration(200).start()
+        }
+
+        btnNext.setOnClickListener {
+            if (currentStepIndex < steps.size - 1) {
+                currentStepIndex++
+                updateUI()
+            } else {
+                repo.setFirstRunCompleted()
+                dialog.dismiss()
+            }
+        }
+
+        btnSkip.setOnClickListener {
+            repo.setFirstRunCompleted()
+            dialog.dismiss()
+        }
+
+        updateUI()
+
+        card.alpha = 0f
+        dialog.show()
+        card.animate().alpha(1f).setDuration(500).start()
+    }
+
     private fun showSettingsBottomSheet() {
         val dialog = BottomSheetDialog(this)
         val view = layoutInflater.inflate(R.layout.bottom_sheet_settings, null)
@@ -281,6 +499,12 @@ class MainActivity : AppCompatActivity() {
             window.decorView.postDelayed({ showNiceGenreSelector() }, 150)
         }
 
+        // Wire up the App Tutorial Button
+        view.findViewById<LinearLayout>(R.id.btnAppTutorial).setOnClickListener {
+            dialog.dismiss()
+            window.decorView.postDelayed({ showTutorial() }, 200)
+        }
+
         setupColorSelectors(view)
         setupDeveloperSection(view)
         dialog.show()
@@ -300,7 +524,6 @@ class MainActivity : AppCompatActivity() {
             repo.saveWidgetColor(color)
         }
 
-        // Helper to tint the circles
         fun tintCircle(id: Int, color: Int) {
             val drawable = view.findViewById<ImageView>(id).drawable.mutate()
             if (drawable is GradientDrawable) drawable.setColor(color)

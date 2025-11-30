@@ -222,7 +222,7 @@
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="40dp"
-            android:text="v1.0 by JJJ"
+            android:text="v1.0r by JJJ"
             android:textColor="@color/text_secondary"
             android:textSize="12sp"
             android:letterSpacing="0.2" />
