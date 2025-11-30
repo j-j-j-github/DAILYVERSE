@@ -4,6 +4,8 @@
 
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+    <!-- Required to restart the midnight alarm after the phone restarts -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
     <application
         android:allowBackup="true"
@@ -16,7 +18,32 @@
         android:theme="@style/Theme.DailyVerse"
         tools:targetApi="31">
 
+        <!--
+           This receiver handles the notification logic via WorkManager.
+           If you are using the DailyWorker class we built, you might not strictly need this
+           receiver line unless you have a separate file named DailyNotificationReceiver.kt.
+           I'll leave it here in case you have legacy code using it.
+        -->
         <receiver android:name=".DailyNotificationReceiver" />
+
+        <!--
+            CRITICAL FIX: This receiver MUST be exported and have intent filters
+            to listen for system events (Time change, Reboot, etc.)
+        -->
+        <receiver
+            android:name=".WidgetUpdateReceiver"
+            android:exported="true">
+            <intent-filter>
+                <!-- Custom Action for our Alarm -->
+                <action android:name="com.example.dailyverse.MIDNIGHT_UPDATE" />
+
+                <!-- System Actions for Reboots & Manual Time Changes -->
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.TIME_SET" />
+                <action android:name="android.intent.action.TIMEZONE_CHANGED" />
+                <action android:name="android.intent.action.DATE_CHANGED" />
+            </intent-filter>
+        </receiver>
 
         <receiver
             android:name=".DailyVerseWidget"
