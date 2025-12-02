@@ -52,10 +52,35 @@ class MainActivity : AppCompatActivity() {
     private lateinit var repo: VerseRepository
     private var currentVerse: Verse? = null
 
-    // Create a local receiver for "Instant" testing feedback while app is in background
+    // Guard to prevent double tutorial launches
+    private var isTutorialTriggered = false
+
+    // Runnable for splash logic so we can cancel it if needed
+    private val splashRunnable = Runnable {
+        val splashContainer = findViewById<View>(R.id.splashContainer)
+        // Safety check if view is gone or null
+        if (splashContainer == null) return@Runnable
+
+        splashContainer.animate()
+            .alpha(0f)
+            .setDuration(500)
+            .withEndAction {
+                splashContainer.visibility = View.GONE
+
+                // FIX: Check boolean guard and Activity state
+                // This ensures tutorial runs ONLY once per session
+                if (repo.isFirstRun() && !isTutorialTriggered) {
+                    if (!isFinishing && !isDestroyed) {
+                        isTutorialTriggered = true
+                        showTutorial()
+                    }
+                }
+            }
+            .start()
+    }
+
     private val timeChangeReceiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context?, intent: Intent?) {
-            // When date changes manually, refresh immediately
             loadInitialVerse()
         }
     }
@@ -76,14 +101,19 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        // 1. Init Repo and Apply Theme BEFORE super.onCreate
+        // This prevents the system "Dark Mode" splash from flashing if the app is set to "Light Mode"
+        repo = VerseRepository(this)
+
+        if (repo.isDarkMode()) {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+        } else {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+        }
+
         super.onCreate(savedInstanceState)
         WindowCompat.setDecorFitsSystemWindows(window, false)
         setContentView(R.layout.activity_main)
-
-        repo = VerseRepository(this)
-
-        if (repo.isDarkMode()) AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-        else AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
 
         window.navigationBarColor = ContextCompat.getColor(this, R.color.bg_bottom_bar)
         applyBottomBarInsets()
@@ -94,7 +124,6 @@ class MainActivity : AppCompatActivity() {
         registerTimeChangeReceiver()
 
         // --- SPLASH SCREEN LOGIC ---
-        // Reverted: Now shows splash screen every time onCreate is called (including theme changes)
         showSplash()
 
         setupListeners()
@@ -102,30 +131,27 @@ class MainActivity : AppCompatActivity() {
 
     private fun showSplash() {
         val splashContainer = findViewById<View>(R.id.splashContainer)
+
+        // Prevent Android from restoring the "GONE" state automatically
+        // This ensures splash shows even after theme change recreation
+        splashContainer.isSaveEnabled = false
+
         splashContainer.visibility = View.VISIBLE
         splashContainer.alpha = 1f
 
-        // Use OnPreDrawListener to ensure the view is fully measured and attached before animating
+        // Use OnPreDrawListener to ensure UI is ready, then post the Safe Runnable
         splashContainer.viewTreeObserver.addOnPreDrawListener(
             object : ViewTreeObserver.OnPreDrawListener {
                 override fun onPreDraw(): Boolean {
-                    splashContainer.viewTreeObserver.removeOnPreDrawListener(this)
+                    if (splashContainer.viewTreeObserver.isAlive) {
+                        splashContainer.viewTreeObserver.removeOnPreDrawListener(this)
+                    }
 
-                    // Delay for 2 seconds (branding presence), then fade out
-                    splashContainer.postDelayed({
-                        // NOW UI is fully ready and splash animation won't be cut
-                        splashContainer.animate()
-                            .alpha(0f)
-                            .setDuration(500)
-                            .withEndAction {
-                                splashContainer.visibility = View.GONE
-                                // Show tutorial strictly AFTER splash is gone
-                                if (repo.isFirstRun()) {
-                                    showTutorial()
-                                }
-                            }
-                            .start()
-                    }, 2000)
+                    // Cancel any existing callbacks to ensure we don't double-queue
+                    splashContainer.removeCallbacks(splashRunnable)
+
+                    // Schedule the fade out using the safe runnable
+                    splashContainer.postDelayed(splashRunnable, 2000)
 
                     return true
                 }
@@ -133,7 +159,6 @@ class MainActivity : AppCompatActivity() {
         )
     }
 
-    // Force update when coming back from Settings
     override fun onResume() {
         super.onResume()
         loadInitialVerse()
@@ -141,6 +166,8 @@ class MainActivity : AppCompatActivity() {
 
     override fun onDestroy() {
         super.onDestroy()
+        // Clean up callbacks to prevent memory leaks or zombie dialogs
+        findViewById<View>(R.id.splashContainer)?.removeCallbacks(splashRunnable)
         try { unregisterReceiver(timeChangeReceiver) } catch (e: Exception) { }
     }
 
@@ -290,7 +317,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     // ────────────────────────────────────────────────
-    // ⭐ IMPROVED TUTORIAL LOGIC
+    // TUTORIAL LOGIC
     // ────────────────────────────────────────────────
 
     private data class TutorialStep(val title: String, val desc: String, val iconRes: Int)
@@ -301,7 +328,6 @@ class MainActivity : AppCompatActivity() {
         dialog.setContentView(R.layout.dialog_tutorial)
 
         dialog.window?.let { window ->
-            // Fix 1: Make Dialog Edge-to-Edge so system bars are transparent (no black bars)
             WindowCompat.setDecorFitsSystemWindows(window, false)
             window.statusBarColor = Color.TRANSPARENT
             window.navigationBarColor = Color.TRANSPARENT
@@ -312,7 +338,6 @@ class MainActivity : AppCompatActivity() {
             window.addFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND)
         }
 
-        // Updated Steps
         val steps = listOf(
             TutorialStep("Welcome to\nDaily Verse!", "Discover daily inspiration with verses tailored for you. Start your day with hope and wisdom.", R.drawable.ic_sparkles),
             TutorialStep("Home Screen Widgets", "Add the Daily Verse widget to your home screen to see new verses instantly without opening the app.", R.drawable.ic_widgets_outline),
@@ -331,16 +356,15 @@ class MainActivity : AppCompatActivity() {
         val imgIcon = dialog.findViewById<ImageView>(R.id.imgTutorialIcon)
         val card = dialog.findViewById<CardView>(R.id.cardTutorial)
 
-        // Fix 2: Set fixed lines to prevent dialog resizing jumping
-        tvDesc.setLines(4)
-        tvDesc.maxLines = 4
+        // Prevent layout jumping
+        tvTitle.setLines(2)
+        tvDesc.setLines(5)
 
-        // Dark Mode Adaptation & Premium Gradient
         val isDark = repo.isDarkMode()
         val gradientDrawable = GradientDrawable(
             GradientDrawable.Orientation.TL_BR,
-            if (isDark) intArrayOf(Color.parseColor("#2C2C2C"), Color.parseColor("#121212")) // Dark Gradient
-            else intArrayOf(Color.parseColor("#FFFFFF"), Color.parseColor("#F5F7FA")) // Soft White Gradient
+            if (isDark) intArrayOf(Color.parseColor("#2C2C2C"), Color.parseColor("#121212"))
+            else intArrayOf(Color.parseColor("#FFFFFF"), Color.parseColor("#F5F7FA"))
         )
         gradientDrawable.cornerRadius = 28f * resources.displayMetrics.density
 
@@ -357,7 +381,6 @@ class MainActivity : AppCompatActivity() {
             btnSkip.setTextColor(Color.parseColor("#757575"))
         }
 
-        // Fix Skip Button (Remove Orange Box)
         btnSkip.background = null
         btnSkip.setOnTouchListener { v, event ->
             when (event.action) {
@@ -373,30 +396,29 @@ class MainActivity : AppCompatActivity() {
             tvDesc.text = step.desc
             imgIcon.setImageResource(step.iconRes)
 
-            // Animation Logic for Icons
             imgIcon.animate().cancel()
             imgIcon.scaleX = 1f; imgIcon.scaleY = 1f; imgIcon.alpha = 1f; imgIcon.translationY = 0f; imgIcon.rotation = 0f; imgIcon.translationX = 0f
 
             when (currentStepIndex) {
-                0 -> { // Pulse
+                0 -> {
                     imgIcon.scaleX = 0.5f; imgIcon.scaleY = 0.5f; imgIcon.alpha = 0f
                     imgIcon.animate().scaleX(1.1f).scaleY(1.1f).alpha(1f).setDuration(500).withEndAction {
                         imgIcon.animate().scaleX(1f).scaleY(1f).setDuration(200).start()
                     }.start()
                 }
-                1 -> { // Widget Slide
+                1 -> {
                     imgIcon.translationX = -50f; imgIcon.alpha = 0f
                     imgIcon.animate().translationX(0f).alpha(1f).setDuration(400).setInterpolator(OvershootInterpolator()).start()
                 }
-                2 -> { // Categories Float Up
+                2 -> {
                     imgIcon.translationY = 50f; imgIcon.alpha = 0f
                     imgIcon.animate().translationY(0f).alpha(1f).setDuration(500).setInterpolator(DecelerateInterpolator()).start()
                 }
-                3 -> { // Style Rotate
+                3 -> {
                     imgIcon.rotation = -90f; imgIcon.alpha = 0f
                     imgIcon.animate().rotation(0f).alpha(1f).setDuration(600).setInterpolator(OvershootInterpolator()).start()
                 }
-                4 -> { // Check Pop
+                4 -> {
                     imgIcon.scaleX = 0f; imgIcon.scaleY = 0f
                     imgIcon.animate().scaleX(1.2f).scaleY(1.2f).setDuration(400).setInterpolator(OvershootInterpolator()).withEndAction {
                         imgIcon.animate().scaleX(1f).scaleY(1f).setDuration(200).start()
@@ -407,14 +429,12 @@ class MainActivity : AppCompatActivity() {
             val params = btnNext.layoutParams as RelativeLayout.LayoutParams
 
             if (currentStepIndex == steps.size - 1) {
-                // Final Screen Logic (Center Button)
                 btnNext.text = "Get Started"
                 btnSkip.visibility = View.INVISIBLE
 
                 params.removeRule(RelativeLayout.ALIGN_PARENT_END)
                 params.addRule(RelativeLayout.CENTER_HORIZONTAL)
             } else {
-                // Normal Screen Logic (Right Button)
                 btnNext.text = "Next"
                 btnSkip.visibility = View.VISIBLE
 
@@ -423,7 +443,6 @@ class MainActivity : AppCompatActivity() {
             }
             btnNext.layoutParams = params
 
-            // Enhanced Indicators
             containerIndicators.removeAllViews()
             for (i in steps.indices) {
                 val dot = View(this)
@@ -499,7 +518,6 @@ class MainActivity : AppCompatActivity() {
             window.decorView.postDelayed({ showNiceGenreSelector() }, 150)
         }
 
-        // Wire up the App Tutorial Button
         view.findViewById<LinearLayout>(R.id.btnAppTutorial).setOnClickListener {
             dialog.dismiss()
             window.decorView.postDelayed({ showTutorial() }, 200)
